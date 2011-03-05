@@ -1,0 +1,72 @@
+<?php  echo $this->partial('partial/acl_menu.phtml'); ?>
+<form name="savePermission" method="post" action="<? echo $this->url(array('action'=>'save'));?>">
+<table id="acl_list">
+<tr>
+	<th  style="width: 30px">ID</th>
+	<th style="width: 10px">modulo</th>
+	<th style="width: 150px">Ruolo</th>
+	<th style="width: 150px">Risorsa</th>
+	<th style="width: 450px">Azione</th>
+	<th style="width: 100px">Permesso</th>
+	<th></th>
+</tr>
+<?php foreach($this->permissions as $p) {
+	
+	?>
+	<tr>
+	<td><?php echo $p->getId()?></td>
+	<?php //$p = new AclPermissions();?>
+	<td>
+		<select name="module[<?php echo $p->getId()?>]">
+			<option value="admin" <?php echo ($p->getModule() == 'admin') ? 'selected' : ''?>>admin</option>
+			<option value="user" <?php echo ($p->getModule() == 'default') ? 'selected' : '' ?>>default</option>
+		</select>
+	</td>
+	<td>
+		<select name="role_id[<?php echo $p->getId()?>]" style="width: 150px">
+		<?php foreach($this->roles as $role){
+			?><option value="<?php  echo $role->getId()?>" <?php echo ($p->getRoleId() == $role->getId()) ? 'selected' : ''?>><?php echo $role->getName()?></option><?php 
+		}?>
+		</select>
+	</td>
+	<td><input type="text" value="<?php echo $p->getResource();?>" name="resource[<?php echo $p->getId()?>]"/></td>
+	<td><input type="text" value="<?php echo $p->getActions();?>" name="actions[<?php echo $p->getId()?>]" style="width: 450px"/></td>
+	<td><select name="permission[<?php echo $p->getId()?>]" style="width: 100px">
+		<option value="0" <?php echo ($p->getPermission()) ? '' : 'selected'?>>Deny</option>
+		<option value="1" <?php echo ($p->getPermission()) ? 'selected' : ''?>>Allow</option>
+	</td>
+		<td>
+		<input type="submit" value="salva" name="submit[save][<?php  echo $p->getId()?>]">
+		<input type="submit" value="cancella" name="submit[del][<?php  echo $p->getId()?>]">
+		</td>
+	</tr>
+	<?php 
+	
+}?>
+<tr>
+	<td><?php echo '';?></td>
+	<td>
+		<select name="module[0]">
+			<option value="admin" >admin</option>
+			<option value="default" >default</option>
+		</select>
+	</td>
+	<td>
+		<select name="role_id[0]" style="width: 150px">
+		<?php foreach($this->roles as $role){
+			?><option value="<?php  echo $role->getId()?>" ><?php echo $role->getName()?></option><?php 
+		}?>
+		</select>
+	</td>
+	<td><input type="text" value="" name="resource[0]"/></td>
+	<td><input type="text" value="" name="actions[0]" style="width: 450px"/></td>
+	<td><select name="permission[0]" style="width: 100px">
+		<option value="0" >Allow</option>
+		<option value="1" >Deny</option>
+	</td>
+	<td>
+		<input type="submit" value="aggiungi" name="submit[save][0]">
+	</td>
+	</tr>
+</table>
+</form>

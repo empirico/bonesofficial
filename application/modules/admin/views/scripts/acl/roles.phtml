@@ -1,0 +1,45 @@
+<?php  echo $this->partial('partial/acl_menu.phtml'); ?>
+<form name="saveroles" method="post" action="<? echo $this->url(array('action'=>'save-roles'));?>">
+<table id="acl_list">
+<tr>
+	<th  style="width: 30px">ID</th>
+	<th style="width: 10px">Nome</th>
+	<th style="width: 250px">Ruolo Padre</th>
+	<th></th>
+</tr>
+<?php foreach($this->roles as $role) { ?>
+	<tr>
+	<td><?php echo $role->getId()?></td>
+	<?php //$role = new AclRoles();?>
+	<td>
+		<input type="text" name="name[<?php echo $role->getId()?>]" value="<?php  echo $role->getName()?>"/>
+	</td>
+	<td>
+	<select name="parent_role[<?php echo $role->getId()?>]" style="width: 250px">
+		<?php foreach($this->roles as $r){
+			?><option value="<?php  echo $r->getId()?>" <?php echo ($role->getParentRole() == $r->getId()) ? 'selected' : ''?>><?php echo $r->getName()?></option><?php 
+		}?>
+	</select>
+	</td>
+	<td>
+		<input type="submit" value="salva" name="submit[save][<?php  echo $role->getId()?>]">
+		<input type="submit" value="elimina" name="submit[del][<?php  echo $role->getId()?>]"></td>
+	</tr>
+	<?php 
+	
+}?>
+<tr>
+	<td></td>
+	<td><input type="text" value="" name="name[0]"/></td>
+	<td>
+	<select name="parent_role[0]" style="width: 250px">
+		<option value="">nessuno</option>
+		<?php foreach($this->roles as $r){
+			?><option value="<?php  echo $r->getId()?>" <?php echo ($role->getParentRole() == $r->getId()) ? 'selected' : ''?>><?php echo $r->getName()?></option><?php 
+		}?>
+	</select>
+	</td>
+	<td><input type="submit" value="aggiungi" name="submit[save][0]"></td>
+	</tr>
+</table>
+</form>

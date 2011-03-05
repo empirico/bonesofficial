@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/limelight/!svn/ver/34/trunk/application/modules/admin/views/scripts/journal
+END
+edit-post.phtml
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/limelight/!svn/ver/34/trunk/application/modules/admin/views/scripts/journal/edit-post.phtml
+END
+error.phtml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/limelight/!svn/ver/34/trunk/application/modules/admin/views/scripts/journal/error.phtml
+END
+new-post.phtml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/limelight/!svn/ver/34/trunk/application/modules/admin/views/scripts/journal/new-post.phtml
+END
+show.phtml
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/limelight/!svn/ver/65/trunk/application/modules/admin/views/scripts/journal/show.phtml
+END
+index.phtml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/limelight/!svn/ver/64/trunk/application/modules/admin/views/scripts/journal/index.phtml
+END

@@ -1,0 +1,49 @@
+	<h3><a href="#">Sommario</a></h3>
+	<div id="summary">
+		<?php  
+		$summary_pages = array();
+		$placeholder = new Zend_View_Helper_Placeholder_Container();
+		$placeholder->captureStart('set');
+		
+		foreach ($this->pages as $page){
+			?>
+			<option value="<? echo $page->getId()?>"><?php echo $page->getSlug();?></option>
+			<?php 
+		}
+		$placeholder->captureEnd();
+		?>
+		<div id="preview" style="">
+			<form name="template_assign" id="template_assign">
+				<div class="slot main" id="slot_1">
+					<select name="slot_1" onchange="javascript:fill_preview_slot(this,'full');">
+					<option value="">----</option>
+					<?php echo $placeholder?>
+					</select>
+					<h6 class="article_title"></h6>
+					<div class="article_content"></div>
+				</div>	
+				<div class="slot" id="slot_2" style="float:left;">
+					<select name="slot_2" onchange="javascript:fill_preview_slot(this,'mini');">
+					<option value="">----</option>
+						<?php echo $placeholder?>
+					</select>
+					<h6 class="article_title"></h6>
+					<div class="article_content mini"></div>	
+				</div>
+				<div class="slot" id="slot_3" style="float:left;">
+					<select name="slot_3" onchange="javascript: fill_preview_slot(this, 'mini');">
+					<option value="">----</option>
+						<?php echo $placeholder?>
+					</select>
+					<h6 class="article_title"></h6>
+					<div class="article_content mini"></div>	
+				</div>		
+					
+				<br style="clear:both"/>
+				<div style="text-align:right">
+					<input type="submit" name="submit" value="salva">
+				</div>
+			</form>
+		</div>
+		<br style="clear:both"/>
+	</div>

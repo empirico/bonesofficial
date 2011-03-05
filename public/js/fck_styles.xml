@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Styles >
+    <Style name="grassetto" element="span">
+      <Attribute name="class" value="grassetto" />
+    </Style >
+     <Style name="corsivo" element="span">
+      <Attribute name="class" value="corsivo" />
+    </Style >
+    <Style name="sottolineato" element="span">
+      <Attribute name="class" value="sottolineato" />
+    </Style >
+</Styles>

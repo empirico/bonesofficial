@@ -1,0 +1,29 @@
+    <h4 class="title">Sottopagine</h4>
+	<div id="subpages">
+		<table id="table_page_list">
+            <tr class="list_header">
+                <th >id</th>
+                <th >nome</th>
+                <th >tipo</th>
+                <th >voce menu</th>
+                <th >publica</th>
+                <th style="width: 16px">&nbsp;</th>
+            </tr>
+            <?php  foreach ($this->child_pages as $page){?>
+            <tr class="sortable" id="page_<?php echo $page->getId();?>" style="margin-bottom:3px;">
+                <td><?php echo $page->getId()?></td>
+                <td><a href="<?php echo $this->url(array('controller' => 'page', 'action' => 'show', 'pageId'=> $page->getId()), null, true);?>"><?php echo $page->getName()?></a></td>
+                <td><?php echo $page->getPageType()?></td>
+                <td><?php echo $page->getDisplayName()?></td>
+                <td><div class="ico_<?php echo ($page->getIsPublic() == 1) ? "yes" : "no" ?>"/></td>
+                <td><p style="width:16px;" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span></p></td>
+			 </tr>
+            <?php }?>
+        </table>
+
+        <br style="clear:both"/>
+
+        <form name="new_page" action="<?php echo $this->url(array('controller'=> 'page', 'action' => 'new'),null,true)?>" method="post">
+          <input type="image" src="/img/admin/new_full.png" name="submit" value="nuova pagina"/>
+        </form>
+	</div>

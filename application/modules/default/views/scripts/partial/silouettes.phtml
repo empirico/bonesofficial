@@ -1,0 +1,5 @@
+<div id="latestEvents">
+<h1><?php echo $this->translator->_("LATEST_EVENTS");?></h1>
+<div class="hr_engraved">&nbsp;</div>
+<?php echo $this->partial('partial/event_list.phtml',array("eventList" => $this->latestShows));?>
+</div>

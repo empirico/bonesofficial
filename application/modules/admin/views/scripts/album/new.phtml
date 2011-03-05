@@ -1,0 +1,45 @@
+<script>
+$(document).ready(function() {
+	$( "#album_details_accordion").accordion({ active: 0 , autoHeight: false});
+	
+});
+</script>
+<div style="margin: auto; width: auto">
+    <h1>new album</h1>
+    <form name="edit_album" action="<? echo $this->url(array('action'=>'save'))?>" method="post" enctype="multipart/form-data">
+    <div class="command_bar page alignRightContent">
+		<input type="image" src="/images/admin/save_full.png" name="submit[SAVE]" value="salva" class="button save"/>
+	</div>
+    <div id="album_details_accordion">
+    	<h3><a>Titolo e descrizione</a></h3>
+		<div>
+		    <input type="hidden" name="galleryId" value="<? echo $this->gallery->getId()?>"/>
+		    <div style="margin-bottom: 10px">
+		        <h3 style="margin-bottom: 5px;">Titolo</h3>  <input type="text" style="width:100%" name="title" id="title" value="<?php echo $this->album->getTitle()?>">
+		     </div>
+		     <div style="margin-bottom: 10px">
+		        <h3 style="margin-bottom: 5px;">Descrizione</h3>
+		        <div style="width:300px;float:left;">
+		            <?php 
+		    		$fck1 = new Bones_Utils_Editor('description');
+		    		$fck1->setValue($this->album->getDescription());
+		    		$fck1->setToolbarSet(Bones_Utils_Editor::TOOLBAR_MINIMAL);
+		    		$fck1->setHeight(200);
+		    		$fck1->create();
+		    		?>
+		        </div>
+		     </div>
+		     <div style="float:left;margin-left:10px;">
+				<h3 style="margin-bottom: 5px;">Images Max Width</h3>
+			    <div><input type="text" style="width:40px" name="max_width" id="title" value="<?php echo $this->album->getMaxWidth()?>"> px</div>
+			    <h3 style="margin-bottom: 5px;">Images Max height</h3>
+			    <div><input type="text" style="width:40px" name="max_height" id="title" value="<?php echo $this->album->getMaxHeight()?>"> px</div>
+			    <div style="margin-bottom: 10px">
+		       		<h3 style="margin-bottom: 5px;">Pubblico</h3>  <input type="checkbox" name="is_public" id="is_public" value="1" <?php echo ($this->album->getIsPublic()) ? "checked" : ""?>>
+		     	</div>
+			 </div>
+		     
+		</div>
+	</form>
+	<br style="clear: both;"/>
+</div>

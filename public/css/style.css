@@ -1,0 +1,99 @@
+@CHARSET "UTF-8";
+* {padding: 0px; margin: 0px;}
+html, body {	height: 100%; }
+body { background: #e6e5bc url('../images/main_background.jpg') top center no-repeat; font-family: Trebuchet Ms; font-size: 13px;}
+
+a {color: #e6e5bc;}
+a:hover {color: #bebd9b;}
+a {text-decoration:none;}
+
+#wrapper { 	width: 960px;
+			min-height: 100%;
+			height: auto !important;
+			height: 100%;
+			margin: 0 auto -50px;
+		}
+#main_content {width: 680px;float:left;}
+#header {background: url('../images/logo.png') top left no-repeat; height:131px;margin-top:10px;position:relative;}
+#right_col {width:280px; float:left; background: url('../images/ampli_logo.png') 3px 10px no-repeat;}
+
+#footer { font-size: 11px; padding: 10px; margin: 0 auto; width:960px;}
+#footer p {margin: 10px;}
+
+#menu { color: #e6e5bc; height: 40px; line-height: 40px;position:absolute; bottom: 0;width:670px;}
+#menu span { font-size: 15px; text-transform: uppercase; margin-left: 10px;font-weight: bold;}
+#menu a {color: #e6e5bc;}
+#menu a:hover {color: #bebd9b;}
+
+#lang_switcher {float:right;margin-right: 10px;}
+#lang_switcher a img{ vertical-align: middle}
+
+#content, #right_content { background: transparent url('../images/content_background_transpar.png') repeat top left; padding: 5px;margin:5px;}
+
+#download_iftw {margin-top: 50px;width:195px; margin-left:40px;height:195px;}
+#silouettes {height:200px;overflow: hidden; color: #FFF;position:relative;}
+#right_content { }
+#content {margin-top: 20px;}
+
+#silouettes .fb_status { font-size: 18px;position: absolute; bottom: 30px;padding: 20px;margin:5px;}
+#silouettes #latestEvents {position: absolute; bottom: 0px;padding: 20px;margin:0px;} 
+
+
+#content .page_layer {background: transparent url('../images/logo_bg_transparent.png') 60px 10px no-repeat; padding-bottom: 20px;}
+.page_layer h1 {margin: 5px 0px 0px 0px;font-size: 20px;}
+.page_layer h2 {margin-bottom: 5px;font-size:18px;}
+.page_layer h2.underlined { padding-bottom: 3px;border-bottom: 1px solid black;}
+.page_layer h3 {margin-bottom: 5px;font-size:16px;}
+.page_layer p {margin-bottom: 5px;font-size:15px;}
+.hr_engraved {background: transparent url('../images/hr_engraved.png');height:10px;margin-bottom:10px; width: 100%}
+
+.left {float: left;}
+.right {float: right;}
+.clear {clear:both;}
+
+
+.footer, .push { height: 50px; clear: both;}
+
+#slideshow { position:relative; width: 660px; height:400px; overflow:hidden;}
+
+.layer_bg {background: transparent url('../images/content_background_transpar.png') repeat top left;}
+.spacer-30 {height: 30px;}
+
+/* LISTA ALBUM [pagina music */
+.album_entry {margin-bottom:10px}
+.album_entry .cover {float:left; width: 260px; text-align: center; padding:5px; border: 1px solid black;}
+.album_entry .cover div {width: 250px;height:250px;background: black no-repeat 50% 50%;}
+.album_entry .album_description {float:left; width: 350px; margin-left: 10px;padding: 5px;}
+.album_description ol {list-style-position: inside; margin-left: 20px;}
+.album_description p {margin-top: 5px;}
+.event_list { list-style-type: none;}
+.event_list li {padding-bottom: 3px;clear:both;}
+
+.event_list p.ev_stdate {float:left; width:70px; overflow: hidden;}
+.event_list p.ev_title { float:left;font-weight: bold;color: #562102}
+
+.latest_activities {list-style-type: none;}
+.latest_activities li {clear:both;border-bottom: 1px solid #333;padding: 3px 0;}
+.latest_activities li p{  margin: 0px; margin-right: 5px;}
+.latest_activities li p { float:left;}
+.latest_activities li p a {color:#e6e5bc;}
+.latest_activities li p { float:auto; }
+p.activity_image {margin: auto;}
+.latest_activities li p.activity_action {font-size: 12px;float:none;}
+.activity_action .from_name {font-weight: bold;}
+p.actibity_link {font-size: 12px;}
+p.acitivity_status {font-size: 12px;}
+
+/* BC PLAYER */
+.bc_player { width: 100%; background: #E8E5BC;padding-top: 10px;text-align:center;}
+
+/* link esterni */
+#external_links { text-align: center;}
+#external_links a {margin-left:10px;}
+
+.page_contact a {color:#e6e5bc}
+.page_contact #external_links {text-align: left;}
+
+.photogallery .frame {width: 150x; height: 150px;padding: 2px; border: 2px solid #562102;float:left;margin: 2px;}
+.photogallery .thumb {width:146px;height:142px;line-height: 150px;overflow: hidden;padding: 3px;}
+.photogallery .thumb img {vertical-align: middle;margin: auto 0px;}

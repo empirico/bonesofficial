@@ -1,0 +1,21 @@
+<h4>Diari</h4>
+<table id="table_page_list">
+	<tr class="list_header">
+		<th>id</th>
+		<th>nome</th>
+		<th>descrizione</th>
+		<th>n° articoli</th>
+		<th>&nbsp;</th>
+</tr>
+<?php foreach($this->journal_list as $journal ){ ?>
+
+<tr>
+<td><?php echo $journal->getId(); ?></td>
+<td><?php echo $journal->getTitle();?></td>
+<td><?php echo substr(strip_tags(stripslashes($journal->getTextAbstract())),0, 100);?></td>
+<td><?php echo $journal->countJournalPosts();?></td>
+<td><div  class="ui-state-default ui-corner-all" style="text-align:center;"><a href="<?php echo $this->url(array('action'=>'show', 'journalId' => $journal->getId()));?>"><span class="ui-icon ui-icon-circle-triangle-e"></span></a></div></td>
+</tr>
+
+<?php }?>
+</table>

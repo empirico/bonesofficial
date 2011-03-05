@@ -1,0 +1,24 @@
+<validators>
+<table name="users">
+	    <validator column="nickname">
+	    	<rule name="minLength"  value="4"  message="La lunghezza dello username non dev'essere minore di ${value} caratteri" />
+	    	<rule name="maxLength"  value="20"  message="La lunghezza dello username non dev'essere superiore ai ${value} caratteri" />
+	    	<rule name="required" message="Il nickname non può essere vuoto" />
+	    	<rule name="unique" message="Il nickname esiste già" />
+	    </validator>
+	    <validator column="email">
+	    	<rule name="required" message="L'indirizzo email non può essere vuoto" />
+	    	<rule name="unique" message="L'indirizzo email esiste già" />
+	    </validator>
+	    <validator column="password">
+	    	<rule name="minLength" value="6" message="La password deve essere composta da almeno 6 caratteri" />
+	    </validator>
+</table>
+<table name="gallery">
+	<validator column="title">
+		<rule name="required" message="title can't be empty" />
+	    <rule name="unique" message="title already exists" />
+	</validator>
+</table>
+
+</validators>

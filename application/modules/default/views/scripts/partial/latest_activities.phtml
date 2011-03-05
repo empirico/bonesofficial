@@ -1,0 +1,41 @@
+	
+	<ul class="latest_activities">
+	<?php  $fb = new App_Model_FbPageConnection();
+		   $posts = $fb->getPosts();
+		   $i = 0;
+		   foreach ($posts['data'] as $post) {
+		   	if ($i > 5) break;
+		   	$fb_post = new App_Model_FbPost($post);
+		   	$type = $post['type'];
+		  	?><li><p class="activity_action"><span class="from_name"><?php  echo $fb_post->getFromName()?></span> <?php  echo $this->translator->_("ACTIVITY_" . strtoupper($type))?>:</p>
+		  	<?php 
+		  	
+		  	switch($post['type']){
+		  		case 'photo':
+		  		case 'video':{
+		  			if ($fb_post->getPicture()) {?><p class="activity_image"><a href="<?php echo $fb_post->getLink()?>" target="_blank"><img src="<?php echo $fb_post->getPicture()?>" border="0" /></a></p><?php } 
+		  		}
+		  		break;
+				case 'link': {
+					?><p class="activity_link"><?php 
+					if ($fb_post->getLink()) {
+						?><a href="<?php echo $fb_post->getLink()?>" target="_blank" ><?php echo $fb_post->getName()?></a><?php 
+					} else {
+						echo $fb_post->getName();
+					}
+					?></p><?php  
+				}
+				break;
+				case 'status': {
+					echo '<p class="activity_status">"' . $fb_post->getMessage() . '"</p>';	
+				}
+				break;
+		  		
+		  	}
+		  	 ?><div class="clear"></div>
+		  	</li><?php 
+		   	$i++;
+		   }
+		   
+	?>
+	</ul>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config>
+    <propel>
+        <datasources default="ORM">
+
+            <datasource id="ORM">
+                <!-- the Propel adapter will usually be the same as phptype of connection DSN -->
+                <adapter>mysql</adapter>
+                <connection>
+                     <dsn>mysql:dbname=bones;host=127.0.0.1</dsn>
+                     <user>root</user>
+                      <password>root</password>
+                </connection>
+
+            </datasource>
+
+        </datasources>
+    </propel>
+</config>

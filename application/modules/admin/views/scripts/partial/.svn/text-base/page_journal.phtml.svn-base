@@ -1,0 +1,24 @@
+<h3 ><a>Titolo e descrizione</a></h3>
+<div>
+    <input type="hidden" name="content_id" value="<? echo $this->journal->getId()?>"/>
+    <div style="margin-bottom: 10px">
+        <h3 style="margin-bottom: 5px;">Titolo</h3>  <input type="text" style="width:100%" name="title" id="title" value="<?php echo $this->journal->getTitle()?>">
+     </div>
+     <div style="margin-bottom: 10px">
+        <h3 style="margin-bottom: 5px;">Abstract</h3>
+        <div>
+            <?php 
+    		$fck1 = new Bones_Utils_Editor('text_abstract');
+    		$fck1->setValue($this->journal->getTextAbstract());
+    		$fck1->setToolbarSet(Bones_Utils_Editor::TOOLBAR_MINIMAL);
+    		$fck1->setHeight(200);
+    		$fck1->create();
+    		?>
+        </div>
+     </div>
+</div>
+<h3><a>Elenco Post</a></h3>
+<div>
+	 <?php echo $this->partial('partial/journal_post_list.phtml',array('journal' => $this->journal,'post_list'=> $this->post_list,'show_settings' => false, 'show_list' => true));?>
+</div>
+<br style="clear: both;"/>

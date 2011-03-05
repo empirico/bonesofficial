@@ -1,0 +1,8 @@
+<?php  if (!empty($this->error_messages)) {?>
+ <div class="ui-state-error ui-corner-all" style="padding: 10px;margin-bottom: 10px;">
+ 	<? foreach($this->error_messages as $key=>$value){?>
+ 		<p><span style="float: left; margin-right: 0.3em;" class="ui-icon ui-icon-alert"></span>
+ 		<strong>Alert:</strong> <?php echo $value?></p>
+ 	<?php }?>
+ </div>
+ <?php }?>
