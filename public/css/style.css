@@ -66,9 +66,9 @@ a {text-decoration:none;}
 .album_entry .album_description {float:left; width: 350px; margin-left: 10px;padding: 5px;}
 .album_description ol {list-style-position: inside; margin-left: 20px;}
 .album_description p {margin-top: 5px;}
+
 .event_list { list-style-type: none;}
 .event_list li {padding-bottom: 3px;clear:both;}
-
 .event_list p.ev_stdate {float:left; width:70px; overflow: hidden;}
 .event_list p.ev_title { float:left;font-weight: bold;color: #562102}
 
@@ -90,6 +90,9 @@ p.acitivity_status {font-size: 12px;}
 /* link esterni */
 #external_links { text-align: center;}
 #external_links a {margin-left:10px;}
+
+/* spalla dx */
+#latestEvents .event_list p.ev_address,#latestEvents .event_list p.ev_image {display:none;}
 
 .page_contact a {color:#e6e5bc}
 .page_contact #external_links {text-align: left;}
