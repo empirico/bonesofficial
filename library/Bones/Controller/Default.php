@@ -18,10 +18,13 @@ class Bones_Controller_Default extends Bones_Controller_Base
         $this->view->headScript()->appendFile('/js/jquery.cycle.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/jquery.prettyPhoto.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/default.js','text/javascript');
+        
+        $this->view->headMeta()->appendName('keywords', 'Bones & Comfort, Music, Biography, Pictures, In Fat we Trust, Luca Romanò, Daniele Murroni, Alberto Trentanni');
         $this->view->headLink()->appendStylesheet('/css/style.css');
         $this->view->headLink()->appendStylesheet('/css/slider.css');
         $this->view->headLink()->appendStylesheet('/css/prettyPhoto.css');
      
+        $this->view->page_title = strtolower(str_replace("Controller", "", get_class($this)));
         
         $this->view->docType('XHTML1_STRICT');
    
