@@ -38,5 +38,6 @@ var boot = { index: function(){
 
 
 $(document).ready(function(){
-	boot.index();
+    boot.index();
+    boot.photos();
 });
