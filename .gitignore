@@ -7,4 +7,7 @@
 /public/infatwetrust/*
 /public/upload/images/*
 /public/upload/doc/*
+/nbproject/*
+/org_netbeans_saas/*
+/org_netbeans_saas_facebook/*
 
