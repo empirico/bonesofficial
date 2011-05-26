@@ -1,7 +1,7 @@
 @CHARSET "UTF-8";
 * {padding: 0px; margin: 0px;}
 html, body {	height: 100%; }
-body { background: #e6e5bc url('../images/main_background.jpg') top center no-repeat; font-family: Trebuchet Ms; font-size: 13px;}
+body { background: #444444 ; font-family: Verdana; font-size: 13px;}
 
 a {color: #e6e5bc;}
 a:hover {color: #bebd9b;}
@@ -13,10 +13,10 @@ a {text-decoration:none;}
 			height: 100%;
 			margin: 0 auto -50px;
 		}
-#main_content {width: 680px;float:left;}
+#main_content {width: 960px;}
 #header {background: url('../images/logo.png') top left no-repeat; height:131px;margin-top:10px;position:relative;}
-#right_col {width:280px; float:left; background: url('../images/ampli_logo.png') 3px 10px no-repeat;}
-
+#left_col {width:280px; float:left; background: url('../images/ampli_logo.png') 3px 10px no-repeat;}
+#left_content {padding: 5px;margin:5px;width:280px;} 
 #footer { font-size: 11px; padding: 10px; margin: 0 auto; width:960px;}
 #footer p {margin: 10px;}
 
@@ -28,7 +28,7 @@ a {text-decoration:none;}
 #lang_switcher {float:right;margin-right: 10px;}
 #lang_switcher a img{ vertical-align: middle}
 
-#content, #right_content { background: transparent url('../images/content_background_transpar.png') repeat top left; padding: 5px;margin:5px;}
+#content { background: transparent url('../images/content_background_transpar.png') repeat top left; padding: 5px;margin:5px; float:left;}
 
 #download_iftw {margin-top: 50px;width:195px; margin-left:40px;height:195px;}
 #silouettes {height:200px;overflow: hidden; color: #FFF;position:relative;}

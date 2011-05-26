@@ -27,17 +27,19 @@
 </head>	    
 <body>
 	<div id="wrapper">
-		<div id="main_content">
+                    <div id="main_content">
 			<div id="header">
 				<?php echo $this->render('partial/default/main_menu.phtml', array('lang' => $this->lang));?>
 			</div>
+                        <div id="left_col">
+                            <?php echo $this->right_content  ?>
+                        </div>
 			<div id="content">
 				<?php echo $this->layout()->content ?>
 			</div>
+                        <br style="clear: both"/>
 		</div>
-		<div id="right_col">
-			<?php echo $this->right_content  ?>
-		</div>
+		
 		<div class="push"></div>
 	</div>
 	
