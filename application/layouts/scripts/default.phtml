@@ -26,26 +26,24 @@
 </script>
 </head>	    
 <body>
-	<div id="wrapper">
-                    <div id="main_content">
-			<div id="header">
-				<?php echo $this->render('partial/default/main_menu.phtml', array('lang' => $this->lang));?>
-			</div>
-                        <div id="left_col">
-                            <?php echo $this->right_content  ?>
-                        </div>
-			<div id="content">
-				<?php echo $this->layout()->content ?>
-			</div>
-                        <br style="clear: both"/>
-		</div>
+    
+<div id="main_content">
+    <div id="header">
+            <?php //echo $this->render('partial/default/main_menu.phtml', array('lang' => $this->lang));?>
+    </div>
+    <div id="content">
+            <?php echo $this->layout()->content ?>
+    </div>
+    <br style="clear: both"/>
+    <div id="footer" class="footer">
+        <div class="hr_engraved" style="width:99%;margin:auto;"></div>
+        <p class="right">&copy; Bones & Comfort 2011. webmaster: <a href="mailto:bonesrock@gmail.com">bonesmccoy</a></p>
+    </div>
+</div>
 		
 		<div class="push"></div>
 	</div>
 	
-	<div id="footer" class="footer">
-			<div class="hr_engraved" style="width:99%;margin:auto;"></div>
-			<p class="right">&copy; Bones & Comfort 2011. webmaster: <a href="mailto:bonesrock@gmail.com">bonesmccoy</a></p>
-	</div>
+	
 </body>
 </html>
