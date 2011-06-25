@@ -20,24 +20,21 @@ function activate_emails() {
 	  $("a#mail_info").attr('href', "mailto:" + info).html(info);
 }
 
-var boot = { index: function(){
-				$('#slideshow').cycle({
-                 		fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
-                 		speed: 500
-                 	});
-                activate_ajaxLinks();
-
-			    $("a[rel^='bonesGallery']").prettyPhoto({animationSpeed:'fast',slideshow:10000}); 
-			},
-			photos : function(){
-				//alert('IM BOOTING PHOTOS');
-				$("a[rel^='bonesPhotogallery']").prettyPhoto({animationSpeed:'fast',slideshow:10000});
-			}
-		};
+var boot = {index: function(){
+				
+		}
+    };
 
 
 
 $(document).ready(function(){
-    boot.index();
-    boot.photos();
+  // initialize scrollable
+    $('#bio').load('/' + lang + "/biography/",
+    function(){
+        $('#music').load('/' + lang + "/music/", function(){
+            $('#contact').load('/' + lang + "/contacts/", function(){
+               $(".scrollable").scrollable(); 
+            });
+        });
+    });
 });

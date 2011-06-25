@@ -10,6 +10,7 @@
     <script type="text/javascript">
     	var lang = '<?php echo $this->lang;?>';
     </script>
+    <script src="http://cdn.jquerytools.org/1.2.5/jquery.tools.min.js"></script>
     <?php echo $this->headScript() ?> 
   	<script type="text/javascript">
 	
@@ -26,24 +27,19 @@
 </script>
 </head>	    
 <body>
-    
-<div id="main_content">
-    <div id="header">
-            <?php //echo $this->render('partial/default/main_menu.phtml', array('lang' => $this->lang));?>
-    </div>
     <div id="content">
-            <?php echo $this->layout()->content ?>
+        <a class="prev browse left"></a>
+        <div class="scrollable">
+            <div class="items">
+                <?php echo $this->layout()->content ?>
+                <div id="bio" class="page_content"></div>
+                <div id="music" class="page_content"></div>
+                <div id="contact" class="page_content"></div>
+            </div>
+            </div>
+
+        <!-- "next page" action -->
+        <a class="next browse right"></a>
     </div>
-    <br style="clear: both"/>
-    <div id="footer" class="footer">
-        <div class="hr_engraved" style="width:99%;margin:auto;"></div>
-        <p class="right">&copy; Bones & Comfort 2011. webmaster: <a href="mailto:bonesrock@gmail.com">bonesmccoy</a></p>
-    </div>
-</div>
-		
-		<div class="push"></div>
-	</div>
-	
-	
 </body>
 </html>

@@ -13,8 +13,6 @@ class Bones_Controller_Default extends Bones_Controller_Base
     	
     	$this->view->headLink()->appendStylesheet('/css/bones/jquery-ui-1.8.4.custom.css');
         
-    	$this->view->headScript()->appendFile('/js/jquery-1.4.2.min.js', 'text/javascript');
-        $this->view->headScript()->appendFile('/js/jquery-ui-1.8.4.custom.min.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/jquery.cycle.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/jquery.prettyPhoto.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/default.js','text/javascript');
@@ -23,6 +21,8 @@ class Bones_Controller_Default extends Bones_Controller_Base
         $this->view->headLink()->appendStylesheet('/css/style.css');
         $this->view->headLink()->appendStylesheet('/css/slider.css');
         $this->view->headLink()->appendStylesheet('/css/prettyPhoto.css');
+        $this->view->headLink()->appendStylesheet('/css/scrollable-horizontal.css');
+        $this->view->headLink()->appendStylesheet('/css/scrollable-buttons.css');
      
         $this->view->page_title = strtolower(str_replace("Controller", "", get_class($this)));
         

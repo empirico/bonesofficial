@@ -1,41 +1,27 @@
 @CHARSET "UTF-8";
 * {padding: 0px; margin: 0px;}
-html, body {	height: 100%; }
-body { background: #444444 ; background: url('../images/big_bg.jpg') top left repeat; background-attachment : fixed; font-family: Verdana; font-size: 13px;}
+html, body {font-size:11px}
+body { background: #444444 ; background: url('../images/big_bg.jpg') top left repeat; 
+       background-attachment : fixed; 
+       font-family: Verdana; 
+       font-size: 13px;}
 
 a {color: #e6e5bc;}
 a:hover {color: #bebd9b;}
 a {text-decoration:none;}
 
-#main_content {width: 850px;margin-left: 250px;}
-#header { height:100px;margin-top:10px;position:relative;}
-#footer { font-size: 11px; margin: 0 auto; width:100%;}
-#footer p {margin: 3px;}
-
-#menu { color: #e6e5bc; height: 40px; line-height: 40px;position:absolute; bottom: 0;width:670px;}
-#menu span { font-size: 15px; text-transform: uppercase; margin-left: 10px;font-weight: bold;}
-#menu a {color: #e6e5bc;}
-#menu a:hover {color: #bebd9b;}
-
-#lang_switcher {float:right;margin-right: 10px;}
-#lang_switcher a img{ vertical-align: middle}
-
-#content { width:850px; height:450px;overflow: hidden;}
+#main_content {width: 900px;}
+#content { width:1024px; margin-left: 180px; margin-top: 60px;height:520px;overflow: hidden;}
 
 #download_iftw {margin-top: 50px;width:195px; margin-left:40px;height:195px;}
-#silouettes {height:200px;overflow: hidden; color: #FFF;position:relative;}
-#right_content { }
 
-#silouettes .fb_status { font-size: 18px;position: absolute; bottom: 30px;padding: 20px;margin:5px;}
-#silouettes #latestEvents {position: absolute; bottom: 0px;padding: 20px;margin:0px;} 
-
-
-#content .page_layer {background: transparent url('../images/logo_bg_transparent.png') 60px 10px no-repeat; padding-bottom: 20px;}
-.page_layer h1 {margin: 5px 0px 0px 0px;font-size: 20px;}
-.page_layer h2 {margin-bottom: 5px;font-size:18px;}
+#content .page_layer {background: transparent url('../images/logo_bg_transparent.png') 60px 10px no-repeat; 
+width:830px; height: 460px; overflow: hidden;}
+.page_layer h1 {margin: 5px 0px 0px 0px;font-size: 1.8em;}
+.page_layer h2 {margin-bottom: 5px;font-size:1.5em}
 .page_layer h2.underlined { padding-bottom: 3px;border-bottom: 1px solid black;}
-.page_layer h3 {margin-bottom: 5px;font-size:16px;}
-.page_layer p {margin-bottom: 5px;font-size:15px;}
+.page_layer h3 {margin-bottom: 5px;font-size:1.4em;}
+.page_layer p {margin-bottom: 5px;font-size:1em;}
 .hr_engraved {background: transparent url('../images/hr_engraved.png');height:10px;margin-bottom:10px; width: 100%}
 
 .left {float: left;}
@@ -44,8 +30,6 @@ a {text-decoration:none;}
 
 
 .footer, .push { height: 50px; clear: both;}
-
-#slideshow { position:relative; width: 660px; height:400px; overflow:hidden;}
 
 .layer_bg {background: transparent url('../images/content_background_transpar.png') repeat top left;}
 .spacer-30 {height: 30px;}
