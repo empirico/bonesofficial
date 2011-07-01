@@ -1,6 +1,0 @@
-<div style="margin: auto; width: auto">
-    <h4>Modifica Articolo : <?php echo $this->post->getTitle()?></h4>
-    <div id="page_accordion">
-    <?php echo $this->partial('partial/journal_post.phtml', array('journal'=>$this->journal, 'post'=>$this->post))?>
-    <br style="clear: both;"/>
-</div>

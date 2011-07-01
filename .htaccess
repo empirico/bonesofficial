@@ -1,20 +1,2 @@
-RewriteEngine On
-
-
-RewriteRule ^(.*)upload/images/(.*)$  /public/image_resize.php?path=$2&%{QUERY_STRING} [L]
-
-# Exclude some directories from URI rewriting
-RewriteRule ^(resources) - [L]
-RewriteRule ^\.htaccess$ - [F]
-
-RewriteCond %{REQUEST_URI} =""
-RewriteRule ^.*$ /public/index.php [NC,L]
-
-RewriteCond %{REQUEST_URI} !^/public/.*$
-RewriteRule ^(.*)$ /public/$1
-
-RewriteCond %{REQUEST_FILENAME} -f
-RewriteRule ^.*$ - [NC,L]
-RewriteRule ^public/.*$ /public/index.php [NC,L]
-
+RewriteEngine Off
 

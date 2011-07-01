@@ -1,8 +1,0 @@
-<?php echo $this->track_virtual_page;?>
-<div class="page_layer photogallery">
-<?php foreach($this->photos as $photo) { ?>
-	<?php $image = $photo->getImage();?>
-	<div class="frame"><div class="thumb"><a rel="bonesPhotogallery" href="<?php echo $image->getFullPath($this->width);?>"><img  border="0" width="<?php echo Bones_Files_Image::THUMB_WIDTH?>" src="<?php echo $image->getFullPath();?>" alt="Bones & comfort" valign="absmiddle"/></a></div></div>
-<?php } ?>
-<div class="clear"></div>
-</div>
