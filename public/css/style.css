@@ -16,11 +16,11 @@ a {text-decoration:none;}
 #download_iftw {margin-top: 50px;width:195px; margin-left:40px;height:195px;}
 
 #content .page_layer {background: transparent url('../images/logo_bg_transparent.png') 60px 10px no-repeat; 
-width:830px; height: 460px; overflow: hidden;}
-.page_layer h1 {margin: 5px 0px 0px 0px;font-size: 1.8em;}
-.page_layer h2 {margin-bottom: 5px;font-size:1.5em}
+width:820px; height: 430px; overflow: hidden; padding:10px}
+.page_layer h1 {margin: 5px 0px 0px 0px;font-size: 1.3em;}
+.page_layer h2 {margin-bottom: 5px;font-size:1.2em}
 .page_layer h2.underlined { padding-bottom: 3px;border-bottom: 1px solid black;}
-.page_layer h3 {margin-bottom: 5px;font-size:1.4em;}
+.page_layer h3 {margin-bottom: 5px;font-size:1.1em;}
 .page_layer p {margin-bottom: 5px;font-size:1em;}
 .hr_engraved {background: transparent url('../images/hr_engraved.png');height:10px;margin-bottom:10px; width: 100%}
 
