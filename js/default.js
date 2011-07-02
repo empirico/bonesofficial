@@ -30,8 +30,5 @@ $(document).ready(function(){
        speed: 800,
        circular: true,
        easing: 'custom'
-   }).navigator({
-       navi: '#menu',
-       naviItem: 'a'
-    }); 
+   }).navigator(); 
 });

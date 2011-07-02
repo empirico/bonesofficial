@@ -13,15 +13,13 @@ if (in_array($posted_lang, $langs)) {
         <title>Bones & Comfort - index</title>
         <meta property="fb:page_id" content="52988616067" />
         <meta name="keywords" content="Bones &amp; Comfort, Music, Biography, Pictures, In Fat we Trust, Luca Romanò, Daniele Murroni, Alberto Trentanni" />    <link href="/css/bones/jquery-ui-1.8.4.custom.css" media="screen" rel="stylesheet" type="text/css" />
-        <link href="/css/style.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="/css/slider.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="/css/prettyPhoto.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="/css/scrollable-horizontal.css" media="screen" rel="stylesheet" type="text/css" />
-
         <link href="/css/scrollable-buttons.css" media="screen" rel="stylesheet" type="text/css" />        <script type="text/javascript">
             var lang = '<? $lang ?>';
         </script>
-        <script src="http://cdn.jquerytools.org/1.2.5/jquery.tools.min.js"></script>
+        <script src="http://cdn.jquerytools.org/1.2.5/full/jquery.tools.min.js"></script>
         <script type="text/javascript" src="/js/default.js"></script> 
         <script type="text/javascript">
 	
@@ -45,7 +43,6 @@ if (in_array($posted_lang, $langs)) {
             <a href="#contact">contact</a>
         </div>
         <div id="content">
-            <a class="prev browse left disabled"></a>
             <div id="mainpanel">
                 <div class="items">
                     <div id="" class="page_content"><img src="/images/frontpage.jpg" alt="Bones &amp; comfort" border="0" width="840"></div>
@@ -54,8 +51,6 @@ if (in_array($posted_lang, $langs)) {
                     <div id="" class="page_content"><? include_once('contacts.php') ?></div>
                 </div>
             </div>
-            <!-- "next page" action -->
-            <a class="next browse right"></a>
         </div>
 
 
