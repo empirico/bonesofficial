@@ -13,6 +13,7 @@ if (in_array($posted_lang, $langs)) {
         <title>Bones & Comfort - index</title>
         <meta property="fb:page_id" content="52988616067" />
         <meta name="keywords" content="Bones &amp; Comfort, Music, Biography, Pictures, In Fat we Trust, Luca Romanò, Daniele Murroni, Alberto Trentanni" />    <link href="/css/bones/jquery-ui-1.8.4.custom.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="/css/style.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="/css/slider.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="/css/prettyPhoto.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="/css/scrollable-horizontal.css" media="screen" rel="stylesheet" type="text/css" />
