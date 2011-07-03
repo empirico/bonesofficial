@@ -37,13 +37,16 @@ if (in_array($posted_lang, $langs)) {
         </script>
     </head>	    
     <body>
-        <div class="navi" id="menu">
-            <a href="#index">index</a>
-            <a href="#bio">bio</a>
-            <a href="#music">music</a>
-            <a href="#contact">contact</a>
-        </div>
+        <div id="logo">&nbsp;</div>
         <div id="content">
+            <div id="header">
+                <div class="navi" id="menu">
+                    <a href="#index">index</a>
+                    <a href="#bio">bio</a>
+                    <a href="#music">music</a>
+                    <a href="#contact">contact</a>
+                </div>
+            </div>
             <div id="mainpanel">
                 <div class="items">
                     <div id="" class="page_content"><img src="/images/frontpage.jpg" alt="Bones &amp; comfort" border="0" width="840"></div>
