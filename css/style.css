@@ -13,7 +13,7 @@ a {text-decoration:none;}
 #main_content {width: 900px;}
 #logo {background: url('../images/logo.jpg') no-repeat top left; width: 230px;height:282px; float:left;}
 #header {height: 70px;position:relative;background: url('../images/logo.png') no-repeat top right;width:900px;}
-#content {width:1024px;margin-left:0px; height:520px;overflow: hidden; float:left;}
+#content {width:1024px;margin-left:0px; height:580px;overflow: hidden; float:left;}
 #menu {position:absolute;bottom:0px; float:left;}
 
 #download_iftw {margin-top: 50px;width:195px; margin-left:40px;height:195px;}
