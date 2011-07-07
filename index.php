@@ -6,7 +6,7 @@ if (in_array($posted_lang, $langs)) {
     $lang = $posted_lang;
 }
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -20,7 +20,8 @@ if (in_array($posted_lang, $langs)) {
         <link href="/css/scrollable-buttons.css" media="screen" rel="stylesheet" type="text/css" />        <script type="text/javascript">
             var lang = '<? $lang ?>';
         </script>
-        <script src="http://cdn.jquerytools.org/1.2.5/full/jquery.tools.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
         <script type="text/javascript" src="/js/default.js"></script> 
         <script type="text/javascript">
 	
@@ -37,26 +38,16 @@ if (in_array($posted_lang, $langs)) {
         </script>
     </head>	    
     <body>
-        <div id="logo">&nbsp;</div>
-        <div id="content">
-            <div id="header">
-                <div class="navi" id="menu">
-                    <a href="#index">index</a>
-                    <a href="#bio">bio</a>
-                    <a href="#music">music</a>
-                    <a href="#contact">contact</a>
-                </div>
+        <div id="background_container"><img src="images/main_background.jpg" width="100%"></div>
+        <div id="wrapper">
+             <div id="content">
+              <div id="biografia" class="panel"><? include('bio.php')?></div>
+              <div id="menubar">
+                    <div id="menu"><a href="#" onclick="javascript:$('#biografia').toggle( 'slide', {direction: 'down'} )">LLLLL</a></div>
+              </div>  
             </div>
-            <div id="mainpanel">
-                <div class="items">
-                    <div id="" class="page_content"><img src="/images/frontpage.jpg" alt="Bones &amp; comfort" border="0" width="840"></div>
-                    <div id="" class="page_content"><? include_once('bio.php') ?></div>
-                    <div id="" class="page_content"><? include_once('music.php') ?></div>
-                    <div id="" class="page_content"><? include_once('contacts.php') ?></div>
-                </div>
-            </div>
+            
+
         </div>
-
-
     </body>
 </html>

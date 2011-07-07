@@ -1,78 +1,16 @@
 @CHARSET "UTF-8";
 * {padding: 0px; margin: 0px;}
-html, body {font-size:13px}
-body { background: #444444 ; background: url('../images/bg_squared.jpg') top left repeat; 
-       background-attachment : fixed; 
-       font-family: Verdana; 
-       }
-
-a {color: #e6e5bc;}
-a:hover {color: #bebd9b;}
-a {text-decoration:none;}
-
-#main_content {width: 900px;}
-#logo {background: url('../images/logo.jpg') no-repeat top left; width: 230px;height:282px; float:left;}
-#header {height: 70px;position:relative;background: url('../images/logo.png') no-repeat top right;width:900px;}
-#content {width:1024px;margin-left:0px; height:580px;overflow: hidden; float:left;}
-#menu {position:absolute;bottom:0px; float:left;}
-
-#download_iftw {margin-top: 50px;width:195px; margin-left:40px;height:195px;}
-
-#content .page_layer {background: transparent url('../images/logo_bg_transparent.png') 60px 10px no-repeat; 
-width:820px; height: 430px; overflow: hidden; padding:10px}
-.page_layer h1 {margin: 5px 0px 0px 0px;font-size: 1.3em;}
-.page_layer h2 {margin-bottom: 5px;font-size:1.2em}
-.page_layer h2.underlined { padding-bottom: 3px;border-bottom: 1px solid black;}
-.page_layer h3 {margin-bottom: 5px;font-size:1.1em;}
-.page_layer p {margin-bottom: 20px;font-size: 1em}
-.hr_engraved {background: transparent url('../images/hr_engraved.png');height:10px;margin-bottom:10px; width: 100%}
-
-.left {float: left;}
-.right {float: right;}
-.clear {clear:both;}
-
-
-.footer, .push { height: 50px; clear: both;}
-
-.layer_bg {background: transparent url('../images/content_background_transpar.png') repeat top left;}
-.spacer-30 {height: 30px;}
-
-/* LISTA ALBUM [pagina music */
-.album_entry {margin-top:20px}
-.album_entry .cover {float:left; width: 260px; text-align: center; padding:5px;}
-.album_entry .cover div {width: 250px;height:250px;background: black no-repeat 50% 50%;}
-.album_entry .album_description {float:left; width: 520px; margin-left: 10px;padding: 5px;margin-top:15px;}
-
-.event_list { list-style-type: none;}
-.event_list li {padding-bottom: 3px;clear:both;}
-.event_list p.ev_stdate {float:left; width:70px; overflow: hidden;}
-.event_list p.ev_title { float:left;font-weight: bold;color: #562102}
-
-.latest_activities {list-style-type: none;}
-.latest_activities li {clear:both;border-bottom: 1px solid #333;padding: 3px 0;}
-.latest_activities li p{  margin: 0px; margin-right: 5px;}
-.latest_activities li p { float:left;}
-.latest_activities li p a {color:#e6e5bc;}
-.latest_activities li p { float:auto; }
-p.activity_image {margin: auto;}
-.latest_activities li p.activity_action {font-size: 12px;float:none;}
-.activity_action .from_name {font-weight: bold;}
-p.actibity_link {font-size: 12px;}
-p.acitivity_status {font-size: 12px;}
-
-/* BC PLAYER */
-.bc_player { width: 100%; background: #E8E5BC;padding-top: 10px;text-align:center;}
-
-/* link esterni */
-#external_links { text-align: center;}
-#external_links a {margin-left:10px;}
-
-/* spalla dx */
-#latestEvents .event_list p.ev_address,#latestEvents .event_list p.ev_image {display:none;}
-
-.page_contact a {color:#e6e5bc}
-.page_contact #external_links {text-align: left;}
-
-.photogallery .frame {width: 150x; height: 150px;padding: 2px; border: 2px solid #562102;float:left;margin: 2px;}
-.photogallery .thumb {width:146px;height:142px;line-height: 150px;overflow: hidden;padding: 3px;}
-.photogallery .thumb img {vertical-align: middle;margin: auto 0px;}
+html, body {font-size:13px;padding:0px; margin:0px; overflow:hidden; color:#FFF}
+body {}
+#wrapper{z-index:2; padding:0px; margin:0px; overflow:hidden;height:100%;width:100%;position:fixed;}
+#background_container {position:absolute; width:100%; margin:0px; padding:0px; left:0px; right:0px; z-index:1}
+#content { margin:0 auto; padding:0px; height:100%; width:960px; overflow:hidden;position:relative;}
+#menubar   {    
+    margin: 0 auto;
+    width: 100%;
+    background: transparent;
+    bottom: 10px;
+    position:absolute
+}
+#menu {background: #000;margin:0; height:50px;width:960px;}
+.panel {width:900px;bottom: 50px;position:absolute;display:none;padding: 0 40px;}
