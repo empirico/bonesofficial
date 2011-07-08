@@ -13,4 +13,4 @@ body {}
     position:absolute
 }
 #menu {background: #000;margin:0; height:50px;width:960px;}
-.panel {width:900px;bottom: 50px;position:absolute;display:none;padding: 0 40px;}
+.panel {padding: 30px;width:900px;bottom: 50px;position:absolute;display:none;padding: 0 40px; background: url('../images/content_background_transpar.png') repeat top left;}
