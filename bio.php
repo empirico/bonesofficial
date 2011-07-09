@@ -1,6 +1,5 @@
 <div class="page_layer page_bio">
-    <img src="/images/ampli_logo.png" align="right">
-    <p>
+        <p>
     I Bones &amp; Comfort nascono nel 2007 quando Daniele (Chitarra/Voce) si unisce ad Alberto (Basso) e Luca (Batteria).
 	La matrice principale southern di Daniele si mescola così allo stoner e all'heavy metal portato dalla sezione ritmica.
     </p>

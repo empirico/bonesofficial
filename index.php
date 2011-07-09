@@ -41,9 +41,16 @@ if (in_array($posted_lang, $langs)) {
         <div id="background_container"><img src="images/main_background.jpg" width="100%"></div>
         <div id="wrapper">
              <div id="content">
-              <div id="biografia" class="panel"><? include('bio.php')?></div>
+              <div id="bio" class="panel"><? include('bio.php')?></div>
+              <div id="music" class="panel"><? include('music.php')?></div>
+              <div id="contacts" class="panel"><? include('contacts.php')?></div>
               <div id="menubar">
-                    <div id="menu"><a href="#" onclick="javascript:$('#biografia').toggle( 'slide', {direction: 'down'} )">LLLLL</a></div>
+                    <div id="menu">
+                        <a href="#" onclick="javascript:$('#bio').toggle( 'slide', {direction: 'down'} )">Music</a>
+                        <a href="#" onclick="javascript:$('#music').toggle( 'slide', {direction: 'down'} )">Bio</a>
+                        <a href="#" onclick="javascript:$('#contacts').toggle( 'slide', {direction: 'down'} )">Contact</a>
+                        
+                    </div>
               </div>  
             </div>
             
