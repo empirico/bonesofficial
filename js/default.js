@@ -31,4 +31,5 @@ $(document).ready(function(){
        circular: true,
        easing: 'custom'
    }).navigator(); 
+   activate_emails();
 });

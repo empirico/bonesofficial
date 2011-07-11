@@ -44,7 +44,6 @@ if (in_array($posted_lang, $langs)) {
                     <a href="#index">index</a>
                     <a href="#bio">bio</a>
                     <a href="#music">music</a>
-                    <a href="#contact">contact</a>
                 </div>
             </div>
             <div id="mainpanel">
@@ -52,8 +51,18 @@ if (in_array($posted_lang, $langs)) {
                     <div id="" class="page_content"><img src="/images/frontpage.jpg" alt="Bones &amp; comfort" border="0" width="840"></div>
                     <div id="" class="page_content"><? include_once('bio.php') ?></div>
                     <div id="" class="page_content"><? include_once('music.php') ?></div>
-                    <div id="" class="page_content"><? include_once('contacts.php') ?></div>
                 </div>
+            </div>
+               
+            <div id="footer" class="clear">
+                <div id="external_links">
+                    <a target="_blank" href="http://www.facebook.com/pages/Bones-Comfort/52988616067" alt="facebook"><img title="facebook" src="/images/facebook_32.png" border="0" height="32" width="32"></a>
+                    <a target="_blank" href="http://www.lastfm.it/music/Bones%2B%2526%2BComfort" alt="last-fm"><img title="last-fm" src="/images/lastfm_32.png" border="0" height="32" width="32"></a>
+                    <a target="_blank" href="http://www.myspace.com/bonesofficial" alt="myspace"><img title="myspace" src="/images/myspace_32.png" border="0" height="32" width="32"></a>
+                    <a target="_blank" href="http://bonescomfort.bandcamp.com/" alt="bandcamp"><img title="bandcamp" src="/images/bandcamp_32.png" border="0" height="32" width="32"></a>
+                </div>
+                <div class="right">info: <a id="mail_info" href=""></a> booking:<a id="booking" href=""></a>               </div>
+                <div class="clear"></div>
             </div>
         </div>
 
