@@ -43,10 +43,10 @@ width:820px; height: 430px; overflow: hidden; padding:10px}
 .spacer-30 {height: 30px;}
 
 /* LISTA ALBUM [pagina music */
-.album_entry {margin-top:20px}
-.album_entry .cover {float:left; width: 260px; text-align: center; padding:5px;}
-.album_entry .cover div {width: 250px;height:250px;background: black no-repeat 50% 50%;}
-.album_entry .album_description {float:left; width: 520px; margin-left: 10px;padding: 5px;margin-top:15px;}
+.album_entry {margin: 10px auto; width: 720px;}
+.album_entry .cover {float:left; width: 200px; text-align: center;}
+.album_entry .cover div {width: 200px;height:200px;background: black no-repeat 50% 50%;}
+.album_entry .album_description {float:left; width: 520px;}
 
 .event_list { list-style-type: none;}
 .event_list li {padding-bottom: 3px;clear:both;}
