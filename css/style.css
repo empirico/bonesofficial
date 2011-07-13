@@ -18,10 +18,11 @@ a {text-decoration:none;}
 #menu a {margin-left: 5px; font-weight: bold;}
 #footer {width:870px;}
 #footer a {text-shadow: 0.15em 0.15em #331107;}
-#external_links {float:left;margin-left: 30px; margin-top: -5px;}
+#external_links {float:left;margin: -5px 10px 0px 30px;}
 #external_links a {margin-left:10px;}
 
-#download_iftw {margin-top: 50px;width:195px; margin-left:40px;height:195px;}
+#aside {float: left; padding-top: 30px;width:60px;overflow: hidden;}
+
 
 #content .page_layer {background: transparent url('../images/logo_bg_transparent.png') 60px 10px no-repeat; 
 width:820px; height: 430px; overflow: hidden; padding:10px}
@@ -52,23 +53,6 @@ width:820px; height: 430px; overflow: hidden; padding:10px}
 .event_list li {padding-bottom: 3px;clear:both;}
 .event_list p.ev_stdate {float:left; width:70px; overflow: hidden;}
 .event_list p.ev_title { float:left;font-weight: bold;color: #562102}
-
-.latest_activities {list-style-type: none;}
-.latest_activities li {clear:both;border-bottom: 1px solid #333;padding: 3px 0;}
-.latest_activities li p{  margin: 0px; margin-right: 5px;}
-.latest_activities li p { float:left;}
-.latest_activities li p a {color:#e6e5bc;}
-.latest_activities li p { float:auto; }
-p.activity_image {margin: auto;}
-.latest_activities li p.activity_action {font-size: 12px;float:none;}
-.activity_action .from_name {font-weight: bold;}
-p.actibity_link {font-size: 12px;}
-p.acitivity_status {font-size: 12px;}
-
-/* BC PLAYER */
-.bc_player { width: 100%; background: #E8E5BC;padding-top: 10px;text-align:center;}
-
-/* link esterni */
 
 
 /* spalla dx */
