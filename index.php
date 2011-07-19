@@ -59,7 +59,7 @@ if (in_array($posted_lang, $langs)) {
             <div id="aside">
                     <g:plusone count="true" size="tall" href="http://www.bonesofficial.com/"></g:plusone>
                     <div style="height: 10px"></div>
-                    <iframe src="http://www.facebook.com/plugins/like.php?app_id=190551664332051&amp;href=www.bonesofficial.com&amp;send=false&amp;layout=box_count&amp;width=100&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=verdana&amp;height=90" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:90px;" allowTransparency="true"></iframe>
+                    <iframe src="http://www.facebook.com/plugins/like.php?app_id=190551664332051&amp;href=http%3A%2F%2Fwww.bonesofficial.com&amp;send=false&amp;layout=box_count&amp;width=100&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=trebuchet+ms&amp;height=90" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:90px;" allowTransparency="true"></iframe>
             </div>
             <div id="footer" class="clear">
                 <div id="external_links">
