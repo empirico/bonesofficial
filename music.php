@@ -13,6 +13,17 @@
             </object> 
         </div>
         <br style="clear:both">
+<h2>Reviews</h2>
+[ITA] <a target="_blank" href="http://www.stereoinvaders.com/index.php?option=com_content&amp;view=article&amp;catid=3:underground&amp;id=4682:bones-and-comfort-in-fat-we-trust&amp;Itemid=16">http://www.stereoinvaders.com</a><br>
+[ITA] <a target="_blank" href="http://www.rockrebelmagazine.com/cd-reviews-pag-7/">http://www.rockrebelmagazine.com/cd-reviews-pag-7/</a><br>
+[ITA] <a target="_blank" href="http://www.noizeitalia.com/index.asp?pag=recensioni2&amp;id=2679">http://www.noizeitalia.com/</a><br>
+[ITA] <a target="_blank" href="http://www.metal.it/album.aspx/11138/">http://www.metal.it/album.aspx/11138/</a><br>
+[ITA] <a target="_blank" href="http://truemetal.it/modules.php?name=News&amp;file=article&amp;sid=35195">http://truemetal.it/modules.php?name=News&amp;file=article&amp;sid=35195</a><br>
+[ITA] <a target="_blank" href="http://www.italiadimetallo.altervista.org/recensioni_cd/bones_comfort_in_fat_we_trust.htm">http://www.italiadimetallo.altervista.org/recensioni_cd/bones_comfort_in_fat_we_trust.htm</a><br>
+[ITA] <a target="_blank" href="http://deleremundi.blogspot.com/2009/12/bones-comfort.html">http://deleremundi.blogspot.com/2009/12/bones-comfort.html</a><br>
+[ENG] <a target="_blank" href="http://insane-riez.blogspot.com/2010/01/in-fat-we-trust.html">http://insane-riez.blogspot.com/2010/01/in-fat-we-trust.html</a><br>
+[ENG] <a target="_blank" href="http://markfishers-musicreview.blogspot.com/2009/12/bones-and-comfort-in-fat-we-trust.html">http://markfishers-musicreview.blogspot.com/2009/12/bones-and-comfort-in-fat-we-trust.html</a> <br>
+
     </div>
 
 </div>

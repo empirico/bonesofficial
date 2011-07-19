@@ -1,5 +1,5 @@
 <?
-$lang = 'it';
+$lang = 'en';
 $langs = array('it', 'en');
 $posted_lang = @$_POST['lang'];
 if (in_array($posted_lang, $langs)) {
@@ -42,14 +42,14 @@ if (in_array($posted_lang, $langs)) {
         <div id="content">
             <div id="header">
                 <div class="navi" id="menu">
-                    <a href="#index">index</a>
-                    <a href="#bio">bio</a>
-                    <a href="#music">music</a>
+                    <a href="#index" onclick="_gaq.push(['_trackPageview', 'index']);">index</a>
+                    <a href="#bio" onclick="_gaq.push(['_trackPageview', 'bio']);">bio</a>
+                    <a href="#music" onclick="_gaq.push(['_trackPageview', 'music']);">music</a>
                 </div>
             </div>
             <div id="mainpanel">
                 <div class="items">
-                    <div id="" class="page_content"><img src="/images/frontpage.jpg" alt="Bones &amp; comfort" border="0" width="840"></div>
+                    <div id="index" class="page_content"><img src="/images/frontpage.jpg" alt="Bones &amp; comfort" border="0" width="840"></div>
                     <div id="" class="page_content"><? include_once('bio.php') ?></div>
                     <div id="" class="page_content"><? include_once('music.php') ?></div>
                 </div>
