@@ -1,5 +1,5 @@
 <?
-$lang = 'it';
+$lang = 'en';
 $langs = array('it', 'en');
 $posted_lang = @$_POST['lang'];
 if (in_array($posted_lang, $langs)) {
@@ -10,9 +10,11 @@ if (in_array($posted_lang, $langs)) {
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Bones & Comfort - index</title>
+        <title>Bones & Comfort - Official web Site</title>
         <meta property="fb:page_id" content="52988616067" />
-        <meta name="keywords" content="Bones &amp; Comfort, Music, Biography, Pictures, In Fat we Trust, Luca Romanò, Daniele Murroni, Alberto Trentanni" />    <link href="/css/bones/jquery-ui-1.8.4.custom.css" media="screen" rel="stylesheet" type="text/css" />
+        <meta name="keywords" content="Stoner, southern, hard rock, fuzz, overdrive, brunetti, orange, tamburo, Bones, Comfort, Music, Biography, myspace, In Fat we Trust, Luca Romanò, Daniele Murroni, Alberto Trentanni" />    
+        <META name="Description" content="Enter the world of Bones & Comfort, Souther stoner band from milan, italy. Lot of Groove and Heavy Riffs at your service."/>
+        <link href="/css/bones/jquery-ui-1.8.4.custom.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="/css/style.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="/css/slider.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="/css/prettyPhoto.css" media="screen" rel="stylesheet" type="text/css" />
@@ -42,14 +44,14 @@ if (in_array($posted_lang, $langs)) {
         <div id="content">
             <div id="header">
                 <div class="navi" id="menu">
-                    <a href="#index">index</a>
-                    <a href="#bio">bio</a>
-                    <a href="#music">music</a>
+                    <a href="#index" onclick="_gaq.push(['_trackPageview', 'index']);">index</a>
+                    <a href="#bio" onclick="_gaq.push(['_trackPageview', 'bio']);">bio</a>
+                    <a href="#music" onclick="_gaq.push(['_trackPageview', 'music']);">music</a>
                 </div>
             </div>
             <div id="mainpanel">
                 <div class="items">
-                    <div id="" class="page_content"><img src="/images/frontpage.jpg" alt="Bones &amp; comfort" border="0" width="840"></div>
+                    <div id="index" class="page_content"><img src="/images/frontpage.jpg" alt="Bones &amp; comfort" border="0" width="840"></div>
                     <div id="" class="page_content"><? include_once('bio.php') ?></div>
                     <div id="" class="page_content"><? include_once('music.php') ?></div>
                 </div>

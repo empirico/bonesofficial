@@ -1,31 +1,38 @@
 @CHARSET "UTF-8";
 * {padding: 0px; margin: 0px;}
-html, body {font-size:13px}
+html, body {font-size:14px}
 body { background: #444444 ; background: url('../images/bg_squared.jpg') top left repeat; 
        background-attachment : fixed; 
-       font-family: Verdana; 
-       }
+       font-family: Trebuchet ms;
+       
+}
 
 a {color: #e6e5bc;}
-a:hover {color: #bebd9b;}
+a:hover {color: #e6e5bc;text-decoration:underline}
 a {text-decoration:none;}
 
 #main_content {width: 900px;}
 #logo {background: url('../images/logo.jpg') no-repeat top left; width: 230px;height:282px; float:left;}
 #header {height: 70px;position:relative;background: url('../images/logo.png') no-repeat top right;width:900px;}
 #content {width:1024px;margin-left:0px; height:610px;overflow: hidden; float:left;}
-#menu {position:absolute;bottom:0px; left: 30px;float:left;text-shadow: 0.15em 0.15em #331107; font-size:1.0em}
-#menu a {margin-left: 5px; font-weight: bold;}
+#menu {position:absolute;bottom:0px; left: 30px;float:left;text-shadow: 0.15em 0.15em #331107; font-size:1.1em; }
+#menu a {margin-left: 5px; font-weight: bold;text-transform: uppercase}
 #footer {width:870px;}
 #footer a {text-shadow: 0.15em 0.15em #331107;}
 #external_links {float:left;margin: -5px 10px 0px 30px;}
 #external_links a {margin-left:10px;}
-
 #aside {float: left; padding-top: 30px;width:60px;overflow: hidden;}
 
 
-#content .page_layer {background: transparent url('../images/logo_bg_transparent.png') 60px 10px no-repeat; 
-width:820px; height: 430px; overflow: hidden; padding:10px}
+#content .page_layer {
+                    background: transparent url('../images/logo_bg_transparent.png') 60px 10px no-repeat; 
+                      width:820px; 
+                      height: 430px; 
+                      overflow: hidden; 
+                      padding:10px;
+                      color: #FFF;
+                      font-size: 0.9em;
+}
 .page_layer h1 {margin: 5px 0px 0px 0px;font-size: 1.3em;}
 .page_layer h2 {margin-bottom: 5px;font-size:1.2em}
 .page_layer h2.underlined { padding-bottom: 3px;border-bottom: 1px solid black;}

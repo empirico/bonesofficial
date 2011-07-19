@@ -11,8 +11,7 @@
 	width: 900px;
 	height:505px;
 	/* custom decorations */
-	/*border:1px solid #ccc;*/
-	background:url(/img/global/gradient/h300.png) repeat-x;
+	/*border:1px solid #ccc;*/	
 }
 
 /*
@@ -32,9 +31,11 @@
 	float:left;
     margin:0px;
     width: 870px; height:460px;
-    background:url(/images/drop_shadow_520.png) no-repeat;
     padding: 30px;
     overflow: hidden;
+}
+.items #index {
+    background:url(/images/drop_shadow_520.png) no-repeat;
 }
 
 /* active item */
