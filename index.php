@@ -44,9 +44,9 @@ if (in_array($posted_lang, $langs)) {
         <div id="content">
             <div id="header">
                 <div class="navi" id="menu">
-                    <a href="#index" onclick="_gaq.push(['_trackPageview', 'index']);">index</a>
-                    <a href="#bio" onclick="_gaq.push(['_trackPageview', 'bio']);">bio</a>
-                    <a href="#music" onclick="_gaq.push(['_trackPageview', 'music']);">music</a>
+                    <a href="#index" onclick="javascript:_gaq.push(['_trackPageview', 'index']);">index</a>
+                    <a href="#bio" onclick="javascript:_gaq.push(['_trackPageview', 'bio']);">bio</a>
+                    <a href="#music" onclick="javascript:_gaq.push(['_trackPageview', 'music']);">music</a>
                 </div>
             </div>
             <div id="mainpanel">
