@@ -60,7 +60,7 @@ if (in_array($posted_lang, $langs)) {
                     <g:plusone count="true" size="tall" href="http://www.bonesofficial.com/"></g:plusone>
                     <div style="height: 10px"></div>
                     <div id="fblike">
-                        <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=190551664332051&amp;xfbml=1"></script><fb:like href="http://www.bonesofficial.com" send="true" layout="box_count" width="400" show_faces="false" font="trebuchet ms"></fb:like>
+                        <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=190551664332051&amp;xfbml=1"></script><fb:like href="http://www.bonesofficial.com" send="false" layout="box_count" width="400" show_faces="false" font="trebuchet ms"></fb:like>
             </div>  </div>
             <div id="footer" class="clear">
                 <div id="external_links">
