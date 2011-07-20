@@ -23,6 +23,12 @@ a {text-decoration:none;}
 #external_links a {margin-left:10px;}
 #aside {float: left; padding-top: 30px;width:60px;overflow: hidden;}
 
+#fblike iframe {
+    width: 95px !important;
+}
+#fblike .fb_edge_comment_widget iframe {
+    width: 330px !important;
+}
 
 #content .page_layer {
                     background: transparent url('../images/logo_bg_transparent.png') 60px 10px no-repeat; 
