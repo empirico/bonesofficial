@@ -58,10 +58,10 @@ a {text-decoration:none;}
 .spacer-30 {height: 30px;}
 
 /* LISTA ALBUM [pagina music */
-.album_entry {margin: 10px auto; width: 720px;}
+.album_entry {margin: 0;}
 .album_entry .cover {float:left; width: 200px; text-align: center;}
 .album_entry .cover div {width: 200px;height:200px;background: black no-repeat 50% 50%;}
-.album_entry .album_description {float:left; width: 520px;}
+.album_entry .album_description {float:left; width: 420px;}
 
 .event_list { list-style-type: none;}
 .event_list li {padding-bottom: 3px;clear:both;}

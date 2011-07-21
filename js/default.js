@@ -32,4 +32,5 @@ $(document).ready(function(){
        easing: 'custom'
    }).navigator(); 
    activate_emails();
+   
 });
