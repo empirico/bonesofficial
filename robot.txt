@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /public/
+Disallow: /infatwetrust/
+Disallow: /myspace_dan/
+Disallow: /new_myspace/
+Disallow: /The Stompbox Cookbook.pdf
