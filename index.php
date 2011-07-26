@@ -13,7 +13,7 @@ if (in_array($posted_lang, $langs)) {
         <title>Bones & Comfort - Official web Site</title>
         <meta property="fb:page_id" content="52988616067" />
         <meta name="keywords" content="Stoner, southern, hard rock, fuzz, overdrive, brunetti, orange, tamburo, Bones, Comfort, Music, Biography, myspace, In Fat we Trust, Luca Romanò, Daniele Murroni, Alberto Trentanni" />    
-        <META name="Description" content="Enter the world of Bones & Comfort, Souther stoner band from milan, italy. Lot of Groove and Heavy Riffs at your service."/>
+        <META name="Description" content="Enter the world of Bones & Comfort, Southern stoner band from Milan, Italy. Lot of Groove and Heavy Riffs at your service."/>
         <link href="/css/bones/jquery-ui-1.8.4.custom.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="/css/style.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="/css/slider.css" media="screen" rel="stylesheet" type="text/css" />
