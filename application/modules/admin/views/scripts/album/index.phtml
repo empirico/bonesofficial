@@ -10,11 +10,11 @@
          </div>
         <?php }
         foreach($this->album_list as $album) {?>
-		<?php  
+		<?php
 			//$album = new Album();
 			$cover = $album->getCoverPhoto();
 			$image = $cover->getImage();
-			$path = ($image->getFilename() != null) ? $image->getFullPath(Bones_Files_Image::THUMB_WIDTH) : "/images/admin/default_album_cover.jpg"?>
+			$path = ($image) ? $image->getFullPath(Bones_Files_Image::THUMB_WIDTH) : "/images/admin/default_album_cover.jpg"?>
             <div style="line-height: 150px;margin: 10px;padding: 10px;text-align:center;float:left; width:150px; border: 1px solid #666;" class="ui-corner-all">
             <div style="height:25px;line-height:25px;"><?php echo $album->getTitle();?></div>
             <div style="border:1px solid black;height:150px;overflow:hidden;width:100%;padding:0px;">
