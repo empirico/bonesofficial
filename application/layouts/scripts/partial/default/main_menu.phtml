@@ -1,10 +1,9 @@
-<div id="menu" style="width:670px">
+<div id="menu">
 	<span>
-		<a href="javascript:void(0);" rel="<?php echo $this->url(array('controller'=>'index', 'action' => 'index'));?>" class="ajaxLink">home</a> ::
-		<a href="javascript:void(0)" rel="<?php echo $this->url(array('controller'=>'biography', 'action' => 'index'));?>" class="ajaxLink">bio</a> ::
-		<a href="javascript:void(0)" rel="<?php echo $this->url(array('controller'=>'music', 'action' => 'index'));?>" class="ajaxLink">music</a>  ::
-		<a href="javascript:void(0)" rel="<?php echo $this->url(array('controller'=>'photos', 'action' => 'index'));?>" class="ajaxLink">photos</a> ::
-		<a href="javascript:void(0)" rel="<?php echo $this->url(array('controller'=>'contacts', 'action' => 'index'));?>" class="ajaxLink">contact us</a>
+		<a href="<?php echo $this->url(array('controller'=>'about', 'action' => 'index'));?>" class="ajaxLink">about</a> ::
+        <a href="<?php echo $this->url(array('controller'=>'portfolio', 'action' => 'index'));?>" class="ajaxLink">portfolio</a> ::
+        <a href="<?php echo $this->url(array('controller'=>'gallery', 'action' => 'index'));?>" class="ajaxLink">gallery</a> ::
+		<a href="<?php echo $this->url(array('controller'=>'contacts', 'action' => 'index'));?>" class="ajaxLink">contacts</a>
 	</span>
 	<?php $lang = ($this->lang == 'it') ? 'en' : 'it';?>
 	<span id="lang_switcher"><a href="<?php echo $this->url(array('lang' => $lang));?>"><? echo $lang?></a></span>
