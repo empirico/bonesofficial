@@ -17,7 +17,6 @@ set_include_path(implode(PATH_SEPARATOR, array(
 
 require_once APPLICATION_PATH . '/../public/js/fckeditor/fckeditor.php';
 require_once 'propel/runtime/lib/Propel.php';
-require_once 'Facebook/facebook.php';
 
 /** Zend_Application */
 require_once 'Zend/Application.php';

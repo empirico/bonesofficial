@@ -2,9 +2,9 @@
 .project
 .settings
 /doc/*
+/nbproject/
 /resources/logs
 /resources/cache
-/public/infatwetrust/*
 /public/upload/images/*
 /public/upload/doc/*
 

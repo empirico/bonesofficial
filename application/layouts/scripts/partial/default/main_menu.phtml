@@ -1,11 +1,11 @@
 <div id="menu" style="width:670px">
 	<span>
-		<a href="javascript:void(0);" rel="<?php echo $this->url(array('controller'=>'index', 'action' => 'index'));?>" class="ajaxLink">home</a> ::  
-		<a href="javascript:void(0)" rel="<?php echo $this->url(array('controller'=>'biography', 'action' => 'index'));?>" class="ajaxLink">bio</a> ::  
+		<a href="javascript:void(0);" rel="<?php echo $this->url(array('controller'=>'index', 'action' => 'index'));?>" class="ajaxLink">home</a> ::
+		<a href="javascript:void(0)" rel="<?php echo $this->url(array('controller'=>'biography', 'action' => 'index'));?>" class="ajaxLink">bio</a> ::
 		<a href="javascript:void(0)" rel="<?php echo $this->url(array('controller'=>'music', 'action' => 'index'));?>" class="ajaxLink">music</a>  ::
-		<a href="javascript:void(0)" rel="<?php echo $this->url(array('controller'=>'photos', 'action' => 'index'));?>" class="ajaxLink">photos</a> :: 
+		<a href="javascript:void(0)" rel="<?php echo $this->url(array('controller'=>'photos', 'action' => 'index'));?>" class="ajaxLink">photos</a> ::
 		<a href="javascript:void(0)" rel="<?php echo $this->url(array('controller'=>'contacts', 'action' => 'index'));?>" class="ajaxLink">contact us</a>
 	</span>
 	<?php $lang = ($this->lang == 'it') ? 'en' : 'it';?>
-	<span id="lang_switcher"><a href="<?php echo $this->url(array('lang' => $lang));?>"><img valign="middle" src="/images/<?php echo $lang ?>_flag.png" width="24" height="24" alt="<?php echo $lang?> flag" border="0"/></a></span>
+	<span id="lang_switcher"><a href="<?php echo $this->url(array('lang' => $lang));?>"><? echo $lang?></a></span>
 </div>
