@@ -1,0 +1,7 @@
+<?php if ($this->logged) { ?>
+    <ul id="main_menu" class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+        <?php foreach ($this->main_menu as $entry) { ?>
+            <li class="ui-state-default ui-corner-top <?php echo ($entry['name'] == $this->selected_page) ? "ui-tabs-selected ui-state-active" : "" ?>"><a href="<?php echo $entry['url'] ?>"><?php echo $entry['name'] ?></a></li>
+        <?php } ?>
+    </ul>
+<?php } ?>

@@ -1,13 +1,14 @@
 @CHARSET "UTF-8";
-* {font-family:arial;font-size: 15px;padding: 0px; margin:0px; }
+* {font-family:trebuchet ms;font-size: 15px;padding: 0px; margin:0px; }
 body {color: #1E1D18;}
 a {color: #43131F;text-decoration: none;}
 a:hover {color: #43131F; text-decoration: underline;}
-
+.clear {clear:both;}
 table {width: 100%; border-collapse: collapse;}
 td, th {border: 1px solid #e6e6e6;text-align:left;padding: 5px;}
-#header {padding: 10px;height: 50px; border-bottom: 1px solid #666; background:url("bones/images/ui-bg_glass_75_e6e6e6_1x400.png") repeat-x scroll 50% 50% #E6E6E6}
-#header h3 { font-size: 25px; color: #666;}
+#header {padding: 10px; margin-bottom :10px; height: 50px; background-color:#466ca6;}
+#header h3 { font-size: 25px;  color: white;}
+
 
 #main_content {padding: 10px;}
 #main_content h1 {font-size: 20px;margin-bottom: 10px;}
@@ -23,8 +24,8 @@ td, th {border: 1px solid #e6e6e6;text-align:left;padding: 5px;}
 
 .icon-green { background-image:url("bones/images/ui-icons_26d939_256x240.png"); }
 
-#main_menu {padding: 5px 0px; border-bottom : 1px solid #666;margin-bottom: 10px;width: 100%;}
-#main_menu li { display:inline; list-style-type: none; margin-left: 10px;font-size: 15px; font-weight: bold; }
+#main_menu ul {}
+#main_menu li {}
 #main_menu li a {text-transform: uppercase;}
 
 ul.menu { list-style: none outside none;margin:0px;margin-bottom: 5px;}
@@ -84,5 +85,5 @@ div#paginator {text-align: center;}
 	text-decoration: none;
 }
 .paginator .first, .paginator .last, -paginator .prev, .paginator .next {
-	font-weight: bold;	
+	font-weight: bold;
 }

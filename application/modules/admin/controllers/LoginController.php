@@ -8,7 +8,7 @@ class Admin_LoginController extends Bones_Controller_Base
     public function init()
     {
     	parent::init();
-     	
+
      	$this->config = Zend_Registry::get('config');
      	$this->view->doctype('XHTML1_STRICT');
        	$this->view->headLink()->appendStylesheet('/css/admin.css');
@@ -27,7 +27,7 @@ class Admin_LoginController extends Bones_Controller_Base
     {
     	$auth = Bones_Auth_Admin::getInstance();
     	$auth->clearIdentity();
-    	$this->_redirect($this->config->limelight->admin->loginurl);
+    	$this->_redirect($this->config->bones->admin->loginurl);
 
     }
 
@@ -38,16 +38,16 @@ class Admin_LoginController extends Bones_Controller_Base
 
          if (empty($username) || empty($password)){
         	$this->setErrorMessage('username e password vuoti');
-        	$this->_redirect($this->config->limelight->admin->loginurl);
+        	$this->_redirect($this->config->bones->admin->loginurl);
         }
 
         $C = new Criteria();
         $C->add(AdminsPeer::USERNAME, $username);
         $C->add(AdminsPeer::PASSWORD, $password);
         $admin = AdminsPeer::doSelectOne($C);
-       
-        
-        
+
+
+
         if ($admin instanceof Admins){
 
         	$auth = Bones_Auth_Admin::getInstance();
@@ -56,7 +56,7 @@ class Admin_LoginController extends Bones_Controller_Base
 
         } else {
        		$this->setErrorMessage('Invalid username and password');
-        	$this->_redirect($this->config->limelight->admin->loginurl);
+        	$this->_redirect($this->config->bones->admin->loginurl);
         }
 
     }
