@@ -5,7 +5,7 @@
 /**
  * Skeleton subclass for representing a row from the 'photos' table.
  *
- * 
+ *
  *
  * You should add additional methods to this class to meet the
  * application requirements.  This class will only be generated as
@@ -14,9 +14,9 @@
  * @package    propel.generator.ORM
  */
 class Photos extends BasePhotos {
-	
+
 	public function delete(PropelPDO $con = null) {
-	
+
 		$file = $this->getFiles();
     	if ($file instanceof Files) {
     		parent::delete($con);
@@ -24,7 +24,7 @@ class Photos extends BasePhotos {
     		$image->delete();
     	}
 	}
-	
+
 	public function getImage() {
 		$fileObj = $this->getFiles();
 		if ($fileObj instanceof Files) {
@@ -32,4 +32,5 @@ class Photos extends BasePhotos {
 		}
 	}
 
+   
 } // Photos
