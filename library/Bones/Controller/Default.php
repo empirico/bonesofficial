@@ -5,6 +5,7 @@ class Bones_Controller_Default extends Bones_Controller_Base
 
 	protected $_locale;
 	protected $_language;
+    protected $_breadcrumb = array();
 
 
 	public function init() {
@@ -17,7 +18,28 @@ class Bones_Controller_Default extends Bones_Controller_Base
 
         $this->view->docType('XHTML1_STRICT');
     	$this->view->error_messages = $this->getErrorMessages();
+        $this->addBreadCrumb('home', $this->view->url(array('controller' => 'index', 'action' => 'index'), 'default', null));
+        $this->addBreadCrumb($this->getRequest()->getControllerName(),$this->view->url(array('controller' => $this->getRequest()->getControllerName(), 'action' =>'index'),'default', null));
     }
+
+
+    protected function addBreadCrumb($element, $url = null){
+        $element = ($element == 'index') ? '' : $element;
+        $url = (empty($url)) ? $this->view->url(array('action'=>$element)) : $url;
+        $this->_breadcrumb[] = array('name' => $element, 'url' => $url);
+    }
+
+    protected function getBreadCrumbs(){
+
+        return $this->_breadcrumb;
+    }
+
+    public function postDispatch() {
+        parent::postDispatch();
+        $this->view->breadcrumbs = $this->getBreadCrumbs();
+    }
+
+
 
 
 }

@@ -1,12 +1,13 @@
 @CHARSET "UTF-8";
 * {padding: 0px; margin: 0px;}
-body {font-size: 14px;font-family: Helvetica;}
+body {font-size: 14px;font-family: Helvetica;background-color: #fff;}
 #main_content {width: 1024px; margin: 0 auto;}
 #header {border-bottom: 1px solid #999; padding: 5px 0px;}
 #logo {padding: 20px 0 10px;}
 #menu {}
 #menu a {text-decoration: none;color:#0e3460;font-size: 1.1em;text-transform: uppercase;}
 #menu a:hover {text-decoration: none;}
+#content {margin-top: 10px;}
 
 
 /* PAGINA PORTFOLIO */
