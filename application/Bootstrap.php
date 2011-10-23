@@ -41,19 +41,24 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 
 		$front = Zend_Controller_Front::getInstance();
 		$front->registerPlugin(new Bones_Controller_Plugin_Multilanguage());
-		
+
 	}
-	
+
 	public function _initAcl(){
-		
+
 	}
-	
+
 	public function _initCache() {
 		$this->bootstrap('cachemanager');
 		$cacheManager = $this->getResource('cachemanager');
 		Zend_Registry::set("cachemanager", $cacheManager);
-		
+
 	}
+
+    public function _initError(){
+        $front = Zend_Controller_Front::getInstance();
+        $front->registerPlugin(new Zend_Controller_Plugin_ErrorHandler());
+    }
 }
 
 

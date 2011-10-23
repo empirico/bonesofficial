@@ -1,0 +1,20 @@
+<h2><? echo $this->portfolio->getTitle() ?></h2>
+<p><? echo $this->portfolio->getDescription() ?></p>
+<div class="work-item-container">
+    <? foreach ($this->work_list as $album) { ?>
+        <?php
+        //$album = new Album();
+        $cover = $album->getCoverPhoto();
+        $image = $cover->getImage();
+        $path = ($image) ? $image->getFullThumbPath(PortfolioController::DEFAULT_THUMB) : "/images/admin/default_album_cover.jpg"
+        ?>
+        <div class="work-item ui-corner-all">
+            <div class="work-item-title"><?php echo $album->getTitle(); ?></div>
+            <div class="work-item-thumb" style="background: url('<? echo $path ?>') top center">
+                <a href="<?php echo $this->url(array('controller' => 'portfolio', 'action' => 'work', 'slug' => $album->getSluggedIndex(), 'lang' => $this->lang), 'portfolio', true); ?>">
+                    <img src="/images/pix.gif" align="middle" border="0"/></a>
+            </div>
+        </div>
+    </div>
+<?php } ?>
+</div>

@@ -25,17 +25,17 @@
 </script>
 </head>
 <body>
-	<div id="wrapper">
+    <div id="wrapper">
 		<div id="main_content">
 			<div id="header">
+                <div id="logo">
+                    <h1>Heart Studio</h3>
+                </div>
 				<?php echo $this->render('partial/default/main_menu.phtml', array('lang' => $this->lang));?>
 			</div>
 			<div id="content">
 				<?php echo $this->layout()->content ?>
 			</div>
-		</div>
-		<div id="right_col">
-			<?php echo $this->right_content  ?>
 		</div>
 		<div class="push"></div>
 	</div>

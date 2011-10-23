@@ -1,10 +1,12 @@
 <div id="menu">
 	<span>
-		<a href="<?php echo $this->url(array('controller'=>'about', 'action' => 'index'));?>" class="ajaxLink">about</a> ::
-        <a href="<?php echo $this->url(array('controller'=>'portfolio', 'action' => 'index'));?>" class="ajaxLink">portfolio</a> ::
-        <a href="<?php echo $this->url(array('controller'=>'gallery', 'action' => 'index'));?>" class="ajaxLink">gallery</a> ::
-		<a href="<?php echo $this->url(array('controller'=>'contacts', 'action' => 'index'));?>" class="ajaxLink">contacts</a>
+		<a href="<?php echo $this->url(array('controller'=>'about', 'action' => 'index'),'default',true);?>">about</a> /
+        <a href="<?php echo $this->url(array('controller'=>'portfolio', 'action' => 'index'),'default',true);?>">portfolio</a> /
+        <a href="<?php echo $this->url(array('controller'=>'gallery', 'action' => 'index'),'default',true);?>">gallery</a> /
+		<a href="<?php echo $this->url(array('controller'=>'contacts', 'action' => 'index'),'default',true);?>">contacts</a>
 	</span>
+    <!--
 	<?php $lang = ($this->lang == 'it') ? 'en' : 'it';?>
 	<span id="lang_switcher"><a href="<?php echo $this->url(array('lang' => $lang));?>"><? echo $lang?></a></span>
+    -->
 </div>
