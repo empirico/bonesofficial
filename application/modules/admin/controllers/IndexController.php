@@ -17,9 +17,20 @@ class Admin_IndexController extends Bones_Controller_Admin
 
     }
 
-
-
-
+    /*
+    protected function _checkLogin(){
+        $auth = Bones_Auth_Admin::getInstance();
+        if (!$auth->getId()) {
+    		$this->_redirect($this->config->bones->admin->loginurl);
+    	} else {
+    		$this->view->logged = true;
+    		$this->_auth = $auth;
+            return true;
+    	}
+        return false;
+    }
+     * 
+     */
 
 }
 

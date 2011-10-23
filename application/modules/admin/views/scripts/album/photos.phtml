@@ -1,12 +1,12 @@
-<h1>album::<span><?php echo $this->album->getTitle()?></span>::photos</h1>
-<div style="margin: 0 0 5px 0;"><a href="<?php echo $this->url(array('action'=>'edit','albumId'=> $this->album->getId()));?>">edit album info</a></div>
+<h1>Album / <span><?php echo $this->album->getTitle()?></span> / Photos</h1>
+<div style="margin: 0 0 5px 0;"><a href="<?php echo $this->url(array('action'=>'edit','albumId'=> $this->album->getId()));?>">Edit Album</a></div>
 <form name="edit_album" action="<? echo $this->url(array('action'=>'save'))?>" method="post" enctype="multipart/form-data">
 <input type="hidden" name="galleryId" value="<? echo $this->album->getGalleryId()?>"/>
 <input type="hidden" name="id" value="<? echo $this->album->getId()?>"/>
 <table>
 	<tr>
 		<td><input type="file" name="photo" style="border: 1px solid black;"></td>
-		<td><input type="image" align="middle" src="/images/admin/new.png" name="submit[ADDPHOTO]" value="aggiungi foto" class="button save"/></td>
+		<td><input type="image" align="middle" src="/images/admin/new.png" name="submit[ADDPHOTO]" value="aggiungi foto" class="button save ui-corner-all"/></td>
 	</tr>
 </table>
 </form>

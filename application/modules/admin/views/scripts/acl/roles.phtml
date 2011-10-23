@@ -17,16 +17,16 @@
 	<td>
 	<select name="parent_role[<?php echo $role->getId()?>]" style="width: 250px">
 		<?php foreach($this->roles as $r){
-			?><option value="<?php  echo $r->getId()?>" <?php echo ($role->getParentRole() == $r->getId()) ? 'selected' : ''?>><?php echo $r->getName()?></option><?php 
+			?><option value="<?php  echo $r->getId()?>" <?php echo ($role->getParentRole() == $r->getId()) ? 'selected' : ''?>><?php echo $r->getName()?></option><?php
 		}?>
 	</select>
 	</td>
 	<td>
-		<input type="submit" value="salva" name="submit[save][<?php  echo $role->getId()?>]">
-		<input type="submit" value="elimina" name="submit[del][<?php  echo $role->getId()?>]"></td>
+		<input type="submit" value="salva" name="submit[save][<?php  echo $role->getId()?>]" class="ui-button ui-corner-all">
+		<input type="submit" value="elimina" name="submit[del][<?php  echo $role->getId()?>]" class="ui-button ui-corner-all"></td>
 	</tr>
-	<?php 
-	
+	<?php
+
 }?>
 <tr>
 	<td></td>
@@ -35,11 +35,11 @@
 	<select name="parent_role[0]" style="width: 250px">
 		<option value="">nessuno</option>
 		<?php foreach($this->roles as $r){
-			?><option value="<?php  echo $r->getId()?>" <?php echo ($role->getParentRole() == $r->getId()) ? 'selected' : ''?>><?php echo $r->getName()?></option><?php 
+			?><option value="<?php  echo $r->getId()?>" <?php echo ($role->getParentRole() == $r->getId()) ? 'selected' : ''?>><?php echo $r->getName()?></option><?php
 		}?>
 	</select>
 	</td>
-	<td><input type="submit" value="aggiungi" name="submit[save][0]"></td>
+	<td><input type="submit" value="aggiungi" name="submit[save][0]" class="ui-button ui-corner-all" ></td>
 	</tr>
 </table>
 </form>

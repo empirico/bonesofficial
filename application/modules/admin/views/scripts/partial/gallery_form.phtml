@@ -1,0 +1,24 @@
+<div id="gallery_details_accordion" class="ui-accordion ui-widget ui-helper-reset ui-accordion-icons" role="tablist">
+    <h3 class="ui-accordion-header ui-helper-reset ui-state-active ui-corner-top ui-state-focus" role="tab" aria-expanded="true" aria-selected="true" tabindex="0"><a>Titolo e descrizione</a></h3>
+    <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active" role="tabpanel" style="display: block;">
+        <input type="hidden" name="gallery_id" value="<? echo $this->gallery->getId() ?>"/>
+        <div style="margin-bottom: 10px">
+            <h3 style="margin-bottom: 5px;">Titolo</h3>
+            <input type="text" style="width:100%" name="title" id="title" value="<?php echo $this->gallery->getTitle() ?>">
+        </div>
+        <div style="margin-bottom: 10px">
+            <h3 style="margin-bottom: 5px;">Descrizione</h3>
+            <div>
+                <?php
+                $fck1 = new Bones_Utils_Editor('description');
+                $fck1->setValue($this->gallery->getDescription());
+                $fck1->setToolbarSet(Bones_Utils_Editor::TOOLBAR_STANDARD);
+                $fck1->setHeight(400);
+                $fck1->create();
+                ?>
+            </div>
+        </div>
+    </div>
+
+    <br style="clear: both;"/>
+</div>

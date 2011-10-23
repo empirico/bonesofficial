@@ -1,6 +1,5 @@
-<div>
 <form name="admin_login" id="admin_login" method="post" action="<?php echo $this->url(array('action' => 'doLogin'));?>">
-<table id="login_table">
+<table id="login_table" class="ui-corner-all">
 	<tr>
 		<th>username</th><td><input type="text" name="username" value="" id="username"/></td>
 	</tr>
@@ -8,8 +7,7 @@
 		<th>password</th><td><input type="password" name="password" value="" id="password"/></td>
 	</tr>
 	<tr>
-		<th></th><td><input type="submit" name="login" value="login"/></td>
+		<th></th><td><input type="submit" name="login" value="login" class="ui-button ui-corner-all"/></td>
 	</tr>
 </table>
 </form>
-</div>

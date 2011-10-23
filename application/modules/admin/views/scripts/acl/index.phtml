@@ -11,7 +11,7 @@
 	<th></th>
 </tr>
 <?php foreach($this->permissions as $p) {
-	
+
 	?>
 	<tr>
 	<td><?php echo $p->getId()?></td>
@@ -25,7 +25,7 @@
 	<td>
 		<select name="role_id[<?php echo $p->getId()?>]" style="width: 150px">
 		<?php foreach($this->roles as $role){
-			?><option value="<?php  echo $role->getId()?>" <?php echo ($p->getRoleId() == $role->getId()) ? 'selected' : ''?>><?php echo $role->getName()?></option><?php 
+			?><option value="<?php  echo $role->getId()?>" <?php echo ($p->getRoleId() == $role->getId()) ? 'selected' : ''?>><?php echo $role->getName()?></option><?php
 		}?>
 		</select>
 	</td>
@@ -36,12 +36,12 @@
 		<option value="1" <?php echo ($p->getPermission()) ? 'selected' : ''?>>Allow</option>
 	</td>
 		<td>
-		<input type="submit" value="salva" name="submit[save][<?php  echo $p->getId()?>]">
-		<input type="submit" value="cancella" name="submit[del][<?php  echo $p->getId()?>]">
+		<input type="submit" value="salva" name="submit[save][<?php  echo $p->getId()?>]" class="ui-button ui-corner-all">
+		<input type="submit" value="cancella" name="submit[del][<?php  echo $p->getId()?>]" class="ui-button ui-corner-all">
 		</td>
 	</tr>
-	<?php 
-	
+	<?php
+
 }?>
 <tr>
 	<td><?php echo '';?></td>
@@ -54,7 +54,7 @@
 	<td>
 		<select name="role_id[0]" style="width: 150px">
 		<?php foreach($this->roles as $role){
-			?><option value="<?php  echo $role->getId()?>" ><?php echo $role->getName()?></option><?php 
+			?><option value="<?php  echo $role->getId()?>" ><?php echo $role->getName()?></option><?php
 		}?>
 		</select>
 	</td>
@@ -65,7 +65,7 @@
 		<option value="1" >Deny</option>
 	</td>
 	<td>
-		<input type="submit" value="aggiungi" name="submit[save][0]">
+		<input type="submit" value="aggiungi" name="submit[save][0]" class="ui-button ui-corner-all">
 	</td>
 	</tr>
 </table>

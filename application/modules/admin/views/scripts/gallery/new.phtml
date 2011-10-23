@@ -1,3 +1,9 @@
+<script>
+    $(document).ready(function() {
+        $( "#gallery_details_accordion").accordion({ active: 0 });
+
+    });
+</script>
 <div style="margin: auto; width: auto">
     <h1>Gallery / New</h1>
     <form name="edit_album" action="<? echo $this->url(array('action' => 'save')) ?>" method="post" enctype="multipart/form-data">
@@ -6,7 +12,5 @@
             <input type="image" src="/images/admin/delete_full.png" name="submit[DEL]" value="cancella" class="button delete ui-corner-all" onclick="javascript:confirmDelete($('#edit_album'));"/>
         </div>
         <? echo $this->partial("partial/gallery_form.phtml", array('gallery' => $this->gallery)) ?>
-        <br style="clear: both;"/>
     </form>
-
 </div>

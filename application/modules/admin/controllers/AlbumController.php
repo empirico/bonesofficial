@@ -3,8 +3,8 @@
 class Admin_AlbumController extends Bones_Controller_Admin
 {
 	const PER_PAGE = 10;
-	
-	
+
+
     public function indexAction()
     {
     	$galleryId = $this->getRequest()->getParam('galleryId') ? $this->getRequest()->getParam('galleryId') : null;
@@ -13,51 +13,51 @@ class Admin_AlbumController extends Bones_Controller_Admin
     		$query->filterByGalleryId($galleryId);
     		$this->view->galleryId = $galleryId;
     	}
-    	
+
     	$this->view->album_list = $query->find();
-    }	
+    }
 
     public function photosAction() {
-    
+
     	$this->view->album = AlbumPeer::retrieveByPK($this->getRequest()->getParam('albumId'));
     	$this->view->photo_list = $this->view->album->getPhotoss();
-    
+
     }
     public function editAction(){
-    
+
     	$album = AlbumPeer::retrieveByPK($this->getRequest()->getParam('albumId'));
     	if (!($album instanceof Album)) {
-    	
+
     		$this->setErrorMessage("Album non valido");
     		$this->redirect_to_error();
 	    	return;
-    	}	
+    	}
     	$this->view->album = $album;
-    	
+
     	$gallery = $album->getGallery();
     	$this->view->gallery = $gallery;
     	$this->view->photo_list = $album->getPhotoss();
-     
+
     }
 
    public function newAction() {
        	$this->view->album = new Album();
     	$this->view->gallery = GalleryPeer::retrieveByPK($this->getRequest()->getParam('galleryId'));
    }
-   
+
    public function errorAction(){
 
    }
-    
-    
+
+
    public function saveAction(){
-    
+
     	$params = $this->getRequest()->getPost();
     	$auth = Bones_Auth_Admin::getInstance();
     	$action = is_array($params['submit']) ? current(array_keys($params['submit'])) : null;
     	if (is_null($action)) {
     		$this->setErrorMessage('Azione non valida');
-    		$this->redirect_to_error();	
+    		$this->redirect_to_error();
     	}
    		if ($params['id'] > 0) {
 		    		$album = AlbumPeer::retrieveByPK($params['id']);
@@ -65,9 +65,9 @@ class Admin_AlbumController extends Bones_Controller_Admin
 		    		$album = new Album();
 		}
     	switch($action) {
-    	
+
     		case 'SAVE': {
-		    	
+
 		    	$album->setTitle($params['title']);
 		    	$album->setDescription($params['description']);
 		    	$album->setGalleryId($params['galleryId']);
@@ -75,7 +75,7 @@ class Admin_AlbumController extends Bones_Controller_Admin
 		    	$album->setMaxHeight($params['max_height']);
 		    	$album->setMaxWidth($params['max_width']);
 		    	$album->save();
-		    	$url = $this->view->url(array('action'=>'edit', 'albumId' => $album->getId()));
+		    	$url = $this->view->url(array('action'=>'photos', 'albumId' => $album->getId()));
     		}
     		break;
     		case 'DEL' : {
@@ -85,7 +85,7 @@ class Admin_AlbumController extends Bones_Controller_Admin
     		break;
     		case 'ADDPHOTO':{
 	    		if (!empty($_FILES['photo']['name'])){
-	    		
+
 	    			$uploader = new Bones_Files_Image();
 	    			try {
 	    				$uploader->uploadfile();
@@ -99,13 +99,13 @@ class Admin_AlbumController extends Bones_Controller_Admin
 	    					$album->save();
 	    				}
 	    			} catch (Bones_Files_Exception $e) {
-	    				
+
 	    				foreach ($uploader->getErrorMessages() as $msg){
 	    					$this->setErrorMessage($msg);
 	    				}
 					}
 				} else {$this->setErrorMessage('Non hai caricato nessun file!');}
-				
+
     			if ($album->getId() > 0) {
     				$url = $this->view->url(array('action' => 'photos', 'albumId' => $album->getId()));
     			} else {
@@ -114,29 +114,29 @@ class Admin_AlbumController extends Bones_Controller_Admin
     		}
     		break;
     	}
-    	
+
     	$this->_redirect($url);
     }
-	
+
     public function listAlbumAction(){
-    
+
     	$this->__checkGallery();
     	$this->view->gallery = $this->gallery;
-    
+
     }
-    
+
     public function deletePhotoAction(){
-    
+
     	$aId = $this->getRequest()->getParam('albumId');
     	$pId = $this->getRequest()->getParam('photoId');
-    	
+
     	$album = AlbumPeer::retrieveByPK($aId);
     	if (!($album instanceof Album )){
     		$this->setErrorMessage("Album non valido");
     		$this->_redirect($this->view->url(array('action' => 'index')));
     		return;
-    	} 
-    	
+    	}
+
     	$photo = PhotosQuery::create()->filterByAlbumId($aId)
     	->filterById($pId)->findOne();
 
@@ -145,10 +145,10 @@ class Admin_AlbumController extends Bones_Controller_Admin
     		$this->_redirect($this->view->url(array('action' => 'index')));
     		return;
     	}
-    	
+
     	$photo->delete();
     	if ($pId == $album->getCoverPhotoId()) {
-    		
+
     		$p2 = PhotosQuery::create()->filterByAlbum($album)->filterById($pId, Criteria::NOT_EQUAL)->findOne();
     		if ($p2 instanceof Photos) {
     			$album->setCoverPhotoId($p2->getId());
@@ -158,10 +158,9 @@ class Admin_AlbumController extends Bones_Controller_Admin
     		$album->save();
     	}
     	$url = $this->view->url(array('action' => 'photos', 'albumId' => $album->getId(), 'photoId' => null));
-    	
+
     	$this->_redirect($url);
     }
-    
+
 }
 
-   

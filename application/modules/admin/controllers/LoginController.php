@@ -8,11 +8,10 @@ class Admin_LoginController extends Bones_Controller_Base
     public function init()
     {
     	parent::init();
-
      	$this->config = Zend_Registry::get('config');
      	$this->view->doctype('XHTML1_STRICT');
        	$this->view->headLink()->appendStylesheet('/css/admin.css');
-        $this->view->headLink()->appendStylesheet('/css/theundir/jquery-ui-1.8.4.custom.css');
+        $this->view->headLink()->appendStylesheet('/css/bones/jquery-ui-1.8.6.custom.css');
         $this->view->headScript()->appendFile('/js/jquery-1.4.2.min.js', $type = 'text/javascript');
         $this->view->headScript()->appendFile('/js/jquery-ui-1.8.4.custom.min.js', $type = 'text/javascript');
 
@@ -45,8 +44,6 @@ class Admin_LoginController extends Bones_Controller_Base
         $C->add(AdminsPeer::USERNAME, $username);
         $C->add(AdminsPeer::PASSWORD, $password);
         $admin = AdminsPeer::doSelectOne($C);
-
-
 
         if ($admin instanceof Admins){
 
