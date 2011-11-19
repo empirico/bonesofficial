@@ -33,7 +33,7 @@
                 </div>
 				<?php echo $this->render('partial/default/main_menu.phtml', array('lang' => $this->lang));?>
 			</div>
-            <? echo $this->render('partial/default/breadcrumbs.phtml', array('breadcrumbs'=>$this->breadcrumbs)); ?>
+            <? echo ($this->shows_breadcrums) ? $this->render('partial/default/breadcrumbs.phtml', array('breadcrumbs'=>$this->breadcrumbs)) : ""; ?>
 			<div id="content">
 				<?php echo $this->layout()->content ?>
 			</div>

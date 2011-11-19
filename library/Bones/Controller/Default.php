@@ -21,6 +21,7 @@ class Bones_Controller_Default extends Bones_Controller_Base
     	$this->view->error_messages = $this->getErrorMessages();
         $this->addBreadCrumb('home', $this->view->url(array('controller' => 'index', 'action' => 'index'), 'default', null));
         $this->addBreadCrumb($this->getRequest()->getControllerName(),$this->view->url(array('controller' => $this->getRequest()->getControllerName(), 'action' =>'index'),'default', null));
+        $this->view->shows_breadcrums = true;
     }
 
 
