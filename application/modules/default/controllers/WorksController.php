@@ -1,5 +1,5 @@
 <?php
-class PortfolioController extends Bones_Controller_Default
+class WorksController extends Bones_Controller_Default
 {
     const DEFAULT_THUMB = 200;
 
@@ -15,7 +15,7 @@ class PortfolioController extends Bones_Controller_Default
 
     }
 
-    public function workAction(){
+    public function showAction(){
         $slugged_index = $this->getRequest()->getParam('slug');
         $this->view->work = AlbumQuery::create()->filterBySluggedIndex($slugged_index)->findOne();
         $this->view->image_list = $this->view->work->getPhotoss();
