@@ -13,7 +13,7 @@
 	<td><?php echo $gallery->getTitle();?></td>
 	<td><?php echo $gallery->countAlbums();?></td>
 	<td style="width: 32px;"><div class="ui-state-default ui-corner-all" style="text-align:center;"><a href="<?php echo $this->url(array('action'=>'edit', 'galleryId' => $gallery->getId()));?>"><span class="ui-icon ui-icon-circle-triangle-e"></span></a></div></td>
-	<td style="width: 32px;"><div class="ui-state-default ui-corner-all" style="text-align:center;"><a href="<?php echo $this->url(array('controller' => 'album', 'action'=>'index', 'galleryId' => $gallery->getId()));?>"><span class="ui-icon ui-icon-circle-triangle-e"></span></a></div></td>
+	<td style="width: 32px;"><div class="ui-state-default ui-corner-all" style="text-align:center;"><a href="<?php echo $this->url(array('controller' => 'album', 'action'=>'list', 'galleryId' => $gallery->getId()));?>"><span class="ui-icon ui-icon-circle-triangle-e"></span></a></div></td>
 </tr>
 
 <?php }?>

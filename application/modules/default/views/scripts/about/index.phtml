@@ -1,0 +1,27 @@
+<div class="left home-main">
+    <div class="box">
+        <h2>About</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pellentesque bibendum leo in mattis. Donec pharetra eleifend metus, non vestibulum enim molestie non. Fusce quis urna a augue ultrices pellentesque. Pellentesque quis leo quis enim consequat gravida sed id magna. <br/><br/>
+            Morbi at dui lorem, vel gravida justo. Nullam porta massa id elit venenatis eu rhoncus purus vulputate. Donec nunc turpis, hendrerit eget ultrices at, ultrices vitae libero. Nunc vitae arcu et lectus auctor sollicitudin. Ut fringilla lobortis purus sed consectetur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.<br/><br/>
+            Duis interdum sem sit amet neque suscipit quis ultricies quam vulputate. Donec iaculis dapibus hendrerit. Donec vitae justo elit. Fusce interdum neque vel lorem interdum placerat posuere massa laoreet. Duis nec dolor eu sem tempor vulputate. Phasellus eget purus non justo aliquet euismod. Sed posuere tristique placerat.
+        </p>
+    </div>
+</div>
+<div class="left home-side">
+    <div class="box">
+        <div class="fb-like-box" data-href="http://www.facebook.com/pages/Heart-Studio/115690515154796" data-width="292" data-show-faces="true" data-border-color="#f9f9f9" data-stream="false" data-header="false"></div>
+    </div>
+</div>
+<div class="clear"></div>
+<h2></h2>
+<div class="about-random-container">
+    <?php foreach ($this->image_list as $photo) { ?>
+        <?php $image = $photo->getImage(); ?>
+        <div class="about-random-item">
+            <div class="about-random-thumbs" style="background: url('<?php echo $image->getFullThumbPath(150) ?>') top center"><a href="<?php echo $this->url(array('controller'=> 'works', 'action' => 'show', 'slug' => $photo->getAlbum()->getSluggedIndex()), 'works',true) ?>" title=""><img border="0" src="/images/frame.png" width="100" height="100" align="absmiddle"/></a>
+            </div>
+        </div>
+    <?php } ?>
+    <div class="clear"></div>
+</div>

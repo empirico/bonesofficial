@@ -1,11 +1,8 @@
-<div id="menu">
+<div id="menu" class="left">
 	<span>
 		<a href="<?php echo $this->url(array('controller'=>'about', 'action' => 'index'),'default',true);?>">about</a> /
         <a href="<?php echo $this->url(array('controller'=>'works', 'action' => 'index'),'default',true);?>">works</a> /
         <a href="<?php echo $this->url(array('controller'=>'contacts', 'action' => 'index'),'default',true);?>">contacts</a>
 	</span>
-    <!--
-	<?php $lang = ($this->lang == 'it') ? 'en' : 'it';?>
-	<span id="lang_switcher"><a href="<?php echo $this->url(array('lang' => $lang));?>"><? echo $lang?></a></span>
-    -->
 </div>
+<p class="right tagline">illustrations &amp; graphic design</p>

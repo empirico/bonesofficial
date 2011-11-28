@@ -1,0 +1,39 @@
+<h1>Album / List</h1>
+<table id="table_page_list">
+    <?php if (isset($this->galleryId)) { ?>
+        <tr>
+            <td colspan="6" align="left" style="line-height: 32px;height:32px;font-size:16px;">
+                <a href="<?php echo $this->url(array('controller' => 'album', 'action' => 'new', 'galleryId' => $this->galleryId, 'lang' => $this->lang), 'admin', true); ?>">
+                    <img src="/images/admin/new.png" style="" align="absmiddle" border="0"/>
+                </a>
+                 New Album
+            </td>
+        </tr>
+    <? } ?>
+    <tr class="list_header">
+        <th>id</th>
+        <th>nome</th>
+        <th>preview</th>
+        <th>public</th>
+        <th>edit</th>
+        <th>view</th>
+    </tr>
+
+    <?php
+    foreach ($this->album_list as $album) {
+        $cover = $album->getCoverPhoto();
+        $image = $cover->getImage();
+        $path = ($image) ? $image->getFullPath(50) : "/images/admin/default_album_cover.jpg";
+        ?>
+        <tr>
+            <td><?php echo $album->getId(); ?></td>
+            <td><?php echo $album->getTitle(); ?></td>
+            <td><img src="<?php echo $path ?>" style="width:50px;" align="middle" border="0"/></td>
+            <td><div class="ico_<?php echo ($album->getIsPublic() == 1) ? "yes" : "no" ?>"></div></td>
+            <td style="width: 32px;"><div class="ui-state-default ui-corner-all" style="text-align:center;"><a href="<?php echo $this->url(array('action' => 'edit', 'albumId' => $album->getId())); ?>"><span class="ui-icon ui-icon-circle-triangle-e"></span></a></div></td>
+            <td style="width: 32px;"><div class="ui-state-default ui-corner-all" style="text-align:center;"><a href="<?php echo $this->url(array('controller' => 'album', 'action' => 'photos', 'albumId' => $album->getId(), 'lang' => $this->lang), 'admin', true); ?>"><span class="ui-icon ui-icon-circle-triangle-e"></span></a></div></td>
+        </tr>
+<?php } ?>
+</table>
+<br style="clear:both"/>
+<?php echo $this->partial('partial/paginator.phtml', array('pager' => $this->pager)); ?>
