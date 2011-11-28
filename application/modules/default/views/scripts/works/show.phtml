@@ -4,7 +4,13 @@
     });
 </script>
 <h2><? echo $this->work->getTitle() ?></h2>
-<p><? echo $this->work->getDescription() ?></p>
+<div class="left work-main">
+    <p><? echo $this->work->getDescription() ?></p>
+</div>
+<div class="left work-side">
+    <? echo $this->render('partial/facebook_like.phtml', array('fb_url' => $this->fb_url)); ?>
+</div>
+<div class="clear"></div>
 <div class="work-gallery-container">
     <?php foreach ($this->image_list as $photo) { ?>
         <?php $image = $photo->getImage(); ?>

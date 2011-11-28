@@ -1,7 +1,14 @@
-<h2><? echo $this->portfolio->getTitle() ?></h2>
-<p><? echo $this->portfolio->getDescription() ?></p>
+<h2>WORKS</h2>
+<div class="left work-main">
+    <p><? echo $this->portfolio->getDescription() ?></p>
+</div>
+<div class="left work-side">
+    <? echo $this->render('partial/facebook_like.phtml', array('fb_url' => $this->fb_url)); ?>
+</div>
+<div class="clear"></div>
 <div class="work-item-container">
-<? foreach ($this->work_list as $album) {
+    <?
+    foreach ($this->work_list as $album) {
         //$album = new Album();
         $cover = $album->getCoverPhoto();
         $image = $cover->getImage();
@@ -9,7 +16,7 @@
         ?>
         <div class="work-item">
             <div class="work-item-thumb" style="background: url('<? echo $path ?>') top center">
-                <a href="<?php echo $this->url(array('controller' => 'works', 'action' => 'show', 'slug' => $album->getSluggedIndex(), 'lang' => $this->lang), 'works', true); ?>"><img src="/images/frame.png" width="200" height="200" align="absmiddle" border="0"/></a>
+                <a href="<?php echo $this->url(array('controller' => 'works', 'action' => 'show', 'slug' => $album->getSluggedIndex(), 'lang' => $this->lang), 'works', true); ?>"><img src="/images/pix.gif" width="112" height="200" align="absmiddle" border="0"/></a>
             </div>
             <div class="work-item-title"><?php echo $album->getTitle(); ?></div>
         </div>
