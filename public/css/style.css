@@ -1,13 +1,13 @@
 @CHARSET "UTF-8";
 * {padding: 0px; margin: 0px;}
-body {font-size: 16px;font-family: 'Quicksand', Helvetica, sans-serif;background: #f9f9f9 url(/images/bg_heart_middle.jpg) no-repeat center 30px;}
-body.splash{ height: 523px; background: #f9f9f9 url(/images/bg_heart.jpg) no-repeat center 30px;text-align: center;}
+body {font-size: 16px;font-family: 'Quicksand', Helvetica, sans-serif;background: #f9f9f9 url(/images/bg_heart_middle.jpg) no-repeat center 10px;}
+body.splash{ height: 450px; background: #f9f9f9 url(/images/bg_heart.jpg) no-repeat center 10px;text-align: center;}
 #main_content {width: 1024px; margin: 0 auto;}
 #header {border-bottom: 2px solid #999; padding: 5px 0px;}
 #footer {margin-top: 30px;border-top: 2px solid #bca474;font-size: 14px;}
 #logo {padding: 0px;margin:0px;}
 #logo a {display:inline-block;}
-#menu {width: 600px;}
+#menu {width: 550px;}
 #menu a {font-weight:bold;text-decoration: none; color:#bca474;;text-transform: uppercase;}
 #menu a:hover {text-decoration: none;}
 #content {margin-top: 10px;}
@@ -18,25 +18,22 @@ a, a:hover, a:visited {color:#bca474;text-decoration: none;}
 .right {float:right;}
 .clear {clear: both;}
 .box {padding: 5px;}
-
+.fb-like {width:100px;}
 
 /* COMMON */
-.tagline {text-transform: uppercase;}
+.tagline {text-transform: uppercase;font-size:14px;}
 
 /* SPLASH SCREEN */
-p#splash_screen {padding: 10px;font-size:100px;width:800px;margin:auto;line-height:540px;text-transform: uppercase;text-shadow: 0px 0px 10px #999;}
-p#splash_screen a {color: #000; line-height:540px;text-transform: uppercase;text-shadow: 0px 0px 10px #999;text-decoration: none;}
+p#splash_screen {padding: 10px;font-size:100px;width:800px;margin:auto;text-transform: uppercase;text-shadow: 0px 0px 10px #999;}
+p#splash_screen a {color: #000;text-transform: uppercase;text-shadow: 0px 0px 10px #999;text-decoration: none;display:inline-block}
 
 
 /*home */
-.home-main {width: 924px;}
-.home-side {width: 100px}
+.home-main, .work-main {width: 924px;}
+.home-side, .work-side{width: 100px;overflow:hidden;}
 
 
 /* PAGINA PORTFOLIO */
-.work-main {width: 924px;}
-.work-side {width: 100px;overflow:hidden;}
-
 .work-item-container, .work-gallery-container, .about-random-thumbs {}
 .work-item , .work-gallery-item, .about-random-item {
     line-height: 112px;
