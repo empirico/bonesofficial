@@ -9,9 +9,9 @@ $conf = array (
       'adapter' => 'mysql',
       'connection' =>
       array (
-        'dsn' => 'mysql:dbname=empirico;host=127.0.0.1',
-        'user' => 'test.local',
-        'password' => 'local.test',
+        'dsn' => 'mysql:dbname=Sql496985_1;host=62.149.150.140',
+        'user' => 'Sql496985',
+        'password' => 'e4737607',
       ),
     ),
     'default' => 'ORM',
