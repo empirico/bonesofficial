@@ -1,16 +1,14 @@
 @CHARSET "UTF-8";
 * {padding: 0px; margin: 0px;}
-body {font-size: 16px;font-family: 'Marvel', Helvetica, sans-serif;background: #f9f9f9 url(/images/bg_heart_middle.jpg) no-repeat center 103px;}
-body.splash{ height: 523px; background: #f9f9f9 url(/images/bg_heart.jpg) no-repeat center 103px;text-align: center;}
+body {font-size: 16px;font-family: 'Quicksand', Helvetica, sans-serif;background: #f9f9f9 url(/images/bg_heart_middle.jpg) no-repeat center 30px;}
+body.splash{ height: 523px; background: #f9f9f9 url(/images/bg_heart.jpg) no-repeat center 30px;text-align: center;}
 #main_content {width: 1024px; margin: 0 auto;}
 #header {border-bottom: 2px solid #999; padding: 5px 0px;}
-#footer {margin-top: 30px;border-top: 2px solid #bca474;font-size: 15px;}
-#logo {padding: 20px 0 0px;}
-#logo h1 {font-size: 40px;}
-#logo h1 a {color: #000; font-size: 40px; text-decoration:none;}
-#logo h1 a:hover {text-decoration:none;}
+#footer {margin-top: 30px;border-top: 2px solid #bca474;font-size: 14px;}
+#logo {padding: 0px;margin:0px;}
+#logo a {display:inline-block;}
 #menu {width: 600px;}
-#menu a {text-decoration: none; color:#bca474;;text-transform: uppercase;}
+#menu a {font-weight:bold;text-decoration: none; color:#bca474;;text-transform: uppercase;}
 #menu a:hover {text-decoration: none;}
 #content {margin-top: 10px;}
 
