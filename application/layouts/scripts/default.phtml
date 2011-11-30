@@ -25,32 +25,29 @@
         </script>
     </head>
     <body>
-        <div id="fb-root"></div>
-        <script>(function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {return;}
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=190551664332051";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
-        <div id="wrapper">
-            <div id="main_content">
-                <div id="header">
-                    <div id="logo">
-                        <a href="/"><img src="/images/logo_heart_studio.jpg" border="0" height="100"/></a>
-                    </div>
-                    <?php echo $this->render('partial/default/main_menu.phtml', array('lang' => $this->lang)); ?>
-                    <div class="clear"></div>
+        <div id="main_content">
+            <div id="fb-root"></div>
+            <script>(function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {return;}
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=190551664332051";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+            <div id="header">
+                <div id="logo">
+                    <a href="/"><img src="/images/logo_heart_studio.jpg" border="0" height="80"/></a>
                 </div>
-                <? echo ($this->shows_breadcrums) ? $this->render('partial/default/breadcrumbs.phtml', array('breadcrumbs' => $this->breadcrumbs)) : ""; ?>
-                <div id="content">
-                    <?php echo $this->layout()->content ?>
-                </div>
-                <div class="push"></div>
-                <div id="footer">
-                    <p class="right">&copy; heart studio 2011</p>
-                    <p class="clear"></p>
-                </div>
+                <?php echo $this->render('partial/default/main_menu.phtml', array('lang' => $this->lang)); ?>
+                <div class="clear"></div>
+            </div>
+            <? echo ($this->shows_breadcrums) ? $this->render('partial/default/breadcrumbs.phtml', array('breadcrumbs' => $this->breadcrumbs)) : ""; ?>
+            <div id="content">
+                <?php echo $this->layout()->content ?>
+            </div>
+            <div id="footer">
+                <p class="right">&copy; heart studio 2011</p>
+                <p class="clear"></p>
             </div>
         </div>
     </body>
