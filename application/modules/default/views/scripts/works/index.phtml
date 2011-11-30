@@ -15,7 +15,7 @@
         $path = ($image) ? $image->getFullThumbPath(WorksController::DEFAULT_THUMB) : "/images/admin/default_album_cover.jpg"
         ?>
         <div class="work-item">
-            <div class="work-item-thumb" style="background: url('<? echo $path ?>') top top">
+            <div class="work-item-thumb" style="background: url('<? echo $path ?>')  center center">
                 <a href="<?php echo $this->url(array('controller' => 'works', 'action' => 'show', 'slug' => $album->getSluggedIndex(), 'lang' => $this->lang), 'works', true); ?>"><img src="/images/pix.gif" width="112" height="200" align="absmiddle" border="0"/></a>
             </div>
             <div class="work-item-title"><?php echo $album->getTitle(); ?></div>
