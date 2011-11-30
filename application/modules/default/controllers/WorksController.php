@@ -5,11 +5,10 @@ class WorksController extends Bones_Controller_Default
 
     public function init(){
         parent::init();
-       	$this->view->portfolio = GalleryQuery::create()->filterByTitle('PORTFOLIO')->findOne();
+       	$this->view->portfolio = GalleryQuery::create()->filterById(1)->findOne();
         $this->view->work_list = $this->view->portfolio->getPublicAlbums();
-        $this->addBreadCrumb($this->getRequest()->getActionName());
-
     }
+    
 	public function indexAction()
     {
 
@@ -19,6 +18,7 @@ class WorksController extends Bones_Controller_Default
         $slugged_index = $this->getRequest()->getParam('slug');
         $this->view->work = AlbumQuery::create()->filterBySluggedIndex($slugged_index)->findOne();
         $this->view->image_list = $this->view->work->getPhotoss();
+        $this->addBreadCrumb($this->view->work->getTitle());
 
     }
 
