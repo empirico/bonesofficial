@@ -15,7 +15,7 @@
     <?php foreach ($this->image_list as $photo) { ?>
         <?php $image = $photo->getImage(); ?>
         <div class="ui-corner-all work-gallery-item">
-            <div class="work-gallery-thumb" style="background: url('<?php echo $image->getFullThumbPath(WorksController::DEFAULT_THUMB) ?>') top center">
+            <div class="work-gallery-thumb" style="background: url('<?php echo $image->getFullThumbPath(WorksController::DEFAULT_THUMB) ?>') top top">
                 <a href="<?php echo $image->getFullPath(800) ?>" rel="gallery[work]" title=""><img border="0" src="/images/pix.gif" align="absmiddle"/></a>
             </div>
         </div>
