@@ -4,7 +4,7 @@ if ($items > 0) {
     $counter = 1;
     foreach ($this->breadcrumbs as $crumb) {
         if ($counter < $items) { ?>
-            <a href="<? echo $crumb['url'] ?>"><? echo $crumb['name'] ?></a> /
+    <a href="<? echo $crumb['url'] ?>"><? echo $crumb['name'] ?></a> &raquo;
             <? } else  echo $crumb['name'];
             $counter++;
         }
