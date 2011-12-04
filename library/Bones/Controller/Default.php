@@ -22,6 +22,7 @@ class Bones_Controller_Default extends Bones_Controller_Base
         $this->addBreadCrumb($this->getRequest()->getControllerName(),$this->view->url(array('controller' => $this->getRequest()->getControllerName(), 'action' =>'index'),'default', null));
         $this->view->shows_breadcrums = true;
         $this->view->fb_url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+        $this->view->page_title = ucfirst($this->getRequest()->getControllerName());
     }
 
 
