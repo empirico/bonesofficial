@@ -23,30 +23,7 @@ function activate_mouseover(){
     });
 }
 
-var boot = {
-    index: function(){
-        $('#slideshow').cycle({
-            fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
-            speed: 500
-        });
-        activate_ajaxLinks();
-
-        $("a[rel^='bonesGallery']").prettyPhoto({
-            animationSpeed:'fast',
-            slideshow:10000
-        });
-    },
-    photos : function(){
-        //alert('IM BOOTING PHOTOS');
-        $("a[rel^='bonesPhotogallery']").prettyPhoto({
-            animationSpeed:'fast',
-            slideshow:10000
-        });
-    }
-};
-
 $(document).ready(function(){
-    boot.index();
     activate_emails();
     activate_mouseover();
 });

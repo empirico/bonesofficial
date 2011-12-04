@@ -44,11 +44,13 @@
             <? echo ($this->shows_breadcrums) ? $this->render('partial/default/breadcrumbs.phtml', array('breadcrumbs' => $this->breadcrumbs)) : ""; ?>
             <div id="content">
                 <?php echo $this->layout()->content ?>
+
             </div>
-            <div id="footer">
-                <p class="right">&copy; heart studio 2011</p>
-                <p class="clear"></p>
-            </div>
+            <div id="push"></div>
+        </div>
+        <div id="footer">
+            <p class="right">&copy; heart studio 2011</p>
+            <p class="clear"></p>
         </div>
     </body>
 </html>
