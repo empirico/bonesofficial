@@ -1,7 +1,7 @@
 @CHARSET "UTF-8";
 * {padding: 0px; margin: 0px;}
 html, body {height:100%}
-body {font-size: 14px; font-family: 'Quicksand', Helvetica, sans-serif; background: #f9f9f9 url(/images/bg_heart_middle.jpg) no-repeat center 90px;}
+body {font-size: 14px; font-family: 'Lato', Helvetica, sans-serif; background: #f9f9f9 url(/images/bg_heart_middle.jpg) no-repeat center 90px;}
 body.splash{ height: 450px; background: #f9f9f9 url(/images/bg_heart.jpg) no-repeat center 90px;text-align: center;}
 #main_content {
   width: 1024px; margin: 0 auto; min-height: 99%;
