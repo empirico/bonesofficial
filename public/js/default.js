@@ -17,9 +17,9 @@ function activate_emails() {
 
 function activate_mouseover(){
     $(".work-item-thumb, .work-gallery-thumb").mouseover(function(){
-        $(this).css('opacity','1');
-    }).mouseout(function(){
         $(this).css('opacity','.8');
+    }).mouseout(function(){
+        $(this).css('opacity','1');
     });
 }
 
