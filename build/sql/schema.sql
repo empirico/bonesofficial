@@ -245,6 +245,7 @@ CREATE TABLE `journal_post`
 	`is_public` TINYINT(4),
 	`journal_id` INTEGER(11)  NOT NULL,
 	`file_id` INTEGER(11),
+	`file_type` VARCHAR(10)  NOT NULL,
 	PRIMARY KEY (`id`),
 	KEY `journal_id`(`journal_id`),
 	KEY `FK_journal_post`(`file_id`),

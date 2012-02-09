@@ -53,6 +53,7 @@ class JournalPostTableMap extends TableMap {
 		$this->addColumn('IS_PUBLIC', 'IsPublic', 'TINYINT', false, 4, null);
 		$this->addForeignKey('JOURNAL_ID', 'JournalId', 'INTEGER', 'journal', 'ID', true, 11, null);
 		$this->addForeignKey('FILE_ID', 'FileId', 'INTEGER', 'files', 'ID', false, 11, null);
+		$this->addColumn('FILE_TYPE', 'FileType', 'VARCHAR', true, 10, null);
 		// validators
 	} // initialize()
 

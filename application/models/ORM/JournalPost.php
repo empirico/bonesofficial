@@ -5,7 +5,7 @@
 /**
  * Skeleton subclass for representing a row from the 'journal_post' table.
  *
- * 
+ *
  *
  * You should add additional methods to this class to meet the
  * application requirements.  This class will only be generated as
@@ -15,4 +15,24 @@
  */
 class JournalPost extends BaseJournalPost {
 
+    const FILE_IMG = 'IMG';
+    const FILE_DOC = 'DOC';
+
+    public function getFile(){
+
+        switch ($this->getFileType()) {
+            case self::FILE_IMG:  {
+               return Bones_Files_Image::createFromFile($this->getFiles());
+            }
+            break;
+            case self::FILE_DOC: {
+               return Bones_Files_Doc::createFromFile($this->getFiles());
+            }
+            break;
+            default:
+                return null;
+            break;
+
+        }
+    }
 } // JournalPost

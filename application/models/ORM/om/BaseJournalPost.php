@@ -121,6 +121,12 @@ abstract class BaseJournalPost extends BaseObject  implements Persistent
 	protected $file_id;
 
 	/**
+	 * The value for the file_type field.
+	 * @var        string
+	 */
+	protected $file_type;
+
+	/**
 	 * @var        Files
 	 */
 	protected $aFiles;
@@ -424,6 +430,16 @@ abstract class BaseJournalPost extends BaseObject  implements Persistent
 	public function getFileId()
 	{
 		return $this->file_id;
+	}
+
+	/**
+	 * Get the [file_type] column value.
+	 * 
+	 * @return     string
+	 */
+	public function getFileType()
+	{
+		return $this->file_type;
 	}
 
 	/**
@@ -879,6 +895,26 @@ abstract class BaseJournalPost extends BaseObject  implements Persistent
 	} // setFileId()
 
 	/**
+	 * Set the value of [file_type] column.
+	 * 
+	 * @param      string $v new value
+	 * @return     JournalPost The current object (for fluent API support)
+	 */
+	public function setFileType($v)
+	{
+		if ($v !== null) {
+			$v = (string) $v;
+		}
+
+		if ($this->file_type !== $v) {
+			$this->file_type = $v;
+			$this->modifiedColumns[] = JournalPostPeer::FILE_TYPE;
+		}
+
+		return $this;
+	} // setFileType()
+
+	/**
 	 * Indicates whether the columns in this object are only set to default values.
 	 *
 	 * This method can be used in conjunction with isModified() to indicate whether an object is both
@@ -926,6 +962,7 @@ abstract class BaseJournalPost extends BaseObject  implements Persistent
 			$this->is_public = ($row[$startcol + 13] !== null) ? (int) $row[$startcol + 13] : null;
 			$this->journal_id = ($row[$startcol + 14] !== null) ? (int) $row[$startcol + 14] : null;
 			$this->file_id = ($row[$startcol + 15] !== null) ? (int) $row[$startcol + 15] : null;
+			$this->file_type = ($row[$startcol + 16] !== null) ? (string) $row[$startcol + 16] : null;
 			$this->resetModified();
 
 			$this->setNew(false);
@@ -934,7 +971,7 @@ abstract class BaseJournalPost extends BaseObject  implements Persistent
 				$this->ensureConsistency();
 			}
 
-			return $startcol + 16; // 16 = JournalPostPeer::NUM_COLUMNS - JournalPostPeer::NUM_LAZY_LOAD_COLUMNS).
+			return $startcol + 17; // 17 = JournalPostPeer::NUM_COLUMNS - JournalPostPeer::NUM_LAZY_LOAD_COLUMNS).
 
 		} catch (Exception $e) {
 			throw new PropelException("Error populating JournalPost object", $e);
@@ -1360,6 +1397,9 @@ abstract class BaseJournalPost extends BaseObject  implements Persistent
 			case 15:
 				return $this->getFileId();
 				break;
+			case 16:
+				return $this->getFileType();
+				break;
 			default:
 				return null;
 				break;
@@ -1400,6 +1440,7 @@ abstract class BaseJournalPost extends BaseObject  implements Persistent
 			$keys[13] => $this->getIsPublic(),
 			$keys[14] => $this->getJournalId(),
 			$keys[15] => $this->getFileId(),
+			$keys[16] => $this->getFileType(),
 		);
 		if ($includeForeignObjects) {
 			if (null !== $this->aFiles) {
@@ -1493,6 +1534,9 @@ abstract class BaseJournalPost extends BaseObject  implements Persistent
 			case 15:
 				$this->setFileId($value);
 				break;
+			case 16:
+				$this->setFileType($value);
+				break;
 		} // switch()
 	}
 
@@ -1533,6 +1577,7 @@ abstract class BaseJournalPost extends BaseObject  implements Persistent
 		if (array_key_exists($keys[13], $arr)) $this->setIsPublic($arr[$keys[13]]);
 		if (array_key_exists($keys[14], $arr)) $this->setJournalId($arr[$keys[14]]);
 		if (array_key_exists($keys[15], $arr)) $this->setFileId($arr[$keys[15]]);
+		if (array_key_exists($keys[16], $arr)) $this->setFileType($arr[$keys[16]]);
 	}
 
 	/**
@@ -1560,6 +1605,7 @@ abstract class BaseJournalPost extends BaseObject  implements Persistent
 		if ($this->isColumnModified(JournalPostPeer::IS_PUBLIC)) $criteria->add(JournalPostPeer::IS_PUBLIC, $this->is_public);
 		if ($this->isColumnModified(JournalPostPeer::JOURNAL_ID)) $criteria->add(JournalPostPeer::JOURNAL_ID, $this->journal_id);
 		if ($this->isColumnModified(JournalPostPeer::FILE_ID)) $criteria->add(JournalPostPeer::FILE_ID, $this->file_id);
+		if ($this->isColumnModified(JournalPostPeer::FILE_TYPE)) $criteria->add(JournalPostPeer::FILE_TYPE, $this->file_type);
 
 		return $criteria;
 	}
@@ -1636,6 +1682,7 @@ abstract class BaseJournalPost extends BaseObject  implements Persistent
 		$copyObj->setIsPublic($this->is_public);
 		$copyObj->setJournalId($this->journal_id);
 		$copyObj->setFileId($this->file_id);
+		$copyObj->setFileType($this->file_type);
 
 		$copyObj->setNew(true);
 		$copyObj->setId(NULL); // this is a auto-increment column, so set to default value
@@ -1896,6 +1943,7 @@ abstract class BaseJournalPost extends BaseObject  implements Persistent
 		$this->is_public = null;
 		$this->journal_id = null;
 		$this->file_id = null;
+		$this->file_type = null;
 		$this->alreadyInSave = false;
 		$this->alreadyInValidation = false;
 		$this->clearAllReferences();

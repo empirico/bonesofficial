@@ -26,7 +26,7 @@ abstract class BaseJournalPostPeer {
 	const TM_CLASS = 'JournalPostTableMap';
 	
 	/** The total number of columns. */
-	const NUM_COLUMNS = 16;
+	const NUM_COLUMNS = 17;
 
 	/** The number of lazy-loaded columns. */
 	const NUM_LAZY_LOAD_COLUMNS = 0;
@@ -79,6 +79,9 @@ abstract class BaseJournalPostPeer {
 	/** the column name for the FILE_ID field */
 	const FILE_ID = 'journal_post.FILE_ID';
 
+	/** the column name for the FILE_TYPE field */
+	const FILE_TYPE = 'journal_post.FILE_TYPE';
+
 	/**
 	 * An identiy map to hold any loaded instances of JournalPost objects.
 	 * This must be public so that other peer classes can access this when hydrating from JOIN
@@ -95,12 +98,12 @@ abstract class BaseJournalPostPeer {
 	 * e.g. self::$fieldNames[self::TYPE_PHPNAME][0] = 'Id'
 	 */
 	private static $fieldNames = array (
-		BasePeer::TYPE_PHPNAME => array ('Id', 'Title', 'TitleSlug', 'TextAbstract', 'Content', 'Tags', 'CreatorUserId', 'Created', 'EditorUserId', 'Edited', 'StartDate', 'EndDate', 'Rank', 'IsPublic', 'JournalId', 'FileId', ),
-		BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'title', 'titleSlug', 'textAbstract', 'content', 'tags', 'creatorUserId', 'created', 'editorUserId', 'edited', 'startDate', 'endDate', 'rank', 'isPublic', 'journalId', 'fileId', ),
-		BasePeer::TYPE_COLNAME => array (self::ID, self::TITLE, self::TITLE_SLUG, self::TEXT_ABSTRACT, self::CONTENT, self::TAGS, self::CREATOR_USER_ID, self::CREATED, self::EDITOR_USER_ID, self::EDITED, self::START_DATE, self::END_DATE, self::RANK, self::IS_PUBLIC, self::JOURNAL_ID, self::FILE_ID, ),
-		BasePeer::TYPE_RAW_COLNAME => array ('ID', 'TITLE', 'TITLE_SLUG', 'TEXT_ABSTRACT', 'CONTENT', 'TAGS', 'CREATOR_USER_ID', 'CREATED', 'EDITOR_USER_ID', 'EDITED', 'START_DATE', 'END_DATE', 'RANK', 'IS_PUBLIC', 'JOURNAL_ID', 'FILE_ID', ),
-		BasePeer::TYPE_FIELDNAME => array ('id', 'title', 'title_slug', 'text_abstract', 'content', 'tags', 'creator_user_id', 'created', 'editor_user_id', 'edited', 'start_date', 'end_date', 'rank', 'is_public', 'journal_id', 'file_id', ),
-		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, )
+		BasePeer::TYPE_PHPNAME => array ('Id', 'Title', 'TitleSlug', 'TextAbstract', 'Content', 'Tags', 'CreatorUserId', 'Created', 'EditorUserId', 'Edited', 'StartDate', 'EndDate', 'Rank', 'IsPublic', 'JournalId', 'FileId', 'FileType', ),
+		BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'title', 'titleSlug', 'textAbstract', 'content', 'tags', 'creatorUserId', 'created', 'editorUserId', 'edited', 'startDate', 'endDate', 'rank', 'isPublic', 'journalId', 'fileId', 'fileType', ),
+		BasePeer::TYPE_COLNAME => array (self::ID, self::TITLE, self::TITLE_SLUG, self::TEXT_ABSTRACT, self::CONTENT, self::TAGS, self::CREATOR_USER_ID, self::CREATED, self::EDITOR_USER_ID, self::EDITED, self::START_DATE, self::END_DATE, self::RANK, self::IS_PUBLIC, self::JOURNAL_ID, self::FILE_ID, self::FILE_TYPE, ),
+		BasePeer::TYPE_RAW_COLNAME => array ('ID', 'TITLE', 'TITLE_SLUG', 'TEXT_ABSTRACT', 'CONTENT', 'TAGS', 'CREATOR_USER_ID', 'CREATED', 'EDITOR_USER_ID', 'EDITED', 'START_DATE', 'END_DATE', 'RANK', 'IS_PUBLIC', 'JOURNAL_ID', 'FILE_ID', 'FILE_TYPE', ),
+		BasePeer::TYPE_FIELDNAME => array ('id', 'title', 'title_slug', 'text_abstract', 'content', 'tags', 'creator_user_id', 'created', 'editor_user_id', 'edited', 'start_date', 'end_date', 'rank', 'is_public', 'journal_id', 'file_id', 'file_type', ),
+		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, )
 	);
 
 	/**
@@ -110,12 +113,12 @@ abstract class BaseJournalPostPeer {
 	 * e.g. self::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
 	 */
 	private static $fieldKeys = array (
-		BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Title' => 1, 'TitleSlug' => 2, 'TextAbstract' => 3, 'Content' => 4, 'Tags' => 5, 'CreatorUserId' => 6, 'Created' => 7, 'EditorUserId' => 8, 'Edited' => 9, 'StartDate' => 10, 'EndDate' => 11, 'Rank' => 12, 'IsPublic' => 13, 'JournalId' => 14, 'FileId' => 15, ),
-		BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'title' => 1, 'titleSlug' => 2, 'textAbstract' => 3, 'content' => 4, 'tags' => 5, 'creatorUserId' => 6, 'created' => 7, 'editorUserId' => 8, 'edited' => 9, 'startDate' => 10, 'endDate' => 11, 'rank' => 12, 'isPublic' => 13, 'journalId' => 14, 'fileId' => 15, ),
-		BasePeer::TYPE_COLNAME => array (self::ID => 0, self::TITLE => 1, self::TITLE_SLUG => 2, self::TEXT_ABSTRACT => 3, self::CONTENT => 4, self::TAGS => 5, self::CREATOR_USER_ID => 6, self::CREATED => 7, self::EDITOR_USER_ID => 8, self::EDITED => 9, self::START_DATE => 10, self::END_DATE => 11, self::RANK => 12, self::IS_PUBLIC => 13, self::JOURNAL_ID => 14, self::FILE_ID => 15, ),
-		BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'TITLE' => 1, 'TITLE_SLUG' => 2, 'TEXT_ABSTRACT' => 3, 'CONTENT' => 4, 'TAGS' => 5, 'CREATOR_USER_ID' => 6, 'CREATED' => 7, 'EDITOR_USER_ID' => 8, 'EDITED' => 9, 'START_DATE' => 10, 'END_DATE' => 11, 'RANK' => 12, 'IS_PUBLIC' => 13, 'JOURNAL_ID' => 14, 'FILE_ID' => 15, ),
-		BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'title' => 1, 'title_slug' => 2, 'text_abstract' => 3, 'content' => 4, 'tags' => 5, 'creator_user_id' => 6, 'created' => 7, 'editor_user_id' => 8, 'edited' => 9, 'start_date' => 10, 'end_date' => 11, 'rank' => 12, 'is_public' => 13, 'journal_id' => 14, 'file_id' => 15, ),
-		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, )
+		BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Title' => 1, 'TitleSlug' => 2, 'TextAbstract' => 3, 'Content' => 4, 'Tags' => 5, 'CreatorUserId' => 6, 'Created' => 7, 'EditorUserId' => 8, 'Edited' => 9, 'StartDate' => 10, 'EndDate' => 11, 'Rank' => 12, 'IsPublic' => 13, 'JournalId' => 14, 'FileId' => 15, 'FileType' => 16, ),
+		BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'title' => 1, 'titleSlug' => 2, 'textAbstract' => 3, 'content' => 4, 'tags' => 5, 'creatorUserId' => 6, 'created' => 7, 'editorUserId' => 8, 'edited' => 9, 'startDate' => 10, 'endDate' => 11, 'rank' => 12, 'isPublic' => 13, 'journalId' => 14, 'fileId' => 15, 'fileType' => 16, ),
+		BasePeer::TYPE_COLNAME => array (self::ID => 0, self::TITLE => 1, self::TITLE_SLUG => 2, self::TEXT_ABSTRACT => 3, self::CONTENT => 4, self::TAGS => 5, self::CREATOR_USER_ID => 6, self::CREATED => 7, self::EDITOR_USER_ID => 8, self::EDITED => 9, self::START_DATE => 10, self::END_DATE => 11, self::RANK => 12, self::IS_PUBLIC => 13, self::JOURNAL_ID => 14, self::FILE_ID => 15, self::FILE_TYPE => 16, ),
+		BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'TITLE' => 1, 'TITLE_SLUG' => 2, 'TEXT_ABSTRACT' => 3, 'CONTENT' => 4, 'TAGS' => 5, 'CREATOR_USER_ID' => 6, 'CREATED' => 7, 'EDITOR_USER_ID' => 8, 'EDITED' => 9, 'START_DATE' => 10, 'END_DATE' => 11, 'RANK' => 12, 'IS_PUBLIC' => 13, 'JOURNAL_ID' => 14, 'FILE_ID' => 15, 'FILE_TYPE' => 16, ),
+		BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'title' => 1, 'title_slug' => 2, 'text_abstract' => 3, 'content' => 4, 'tags' => 5, 'creator_user_id' => 6, 'created' => 7, 'editor_user_id' => 8, 'edited' => 9, 'start_date' => 10, 'end_date' => 11, 'rank' => 12, 'is_public' => 13, 'journal_id' => 14, 'file_id' => 15, 'file_type' => 16, ),
+		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, )
 	);
 
 	/**
@@ -203,6 +206,7 @@ abstract class BaseJournalPostPeer {
 			$criteria->addSelectColumn(JournalPostPeer::IS_PUBLIC);
 			$criteria->addSelectColumn(JournalPostPeer::JOURNAL_ID);
 			$criteria->addSelectColumn(JournalPostPeer::FILE_ID);
+			$criteria->addSelectColumn(JournalPostPeer::FILE_TYPE);
 		} else {
 			$criteria->addSelectColumn($alias . '.ID');
 			$criteria->addSelectColumn($alias . '.TITLE');
@@ -220,6 +224,7 @@ abstract class BaseJournalPostPeer {
 			$criteria->addSelectColumn($alias . '.IS_PUBLIC');
 			$criteria->addSelectColumn($alias . '.JOURNAL_ID');
 			$criteria->addSelectColumn($alias . '.FILE_ID');
+			$criteria->addSelectColumn($alias . '.FILE_TYPE');
 		}
 	}
 

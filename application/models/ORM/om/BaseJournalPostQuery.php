@@ -22,6 +22,7 @@
  * @method     JournalPostQuery orderByIsPublic($order = Criteria::ASC) Order by the is_public column
  * @method     JournalPostQuery orderByJournalId($order = Criteria::ASC) Order by the journal_id column
  * @method     JournalPostQuery orderByFileId($order = Criteria::ASC) Order by the file_id column
+ * @method     JournalPostQuery orderByFileType($order = Criteria::ASC) Order by the file_type column
  *
  * @method     JournalPostQuery groupById() Group by the id column
  * @method     JournalPostQuery groupByTitle() Group by the title column
@@ -39,6 +40,7 @@
  * @method     JournalPostQuery groupByIsPublic() Group by the is_public column
  * @method     JournalPostQuery groupByJournalId() Group by the journal_id column
  * @method     JournalPostQuery groupByFileId() Group by the file_id column
+ * @method     JournalPostQuery groupByFileType() Group by the file_type column
  *
  * @method     JournalPostQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method     JournalPostQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -79,6 +81,7 @@
  * @method     JournalPost findOneByIsPublic(int $is_public) Return the first JournalPost filtered by the is_public column
  * @method     JournalPost findOneByJournalId(int $journal_id) Return the first JournalPost filtered by the journal_id column
  * @method     JournalPost findOneByFileId(int $file_id) Return the first JournalPost filtered by the file_id column
+ * @method     JournalPost findOneByFileType(string $file_type) Return the first JournalPost filtered by the file_type column
  *
  * @method     array findById(int $id) Return JournalPost objects filtered by the id column
  * @method     array findByTitle(string $title) Return JournalPost objects filtered by the title column
@@ -96,6 +99,7 @@
  * @method     array findByIsPublic(int $is_public) Return JournalPost objects filtered by the is_public column
  * @method     array findByJournalId(int $journal_id) Return JournalPost objects filtered by the journal_id column
  * @method     array findByFileId(int $file_id) Return JournalPost objects filtered by the file_id column
+ * @method     array findByFileType(string $file_type) Return JournalPost objects filtered by the file_type column
  *
  * @package    propel.generator.ORM.om
  */
@@ -640,6 +644,28 @@ abstract class BaseJournalPostQuery extends ModelCriteria
 			}
 		}
 		return $this->addUsingAlias(JournalPostPeer::FILE_ID, $fileId, $comparison);
+	}
+
+	/**
+	 * Filter the query on the file_type column
+	 * 
+	 * @param     string $fileType The value to use as filter.
+	 *            Accepts wildcards (* and % trigger a LIKE)
+	 * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+	 *
+	 * @return    JournalPostQuery The current query, for fluid interface
+	 */
+	public function filterByFileType($fileType = null, $comparison = null)
+	{
+		if (null === $comparison) {
+			if (is_array($fileType)) {
+				$comparison = Criteria::IN;
+			} elseif (preg_match('/[\%\*]/', $fileType)) {
+				$fileType = str_replace('*', '%', $fileType);
+				$comparison = Criteria::LIKE;
+			}
+		}
+		return $this->addUsingAlias(JournalPostPeer::FILE_TYPE, $fileType, $comparison);
 	}
 
 	/**
