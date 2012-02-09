@@ -17,7 +17,7 @@
 </tr>
 
 <?php }?>
-<tr><td colspan="5" align="left"><a href="<?php echo $this->url(array('controller' => 'journal', 'action' => 'edit', 'journaal_id' => null));?>" class="ui-button">new journal</a></td></tr>
+<tr><td colspan="5" align="left"><a href="<?php echo $this->url(array('controller' => 'journal', 'action' => 'edit', 'journal_id' => null));?>" class="ui-button">new journal</a></td></tr>
 </table>
 <br style="clear:both"/>
 <?php echo $this->partial('partial/paginator.phtml', array('pager' => $this->pager)); ?>
