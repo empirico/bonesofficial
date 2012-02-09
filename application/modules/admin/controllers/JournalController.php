@@ -55,18 +55,26 @@ class Admin_JournalController extends Bones_Controller_Admin {
 
     public function editAction() {
 
-        $this->__checkJournal();
-        $this->view->journal = $this->journal;
-        $this->view->journal = $journal_id ? JournalQuery::create()->findOneById($journal_id) : new Journal();
+        $journal_id = $this->getRequest()->getParam('journal_id');
+        $journal =  (!empty($journal_id)) ?  JournalPeer::retrieveByPK($journal_id) : new Journal();
+        $journal = ($journal instanceof Journal) ? $journal : new Journal();
+        $this->view->journal = $journal;
     }
 
     public function saveAction() {
         $post_data = $this->getRequest()->getPost();
         $journal = (!empty($post_data['journal_id'])) ? JournalQuery::create()->findOneById($post_data['journal_id']) : new Journal();
-        $journal->setTitle($post_data['title']);
-        $journal->setTitleSlug(Bones_Utils_Filter::slug_me($post_data['title']));
-        $journal->setTextAbstract($post_data['text_abstract']);
-        $journal->save();
+        switch (current(array_keys($post_data['submit']))) {
+            case 'SAVE':
+                $journal->setTitle($post_data['title']);
+                $journal->setTitleSlug(Bones_Utils_Filter::slug_me($post_data['title']));
+                $journal->setTextAbstract($post_data['text_abstract']);
+                $journal->save();
+                break;
+            case 'DEL':
+                $journal->delete();
+                break;
+        }
         $this->_redirect($this->view->url(array('action' => 'index')));
     }
 
@@ -168,4 +176,5 @@ class Admin_JournalController extends Bones_Controller_Admin {
             $this->_redirect($this->view->url(array('action' => 'show', 'journal_id' => $this->journal->getId())));
         }
     }
+
 }

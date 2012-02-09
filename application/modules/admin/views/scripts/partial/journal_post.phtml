@@ -1,12 +1,12 @@
 <form enctype="multipart/form-data" name="save_post" id="save_post" method="POST" action="<? echo $this->url(array('action' => 'save-post')) ?>">
 
     <div class="command_bar post alignRightContent">
-        <div style="float:left;background: white;padding:0.1em;border:1px solid black;" class="ui-corner-all ui-button ui-widget">
-            <a href="<?php echo $this->url(array('controller' => 'journal', 'action' => 'show', 'journal_id' => $this->journal->getId(), 'lang' => $this->lang), 'admin', true); ?>"><img border="0" src="/images/admin/list_full.png"></a>
+        <div style="float:left;background: white;padding:0.1em;border:0px solid black;">
+            <a href="<?php echo $this->url(array('controller' => 'journal', 'action' => 'show', 'journal_id' => $this->journal->getId(), 'lang' => $this->lang), 'admin', true); ?>"><img border="0" src="/images/admin/list.png"></a>
         </div>
-        <input type="image" src="/images/admin/save_full.png" class="button save" name="submit[SAVE]"/>
+        <input type="image" src="/images/admin/save.png" name="submit[SAVE]" style="border: 0px"/>
         <?php if ($this->post->getId() > 0) { ?>
-            <input type="image" src="/images/admin/delete_full.png" name="submit[DEL]"  class="button delete" value="cancella" onclick="javascript:confirmDelete($('#save_post'));"/>
+            <input type="image" src="/images/admin/delete.png" name="submit[DEL]" style="border: 0px" value="cancella" onclick="javascript:confirmDelete($('#save_post'));"/>
         <?php } ?>
     </div>
     <br style="clear:both"/>
