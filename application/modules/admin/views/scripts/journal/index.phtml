@@ -1,0 +1,24 @@
+<h1>Journals</h1>
+<table id="table_page_list">
+		<tr class="list_header">
+		<th>id</th>
+		<th>nome</th>
+		<th>n° post</th>
+		<th>edit</th>
+		<th>view</th>
+</tr>
+<?php foreach($this->journals as $journal ){?>
+<tr>
+	<td><?php echo $journal->getId(); ?></td>
+	<td><?php echo $journal->getTitle();?></td>
+    <td><?php echo $journal->countJournalPosts();?></td>
+	<td style="width: 32px;"><div class="ui-state-default ui-corner-all" style="text-align:center;"><a href="<?php echo $this->url(array('action'=>'edit', 'journal_id' => $journal->getId()));?>"><span class="ui-icon ui-icon-circle-triangle-e"></span></a></div></td>
+	<td style="width: 32px;"><div class="ui-state-default ui-corner-all" style="text-align:center;"><a href="<?php echo $this->url(array('controller' => 'journal', 'action'=>'show', 'journal_id' => $journal->getId()));?>"><span class="ui-icon ui-icon-circle-triangle-e"></span></a></div></td>
+</tr>
+
+<?php }?>
+<tr><td colspan="5" align="left"><a href="<?php echo $this->url(array('controller' => 'journal', 'action' => 'edit', 'journaal_id' => null));?>" class="ui-button">new journal</a></td></tr>
+</table>
+<br style="clear:both"/>
+<?php echo $this->partial('partial/paginator.phtml', array('pager' => $this->pager)); ?>
+
