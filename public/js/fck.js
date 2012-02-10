@@ -6,7 +6,7 @@ FCKConfig.ToolbarSets["limelight"] = [
 	['OrderedList','UnorderedList','-','Outdent','Indent'],
 	['Source'],
 	"/",
-	['Image','Table','Rule','SpecialChar'],
+	['Image','Table','Rule','SpecialChar','YouTube'],
 	['Style'],
 	['TextColor','BGColor']
 ];
@@ -24,6 +24,7 @@ FCKConfig.ToolbarSets["minimal"] = [
 ['TextColor','-','Style', '-','Link','Unlink'],
 ['JustifyLeft','JustifyCenter','JustifyRight','JustifyFull'],
 ['OrderedList','UnorderedList','-','Outdent','Indent'],
+['Image','YouTube'],['Source']
 ];
 
 FCKConfig.StylesXmlPath = '/js/fck_styles.xml' ;

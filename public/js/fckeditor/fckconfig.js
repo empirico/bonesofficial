@@ -318,3 +318,5 @@ FCKConfig.BackgroundBlockerOpacity = 0.50 ;
 FCKConfig.MsWebBrowserControlCompat = false ;
 
 FCKConfig.PreventSubmitHandler = false ;
+
+FCKConfig.Plugins.Add( 'youtube', 'en,ja' ) ;
