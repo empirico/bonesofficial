@@ -10,13 +10,13 @@
     <script type="text/javascript">
     	var lang = '<?php echo $this->lang;?>';
     </script>
-    <?php echo $this->headScript() ?> 
+    <?php echo $this->headScript() ?>
   	<script type="text/javascript">
-	
+
 	  var _gaq = _gaq || [];
 	  _gaq.push(['_setAccount', 'UA-12833462-1']);
 	  _gaq.push(['_trackPageview']);
-	
+
 	  (function() {
 	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
@@ -24,26 +24,7 @@
 	  })();
 
 </script>
-</head>	    
+</head>
 <body>
-	<div id="wrapper">
-		<div id="main_content">
-			<div id="header">
-				<?php echo $this->render('partial/default/main_menu.phtml', array('lang' => $this->lang));?>
-			</div>
-			<div id="content">
-				<?php echo $this->layout()->content ?>
-			</div>
-		</div>
-		<div id="right_col">
-			<?php echo $this->right_content  ?>
-		</div>
-		<div class="push"></div>
-	</div>
-	
-	<div id="footer" class="footer">
-			<div class="hr_engraved" style="width:99%;margin:auto;"></div>
-			<p class="right">&copy; Bones & Comfort 2011. webmaster: <a href="mailto:bonesrock@gmail.com">bonesmccoy</a></p>
-	</div>
-</body>
+
 </html>
