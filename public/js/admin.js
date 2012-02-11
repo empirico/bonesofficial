@@ -14,3 +14,7 @@ function confirmDelete(form_id) {
 
 	if (window.confirm('Confirm delete')) { $(id).submit();}
 }
+
+$(document).ready( function() {
+    $('.input_calendar').datepicker({ dateFormat: 'yy-mm-dd' });
+});

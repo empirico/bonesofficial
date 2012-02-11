@@ -1,15 +1,15 @@
 <script>
 $(document).ready(function() {
 	$( "#gallery_details_accordion").accordion({ active: 0 });
-	
+
 });
 </script>
 <div style="margin: auto; width: auto">
-    <h1>editing Gallery</h1>
-    <form name="edit_album" action="<? echo $this->url(array('action'=>'save'))?>" method="post" enctype="multipart/form-data">
+    <h1>Editing photogallery</h1>
+    <form name="edit_gallery" action="<? echo $this->url(array('action'=>'save'))?>" method="post" enctype="multipart/form-data">
     <div class="command_bar page alignRightContent">
-		<input type="image" src="/images/admin/save_full.png" name="submit[SAVE]" value="salva" class="button save"/>
-		<input type="image" src="/images/admin/delete_full.png"" name="submit[DEL]" value="cancella" class="button delete" onclick="javascript:confirmDelete($('#edit_album'));"/>
+		<input type="image" src="/images/admin/save.png" name="submit[SAVE]" value="salva" style="border: 0px;"/>
+		<input type="image" src="/images/admin/delete.png"" name="submit[DEL]" value="cancella" style="border: 0px;" onclick="javascript:confirmDelete('edit_gallery');"/>
 	</div>
     <div id="gallery_details_accordion">
     	<h3><a>Titolo e descrizione</a></h3>
@@ -21,7 +21,7 @@ $(document).ready(function() {
 		     <div style="margin-bottom: 10px">
 		        <h3 style="margin-bottom: 5px;">Descrizione</h3>
 		        <div>
-		            <?php 
+		            <?php
 		    		$fck1 = new Bones_Utils_Editor('description');
 		    		$fck1->setValue($this->gallery->getDescription());
 		    		$fck1->setToolbarSet(Bones_Utils_Editor::TOOLBAR_MINIMAL);
