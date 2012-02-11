@@ -21,7 +21,7 @@ class Bones_Controller_Admin extends Bones_Controller_Base {
         $this->view->headLink()->appendStylesheet('/css/admin.css');
 
         if (!$auth->getId()) {
-            $this->setErrorMessage('La sessione è scaduta');
+            //$this->setErrorMessage('La sessione è scaduta');
             $this->_redirect($this->config->bones->admin->loginurl);
         } else {
             $this->view->logged = true;
