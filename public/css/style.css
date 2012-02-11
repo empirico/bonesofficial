@@ -12,6 +12,7 @@ body{
 	color: #313131;
 	font-family: 'Alegreya', serif;
 	position: relative;
+    font-size:15px;
 }
 #main_content {
 	background: url("../images/main_bg.jpg") repeat scroll 0 0 #f4cfa3;
