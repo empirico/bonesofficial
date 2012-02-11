@@ -1,6 +1,6 @@
 <?php
 
-class MusicController extends Bones_Controller_Default
+class MediaController extends Bones_Controller_Default
 {
 
 

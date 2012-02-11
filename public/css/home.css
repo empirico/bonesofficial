@@ -1,0 +1,7 @@
+body.home #header_main_container {
+	height: 528px;
+}
+body.home #header_bottom {
+   background: url("../images/header_extended_bottom.png") no-repeat scroll 50% 0 transparent;
+   height: 100px;
+}

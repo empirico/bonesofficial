@@ -1,31 +1,66 @@
 <?php echo $this->doctype() . "\n"; ?>
 <html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Bones & Comfort - <?php echo $this->page_title?></title>
-    <meta property="fb:page_id" content="52988616067" />
-    <?php echo $this->headMeta() ?>
-    <?php echo $this->headLink() ?>
-    <?php echo $this->headStyle() ?>
-    <script type="text/javascript">
-    	var lang = '<?php echo $this->lang;?>';
-    </script>
-    <?php echo $this->headScript() ?>
-  	<script type="text/javascript">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Bones & Comfort | www.bonesofficial.com | <?php echo $this->page_title ?></title>
+        <meta property="fb:page_id" content="52988616067" />
+        <?php echo $this->headMeta() ?>
+        <?php echo $this->headLink() ?>
+        <?php echo $this->headStyle() ?>
+        <script type="text/javascript">
+            var lang = '<?php echo $this->lang; ?>';
+        </script>
+        <?php echo $this->headScript() ?>
+        <script type="text/javascript">
 
-	  var _gaq = _gaq || [];
-	  _gaq.push(['_setAccount', 'UA-12833462-1']);
-	  _gaq.push(['_trackPageview']);
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-12833462-1']);
+            _gaq.push(['_trackPageview']);
 
-	  (function() {
-	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  })();
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
 
-</script>
-</head>
-<body>
-    <?php echo $this->layout()->content ?>
-</body>
+        </script>
+    </head>
+    <body class="<? echo $this->body_class; ?>">
+        <div id="main_content">
+            <div id="header_main_container">
+                <div class="site_width">
+                    <div class="nav_main">
+                        <h1>
+                            <a href="/" border="0"><img src="images/main_logo.png" height="125"/></a>
+                        </h1>
+                        <div id="main_menu_container">
+                            <ul id="main_menu" class="menu">
+                                <li><a href="/news">News</a></li>
+                                <li><a href="/tour">Tour</a></li>
+                                <li><a href="/biography">Biography</a></li>
+                                <li><a href="/music">Music</a></li>
+                                <li><a href="/media">Media</a></li>
+                                <!--li><a href="#">Store</a></li-->
+                                <li><a href="/contacts">Contacts</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="header_bottom"></div>
+            <div class="page_container">
+                <div class="site_width">
+                    <div class="left_side_wrap"></div>
+                    <div class="page_maincontent">
+                        <?php echo $this->layout()->content ?>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+        <div id="footer_container">
+            <div class="site_width"></div>
+        </div>
+
+    </body>
 </html>
