@@ -1,9 +1,83 @@
-	<?php for($i = 0; $i < 7; $i++){?>
-	<div style="width: 200px;height: 200px;float:left;margin: 5px;" class="ui-accordion-header ui-helper-reset ui-state-default ui-state-active ui-corner-top">
-	<h3 style="padding:10px"class="ui-state-default" >Container <?php echo $i?></h3>
-	<div style="padding:10px;height:auto" style="">
-		&nbsp;
-	</div>
-	</div>
-	<?php 
-	}?>
+<style>
+    .float_container {
+        width: 300px;
+        height: 200px;
+        float:left;
+        margin: 5px;
+    }
+    .float_container h3 {
+        padding:10px
+    }
+    .float_container > div {
+        padding:10px;height:auto;
+    }
+    .float_container > div img {float:left;}
+</style>
+<div style="" class="ui-accordion-header ui-helper-reset ui-state-default ui-state-active ui-corner-top float_container">
+    <h3 class="ui-state-default" >Journals</h3>
+    <div>
+        <table border="0">
+            <? foreach ($this->journals as $journal) { ?>
+                <tr>
+                    <td><? echo $journal->getTitle() ?></td>
+                    <td>&raquo;</td>
+                </tr>
+            <? } ?>
+        </table>
+    </div>
+</div>
+
+<div style="" class="ui-accordion-header ui-helper-reset ui-state-default ui-state-active ui-corner-top float_container">
+    <h3 class="ui-state-default" >Posts</h3>
+    <div>
+        <table border="0">
+            <? foreach ($this->posts as $post) { ?>
+                <tr>
+                    <td><? echo $post->getTitle() ?></td>
+                    <td>&raquo;</td>
+                </tr>
+            <? } ?>
+        </table>
+    </div>
+</div>
+
+<div style="" class="ui-accordion-header ui-helper-reset ui-state-default ui-state-active ui-corner-top float_container">
+    <h3 class="ui-state-default" >Galleries</h3>
+    <div>
+        <table border="0">
+            <? foreach ($this->galleries as $gallery) { ?>
+                <tr>
+                    <td><? echo $gallery->getTitle() ?></td>
+                    <td>&raquo;</td>
+                </tr>
+            <? } ?>
+        </table>
+    </div>
+</div>
+
+<div style="" class="ui-accordion-header ui-helper-reset ui-state-default ui-state-active ui-corner-top float_container">
+    <h3 class="ui-state-default" >Albums</h3>
+    <div>
+        <table border="0">
+            <? foreach ($this->albums as $album) { ?>
+                <tr>
+                    <td><? echo $album->getTitle() ?></td>
+                    <td>&raquo;</td>
+                </tr>
+            <? } ?>
+        </table>
+    </div>
+</div>
+
+<div style="" class="ui-accordion-header ui-helper-reset ui-state-default ui-state-active ui-corner-top float_container">
+    <h3 class="ui-state-default" >Photos</h3>
+    <div>
+    <? foreach ($this->photos as $photo) {
+        $file = $photo->getFiles();
+        $image = Bones_Files_Image::createFromFile($file);
+       ?> <img src="<? echo $image->getFullPath(100) ?>"/>
+    <? } ?>
+    </div>
+</div>
+
+
