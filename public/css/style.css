@@ -37,7 +37,6 @@ body{
 
 #footer_container{
     background: url("../images/bg_footer.png") no-repeat scroll 50% 0 transparent;
-    padding-top: 112px;
 	height:160px;
 }
 
@@ -51,13 +50,14 @@ body{
     float: right;
     height: 45px;
     padding-top: 45px;
+    margin-right:30px;
     background: url("../images/main_menu_bottom_line.png") repeat-x bottom right;
 }
 #main_menu li {
     display: block;
     float: left;
     padding: 0 10px 45px 10px;
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: bold;
 
 }
