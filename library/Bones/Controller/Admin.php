@@ -14,10 +14,10 @@ class Bones_Controller_Admin extends Bones_Controller_Base {
         $this->view->doctype('XHTML1_STRICT');
 
 
-        $this->view->headLink()->appendStylesheet('/css/bones/jquery-ui-1.8.4.custom.css');
+        $this->view->headLink()->appendStylesheet('/css/bones/jquery-ui-1.8.17.custom.css');
         $this->view->headScript()->prependFile($this->view->baseUrl() . '/js/fckeditor/fckeditor.js?' . rand(999, 99999), $type = 'text/javascript');
         $this->view->headScript()->appendFile('/js/jquery-1.4.2.min.js', $type = 'text/javascript');
-        $this->view->headScript()->appendFile('/js/jquery-ui-1.8.4.custom.min.js', $type = 'text/javascript');
+        $this->view->headScript()->appendFile('/js/jquery-ui-1.8.7.custom.min.js', $type = 'text/javascript');
         $this->view->headLink()->appendStylesheet('/css/admin.css');
 
         if (!$auth->getId()) {
