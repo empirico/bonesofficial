@@ -6,6 +6,7 @@ class IndexController extends Bones_Controller_Default {
         parent::init();
         $this->view->headLink()->appendStylesheet('/css/home.css');
         $this->view->body_class = "home";
+        $this->view->left_side = $this->get_latest_shows();
     }
 
     public function indexAction() {
@@ -14,6 +15,7 @@ class IndexController extends Bones_Controller_Default {
             $this->view->width = ($album->getMaxWidth()) ? $album->getMaxWidth() : Bones_Files_Image::THUMB_WIDTH;
             $this->view->photos = $album->getPhotoss();
         }
+
     }
 
 }

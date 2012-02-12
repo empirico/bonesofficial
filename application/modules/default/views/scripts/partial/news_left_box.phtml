@@ -1,0 +1,11 @@
+<div class="generic_box">
+     <div class="main_separator"></div>
+    <h2><img src="/images/news.png"/></h2>
+   <div class="box_content">
+        <? foreach ($this->posts as $post) {?>
+            <div>
+                <h3><? echo $post->getTitle()?></h3>
+            </div>
+        <? } ?>
+    </div>
+</div>

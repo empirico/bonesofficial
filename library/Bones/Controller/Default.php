@@ -38,8 +38,27 @@ class Bones_Controller_Default extends Bones_Controller_Base
 		  $this->_helper->layout->disableLayout();
 		  $this->view->track_virtual_page = $this->view->partial("partial/analytics.phtml", array("virtual_page" => $this->view->url()));;//"/". $this->_request->getControllerName() . "/" . $this->_request->getActionName();
 		}
+    }
 
-    	$this->view->right_content = $this->view->partial('partial/right_content.phtml', array('translator' => $this->translator, 'latestShows' => $this->view->latestShows));
+    public function get_latest_shows() {
+        $items = JournalPostQuery::create()
+                    ->filterByJournalId(2)
+                    ->filterByIsPublic(1)
+                    ->orderByCreated(Criteria::DESC)
+                    ->limit(3)->find();
+        return $this->view->partial("partial/shows_left_box.phtml", array("posts" => $items));
+    }
+
+    public function get_latest_news() {
+
+        $posts = JournalPostQuery::create()
+                    ->filterByJournalId(1)
+                    ->filterByIsPublic(1)
+                    ->orderByCreated(Criteria::DESC)
+                    ->limit(3)->find();
+
+        return $this->view->partial("partial/news_left_box.phtml", array("posts"=> $posts));
+
     }
 
 

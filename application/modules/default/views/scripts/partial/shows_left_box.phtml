@@ -1,0 +1,12 @@
+<div class="generic_box">
+     <div class="main_separator"></div>
+    <h2><img src="/images/upcoming_shows.png"/></h2>
+    <div class="box_content">
+        <? foreach ($this->posts as $post) {?>
+            <div>
+                <h3><? echo $post->getTitle()?></h3>
+                <p><? echo $post->getCreated() ?></p>
+            </div>
+        <? } ?>
+    </div>
+</div>

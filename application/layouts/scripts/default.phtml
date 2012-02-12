@@ -50,7 +50,9 @@
             <div id="header_bottom"></div>
             <div class="page_container">
                 <div class="site_width">
-                    <div class="left_side_wrap"></div>
+                    <div class="left_side_wrap">
+                        <? echo $this->left_side ?>
+                    </div>
                     <div class="page_maincontent">
                         <?php echo $this->layout()->content ?>
                     </div>
