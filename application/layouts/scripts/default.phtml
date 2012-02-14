@@ -46,6 +46,10 @@
                             </ul>
                         </div>
                     </div>
+
+                    <? if ($this->is_home) {
+                        echo $this->partial("partial/home_display.phtml");
+                    }?>
                 </div>
             </div>
             <div id="header_bottom"></div>

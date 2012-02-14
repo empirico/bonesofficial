@@ -6,7 +6,7 @@ function activate_ajaxLinks() {
 		$('#content').html(src);
 		$('#content').load($(this).attr('rel'));
 	});
-    
+
 }
 function activate_emails() {
 	  info =  "bonesrock";
@@ -21,13 +21,9 @@ function activate_emails() {
 }
 
 var boot = { index: function(){
-				$('#slideshow').cycle({
-                 		fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
-                 		speed: 500
-                 	});
-                activate_ajaxLinks();
+			   activate_ajaxLinks();
 
-			    $("a[rel^='bonesGallery']").prettyPhoto({animationSpeed:'fast',slideshow:10000}); 
+			    $("a[rel^='bonesGallery']").prettyPhoto({animationSpeed:'fast',slideshow:10000});
 			},
 			photos : function(){
 				//alert('IM BOOTING PHOTOS');
@@ -40,4 +36,10 @@ var boot = { index: function(){
 $(document).ready(function(){
     boot.index();
     boot.photos();
+   	// initialize scrollable
+	$("#home_scroller").scrollable({circular: true}).autoscroll({
+        interval: 5000
+    }).navigator();
+
+
 });
