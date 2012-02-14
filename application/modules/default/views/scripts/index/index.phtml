@@ -3,13 +3,26 @@
     <h3><? echo $this->first_news->getTitle() ?></h3>
     <p>
         <? if ($this->first_news->getFileId() > 0) { ?>
-         <? echo $this->file_type ?>
-        <?}?>
-        <? echo $this->first_news->getContent() ?>
-    </p>
+            <? if ($this->first_news->getFileType() == 'IMG') { ?>
+            <p style="text-align: center">
+                <img src="<?php echo $this->first_news->getFile()->getFullPath(550); ?>"/>
+            </p>
+        <? } ?>
+    <? } ?>
+    <? echo $this->first_news->getContent() ?>
+    <? if ($this->first_news->getFileId() > 0) { ?>
+        <? if ($this->first_news->getFileType() == 'DOC') { ?>
+            <a href="<?php echo $this->first_news->getFile()->getFullPath(); ?>" target="_blank"><?php echo $this->post->getFiles()->getFilename() ?></a>
+        <? } ?>
+    <? } ?>
+</p>
 </div>
-<? foreach ($this->news as $news) {?>
-<div>
-    <h4><? echo $news->getTitle() ?></h4>
-</div>
-<?}?>
+<div class="big_separator"></div>
+<? foreach ($this->news as $news) { ?>
+    <div>
+        <h4><? echo $news->getTitle() ?></h4>
+        <p><? echo $news->getAbstractFromContent() ?></p>
+    </div>
+    <div class="main_separator"></div>
+<?
+}?>

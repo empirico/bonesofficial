@@ -1,7 +1,5 @@
 <?php
 
-
-
 /**
  * Skeleton subclass for representing a row from the 'journal' table.
  *
@@ -15,5 +13,15 @@
  */
 class Journal extends BaseJournal {
 
+    public function getLatestPublicPost($count = 3) {
+
+        return JournalPostQuery::create()->filterByJournal($this)
+                        ->orderByCreated(Criteria::DESC)
+                        ->limit($count)->find();
+    }
+
     
-} // Journal
+
+}
+
+// Journal

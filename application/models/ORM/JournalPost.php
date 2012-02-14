@@ -35,4 +35,12 @@ class JournalPost extends BaseJournalPost {
 
         }
     }
+
+
+    public function getAbstractFromContent($lenght = 255) {
+
+        $text = $this->getContent();
+        $text = substr(strip_tags($text), 0, $lenght);
+        return $text . " ...";
+    }
 } // JournalPost

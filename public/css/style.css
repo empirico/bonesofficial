@@ -80,7 +80,8 @@ body{
 .clear {clear: both;}
 .left {float:left;}
 .right {float:right;}
-.main_separator {background: url("../images/main_separator.png") repeat-x transparent;height: 8px;}
+.main_separator {background: url("../images/main_separator.png") repeat-x transparent;height: 8px;margin: 30px 0;}
+.big_separator {background: url("../images/big_separator.png") repeat-x transparent;height: 8px;margin: 30px 0;}
 
 
 /* BOXES */

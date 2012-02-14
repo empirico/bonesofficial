@@ -42,23 +42,16 @@ class Bones_Controller_Default extends Bones_Controller_Base
     }
 
     public function get_latest_shows() {
-        $items = JournalPostQuery::create()
-                    ->filterByJournalId(2)
-                    ->filterByIsPublic(1)
-                    ->orderByCreated(Criteria::DESC)
-                    ->limit(3)->find();
+        $shows_journal = JournalPeer::retrieveByPK(2);
+        $items = $shows_journal->getLatestPublicPost(3);
         return $this->view->partial("partial/shows_left_box.phtml", array("posts" => $items));
     }
 
     public function get_latest_news() {
+        $news_journal = JournalPeer::retrieveByPK(2);
+        $items = $news_journal->getLatestPublicPost(3);
 
-        $posts = JournalPostQuery::create()
-                    ->filterByJournalId(1)
-                    ->filterByIsPublic(1)
-                    ->orderByCreated(Criteria::DESC)
-                    ->limit(3)->find();
-
-        return $this->view->partial("partial/news_left_box.phtml", array("posts"=> $posts));
+        return $this->view->partial("partial/news_left_box.phtml", array("posts"=> $items));
 
     }
 
