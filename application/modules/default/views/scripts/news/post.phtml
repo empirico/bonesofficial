@@ -1,3 +1,4 @@
+<? if ($this->first_news instanceof JournalPost) {?>
 <div class="main_post">
     <h3><? echo $this->first_news->getTitle() ?></h3>
     <div class="clear"></div>
@@ -15,13 +16,6 @@
     <div class="post_date">Bones & Comfort - <?echo $this->first_news->getSmartCreated(); ?></div>
     <div class="big_separator clear"></div>
 </div>
-
-<? foreach ($this->news as $news) { ?>
-    <div class="post">
-        <h4><? echo $news->getTitle() ?> <span class="post_date">( <?echo $news->getSmartCreated(); ?> ) </span></h4>
-        <div class="post_content"><? echo $news->getAbstractFromContent() ?></div>
-        <div class="read_more"><a href="<?echo $this->url(array('controller'=> 'news', 'action' => 'post', 'slug'=> $news->getTitleSlug()),'news',true) ?>" >read more &raquo;</a></div>
-        <div class="main_separator clear"></div>
-    </div>
-    <?
-}?>
+<? } else {?>
+OOOOOOPS!!!!
+<? } ?>

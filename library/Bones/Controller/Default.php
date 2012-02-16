@@ -48,7 +48,7 @@ class Bones_Controller_Default extends Bones_Controller_Base
     }
 
     public function get_latest_news() {
-        $news_journal = JournalPeer::retrieveByPK(2);
+        $news_journal = JournalPeer::retrieveByPK(1);
         $items = $news_journal->getLatestPublicPost(3);
 
         return $this->view->partial("partial/news_left_box.phtml", array("posts"=> $items));

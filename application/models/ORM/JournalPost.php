@@ -43,4 +43,9 @@ class JournalPost extends BaseJournalPost {
         $text = substr(strip_tags($text), 0, $lenght);
         return $text . " ...";
     }
+
+    public function getSmartCreated() {
+        $date = new Zend_Date($this->getCreated(), 'it_IT');
+        return $date->get(Zend_Date::DATE_MEDIUM, 'en_US');
+    }
 } // JournalPost

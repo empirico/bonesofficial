@@ -20,8 +20,11 @@ class Journal extends BaseJournal {
                         ->limit($count)->find();
     }
 
-    
 
+    public static function getPostBySlug($journal_id, $slug) {
+        return JournalPostQuery::Create()->filterByJournalId($journal_id)
+                ->findOneByTitleSlug($slug);
+    }
 }
 
 // Journal

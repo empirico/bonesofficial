@@ -1,16 +1,17 @@
 <div id="paginator">
+	<p>Pagina <?php echo $this->pager->getPage();?> di <?php echo $this->pager->getTotalPages()?></p>
 	<div class="paginator">
 		<span class="first">
-			<?if ($link = $this->pager->getFirstPage()) {?>
+			<?if ($link = $this->pager->getFirstPage()) {?> 
 			<a href="<?echo $this->url(array('offset'=> $link))?>">&laquo;</a>
 			<?php } else {?><?php }?>
 		</span>
 		<span class="prev">
-		<?php if ($link = $this->pager->getPrev()) {?>
+		<?php if ($link = $this->pager->getPrev()) {?> 
 			<a href="<?echo $this->url(array('offset'=> $link))?>">&lt;</a>
 		<?php } else {?>&lt;<?php }?>
 		</span>
-	<?foreach ($this->pager->getPrevLinks() as $link) {?>
+	<?foreach ($this->pager->getPrevLinks() as $link) {?> 
 		<span><a href="<?echo $this->url(array('offset'=> $link))?>"><?php echo $link?></a></span>
 	<?}?>
 	<span class="current"><?php echo $this->pager->getPage()?></span>
@@ -18,7 +19,7 @@
 			<span><a href="<?echo $this->url(array('offset'=> $link))?>"><?php echo $link?></a></span>
 	 	<?php }?>
 	<span class="next">
-		<?if ($link = $this->pager->getNext()){ ?> <a href="<?echo $this->url(array('offset'=> $link))?>">&gt;</a>
+		<?if ($link = $this->pager->getNext()){ ?> <a href="<?echo $this->url(array('offset'=> $link))?>">&gt;</a> 
 		<?php } else {?>&gt;<?php }?>
 	</span>
 		<span class="last">
