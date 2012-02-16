@@ -2,7 +2,7 @@
 <? foreach ($this->news as $news) { ?>
     <div class="post">
         <h4><? echo $news->getTitle() ?> <span class="post_date">( <?echo $news->getSmartCreated(); ?> ) </span></h4>
-        <div class="post_content"><? echo $news->getAbstractFromContent() ?></div>
+        <div class="post_content"><? echo $news->getContent() ?></div>
         <div class="main_separator clear"></div>
     </div>
     <?
