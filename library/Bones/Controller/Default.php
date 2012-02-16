@@ -41,18 +41,21 @@ class Bones_Controller_Default extends Bones_Controller_Base
 		}
     }
 
-    public function get_latest_shows() {
+    public function get_latest_shows($items = 3) {
         $shows_journal = JournalPeer::retrieveByPK(2);
-        $items = $shows_journal->getLatestPublicPost(3);
+        $items = $shows_journal->getLatestPublicPost($items);
         return $this->view->partial("partial/shows_left_box.phtml", array("posts" => $items));
     }
 
-    public function get_latest_news() {
+    public function get_latest_news($items = 3) {
         $news_journal = JournalPeer::retrieveByPK(1);
-        $items = $news_journal->getLatestPublicPost(3);
+        $items = $news_journal->getLatestPublicPost($items);
 
         return $this->view->partial("partial/news_left_box.phtml", array("posts"=> $items));
+    }
 
+    public function get_bandcamp_player () {
+        return $this->view->partial("partial/band_camp_player.phtml");
     }
 
 

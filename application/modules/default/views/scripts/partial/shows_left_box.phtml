@@ -1,11 +1,12 @@
-<div class="generic_box">
-     <div class="main_separator"></div>
+<div class="generic_box shows">
+    <div class="main_separator"></div>
     <h2><img src="/images/upcoming_shows.png"/></h2>
     <div class="box_content">
-        <? foreach ($this->posts as $post) {?>
-            <div>
-                <h3><? echo $post->getTitle()?></h3>
-                <p><? echo $post->getCreated() ?></p>
+        <div class="lucid_border"></div>
+        <? foreach ($this->posts as $post) { ?>
+            <div class="item">
+                <p class="date text_shadow_dark"><? echo $post->getSmartCreated() ?></p>
+                <p class="title text_shadow_dark"><? echo $post->getTitle() ?></p>
             </div>
         <? } ?>
     </div>

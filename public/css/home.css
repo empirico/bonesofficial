@@ -5,3 +5,5 @@ body.home #header_bottom {
    background: url("../images/header_extended_bottom.png") no-repeat scroll 50% 0 transparent;
    height: 100px;
 }
+
+#display {background: url("../images/home_display_bg.jpg") no-repeat;width:960px; height: 392px;overflow:hidden;}
