@@ -12,7 +12,7 @@ body{
 	color: #313131;
 	font-family: 'Alegreya', serif;
 	position: relative;
-    font-size:15px;
+    font-size:16px;
 }
 
 a, a:visited, a:active {text-decoration: none; color: #9B6434;}
@@ -123,3 +123,10 @@ a:hover {text-decoration: underline;}
 .compilation p.label {font-style: italic}
 
 #albums {margin: 20px 0;}
+#albums .album_description {float:left; width:240px;font-size:16px;}
+#albums .album_cover {float:left; width:360px;background: url("../images/albums_bg.png") no-repeat;}
+.album_cover img {margin: 40px auto;width:300px;display:block;}
+.album_description h2 {font-size: 20px; text-shadow: 0 1px 1px #4C5046; margin-bottom: 10px;}
+.album_description ol {margin-left: 10px; margin-bottom: 10px;}
+.album_description a.download_link {font-size: 20px; text-shadow: 0 1px 1px #4C5046;font-style: italic;}
+.album_description a.download_link span {text-transform: uppercase}
