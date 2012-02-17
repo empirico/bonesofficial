@@ -46,10 +46,11 @@
                             </ul>
                         </div>
                     </div>
-
-                    <? if ($this->is_home) {
+                    <?
+                    if ($this->is_home) {
                         echo $this->partial("partial/home_display.phtml");
-                    }?>
+                    }
+                    ?>
                 </div>
             </div>
             <div id="header_bottom"></div>
@@ -62,11 +63,14 @@
                         <?php echo $this->layout()->content ?>
                     </div>
                     <div class="clear"></div>
+                    <? echo $this->partial("/partial/social_media.phtml") ?>
                 </div>
             </div>
         </div>
         <div id="footer_container">
-            <div class="site_width"></div>
+            <div class="site_width">
+
+            </div>
         </div>
 
     </body>

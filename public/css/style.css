@@ -10,10 +10,11 @@
 body{
 	background: url("../images/body_bg.jpg");
 	color: #313131;
-	font-family: 'Alegreya', serif;
+	font-family: Helvetica,sans-serif;
 	position: relative;
     font-size:16px;
 }
+h1,h2,h3,h4,h5,h6 , .title{ font-family: 'Alegreya', serif;}
 
 a, a:visited, a:active {text-decoration: none; color: #9B6434;}
 a:hover {text-decoration: underline;}
@@ -48,6 +49,7 @@ a:hover {text-decoration: underline;}
 }
 /* MENU  */
 #main_menu {
+    font-family: 'Alegreya', serif;
 	display: block;
     float: right;
     height: 45px;
@@ -130,3 +132,11 @@ a:hover {text-decoration: underline;}
 .album_description ol {margin-left: 10px; margin-bottom: 10px;}
 .album_description a.download_link {font-size: 20px; text-shadow: 0 1px 1px #4C5046;font-style: italic;}
 .album_description a.download_link span {text-transform: uppercase}
+
+#bio p, #contacts p {margin: 20px 0;}
+#contacts p.addresses span {display:block; width: 150px; float: left;}
+
+#social_media {margin-top: 30px;}
+#social_media .icons {margin: 0 auto;width: 800px}
+#social_media a {display:block; float:left;}
+#social_media img {width: 150px;}

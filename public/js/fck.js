@@ -21,10 +21,10 @@ FCKConfig.ToolbarSets["journal_post"] = [
   ];
 
 FCKConfig.ToolbarSets["minimal"] = [
-['TextColor','-','Style', '-','Link','Unlink'],
+['TextColor','-','Style', '-','Link','Unlink'],['TextColor','BGColor'],
 ['JustifyLeft','JustifyCenter','JustifyRight','JustifyFull'],
 ['OrderedList','UnorderedList','-','Outdent','Indent'],
-['Image','YouTube'],['Source']
+['Image','YouTube'],['Source','RemoveFormat']
 ];
 
 FCKConfig.StylesXmlPath = '/js/fck_styles.xml' ;
