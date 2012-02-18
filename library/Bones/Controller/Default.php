@@ -57,6 +57,9 @@ class Bones_Controller_Default extends Bones_Controller_Base
         return $this->view->partial("partial/band_camp_player.phtml");
     }
 
+    public function get_twitter_stream(){
+        return $this->view->partial("/partial/twitter_stream.phtml") ;
+    }
 
 }
 

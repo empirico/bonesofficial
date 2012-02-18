@@ -7,8 +7,15 @@ body.home #header_bottom {
 }
 
 #display {background: url("../images/home_display_bg.jpg") no-repeat;width:960px; height: 392px;overflow:hidden;border-top: 3px solid #f4cfa3;}
-#higlight_panel {background: url("../images/box_cd_bg.jpg") no-repeat;height: 392px; width: 360px;float:left;}
+#higlight_panel {
+    background: url("../images/box_cd_bg.jpg") no-repeat;height: 392px; width: 360px;float:left;
+}
+#higlight_panel .panel_content {padding: 10px;text-align: center;}
 
+.panel_content.perkele h2 {font-size: 20px;}
+.panel_content.perkele .head {font-style: italic;}
+.perkele .download_link {font-weight:bold;}
+.perkele .album_cover img {margin: 10px auto;display:block;}
 /*
 	root element for the scrollable.
 	when scrolling occurs this element stays still.

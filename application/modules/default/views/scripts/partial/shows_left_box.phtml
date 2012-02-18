@@ -3,11 +3,18 @@
     <h2><img src="/images/upcoming_shows.png"/></h2>
     <div class="box_content">
         <div class="lucid_border"></div>
+        <? if (count($this->post > 0)) {?>
         <? foreach ($this->posts as $post) { ?>
             <div class="item">
                 <p class="date text_shadow_dark"><? echo $post->getSmartCreated() ?></p>
                 <p class="title text_shadow_dark"><? echo $post->getTitle() ?></p>
             </div>
-        <? } ?>
+        <? }
+        } else {
+            ?>
+            <div class="item">
+                <p class="title text_shadow_dark">No shows scheduled</p>
+            </div>
+        <? }?>
     </div>
 </div>
