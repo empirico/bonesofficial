@@ -115,9 +115,15 @@ a:hover {text-decoration: underline;}
 
 .post {margin-bottom: 30px;}
 .post h4 {font-size: 18px; text-transform:uppercase;}
-.post h4 .post_date {text-transform: none; font-size: 14px; font-style: italic;}
+.post h4
 .post .post_content {padding: 0 10px;margin-bottom:10px;}
 .post .read_more {float: right;font-weight: bold;}
+.post_footer {height: 70px;background: url("../images/bg_footer.png") no-repeat 0 -30px  transparent;font-family: 'Alegreya', serif;}
+.post_footer_content {height:54px;}
+.post_footer_content .post_date, .post_footer_content .post_share  { margin: 0px; height:54px; line-height: 54px; font-size: 16px; font-style: italic;padding: 0 10px;}
+.post_footer_content .post_date {width: 150px;border-right: 1px dashed #666;}
+.post_footer_content .post_date span {font-weight: bold;}
+.post_footer_content .post_share {text-align: right; width: 300px;}
 
 #compilations {margin: 20px 0;}
 .compilation {float: left; width: 170px; padding: 20px 10px;text-align: center; background: url("../images/compilation_bg.png") no-repeat 6px -10px;}

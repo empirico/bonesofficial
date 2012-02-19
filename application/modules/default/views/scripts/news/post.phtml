@@ -1,21 +1,30 @@
-<? if ($this->first_news instanceof JournalPost) {?>
-<div class="main_post">
-    <h3><? echo $this->first_news->getTitle() ?></h3>
-    <div class="clear"></div>
-    <? if (($this->first_news->getFileId() > 0) && ($this->first_news->getFileType() == 'IMG')) { ?>
-        <div class="post_image">
-            <img src="<?php echo $this->first_news->getFile()->getFullPath(400); ?>"/>
-        </div>
-    <? } ?>
-    <div class="post_content">
-        <? echo $this->first_news->getContent() ?>
-        <? if (($this->first_news->getFileId() > 0) && ($this->first_news->getFileType() == 'DOC')) { ?>
-            <div class="post_attachment"><a href="<?php echo $this->first_news->getFile()->getFullPath(); ?>" target="_blank"><?php echo $this->first_news->getFiles()->getFilename() ?></a></div>
+<? if ($this->first_news instanceof JournalPost) { ?>
+    <div class="main_post">
+        <h3><? echo $this->first_news->getTitle() ?></h3>
+        <div class="clear"></div>
+        <? if (($this->first_news->getFileId() > 0) && ($this->first_news->getFileType() == 'IMG')) { ?>
+            <div class="post_image">
+                <img src="<?php echo $this->first_news->getFile()->getFullPath(400); ?>"/>
+            </div>
         <? } ?>
+        <div class="post_content">
+            <? echo stripslashes($this->first_news->getContent()) ?>
+            <? if (($this->first_news->getFileId() > 0) && ($this->first_news->getFileType() == 'DOC')) { ?>
+                <div class="post_attachment"><a href="<?php echo $this->first_news->getFile()->getFullPath(); ?>" target="_blank"><?php echo $this->first_news->getFiles()->getFilename() ?></a></div>
+            <? } ?>
+        </div>
+        <div class="post_footer">
+            <div class="big_separator clear"></div>
+            <div class="post_footer_content">
+                <div class="post_date left">Date: <? echo $this->first_news->getSmartCreated(); ?></div>
+                <div class="post_share right">
+                    Share on
+                    <span><a target="_blank" href="http://www.facebook.com/share.php?u=<? echo urlencode('http://' .$_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);?>">Facebook</a></span>
+                </div>
+            </div>
+            <div class="big_separator clear"></div>
+        </div>
     </div>
-    <div class="post_date">Bones & Comfort - <?echo $this->first_news->getSmartCreated(); ?></div>
-    <div class="big_separator clear"></div>
-</div>
-<? } else {?>
-OOOOOOPS!!!!
+<? } else { ?>
+    OOOOOOPS!!!!
 <? } ?>

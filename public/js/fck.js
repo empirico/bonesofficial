@@ -21,7 +21,7 @@ FCKConfig.ToolbarSets["journal_post"] = [
   ];
 
 FCKConfig.ToolbarSets["minimal"] = [
-['TextColor','-','Style', '-','Link','Unlink'],['TextColor','BGColor'],
+['Bold','Italic','Underline','StrikeThrough', '-','Link','Unlink'],['TextColor','BGColor'],
 ['JustifyLeft','JustifyCenter','JustifyRight','JustifyFull'],
 ['OrderedList','UnorderedList','-','Outdent','Indent'],
 ['Image','YouTube'],['Source','RemoveFormat']
