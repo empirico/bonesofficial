@@ -6,7 +6,7 @@
         <? if (($this->posts->count() > 0)) {?>
         <? foreach ($this->posts as $post) { ?>
             <div class="item">
-                <p class="date text_shadow_dark"><? echo $post->getSmartCreated() ?></p>
+                <p class="date text_shadow_dark"><? echo $post->getSmartStartDate() ?></p>
                 <p class="title text_shadow_dark"><? echo $post->getTitle() ?></p>
             </div>
         <? }
