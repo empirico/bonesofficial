@@ -17,7 +17,7 @@ class Journal extends BaseJournal {
 
         return JournalPostQuery::create()->filterByJournal($this)
                         ->filterByIsPublic(1)
-                        ->orderByCreated(Criteria::DESC)
+                        ->orderByStartDate(Criteria::DESC)
                         ->limit($count)->find();
     }
 
