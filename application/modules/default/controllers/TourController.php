@@ -15,7 +15,7 @@ class TourController extends Bones_Controller_Default
     	$query = JournalPostQuery::create()
                 ->filterByJournalId(self::JOURNAL_ID)
                 ->filterByIsPublic(1)
-                ->orderByCreated(Criteria::DESC);
+                ->orderByStartDate(Criteria::DESC);
 
     	$pager = new PropelPager($query,'JournalPostPeer','doSelect',$offset, self::PER_PAGE);
 

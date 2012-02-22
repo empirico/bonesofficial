@@ -48,4 +48,9 @@ class JournalPost extends BaseJournalPost {
         $date = new Zend_Date($this->getCreated(), 'it_IT');
         return $date->get(Zend_Date::DATE_MEDIUM, 'en_US');
     }
+
+    public function getSmartStartDate() {
+        $date = new Zend_Date($this->getStartDate(), 'it_IT');
+        return $date->get(Zend_Date::DATE_MEDIUM, 'en_US');
+    }
 } // JournalPost
