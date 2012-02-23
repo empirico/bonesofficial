@@ -19,7 +19,9 @@
 
             var _gaq = _gaq || [];
             _gaq.push(['_setAccount', 'UA-12833462-1']);
+            <? if ($_SERVER['HTTP_HOST'] == 'www.bonesofficial.com') { ?>
             _gaq.push(['_trackPageview']);
+            <? } ?>
 
             (function() {
                 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
