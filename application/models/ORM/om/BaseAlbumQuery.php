@@ -8,6 +8,7 @@
  *
  * @method     AlbumQuery orderById($order = Criteria::ASC) Order by the id column
  * @method     AlbumQuery orderByTitle($order = Criteria::ASC) Order by the title column
+ * @method     AlbumQuery orderByTitleSlug($order = Criteria::ASC) Order by the title_slug column
  * @method     AlbumQuery orderByDescription($order = Criteria::ASC) Order by the description column
  * @method     AlbumQuery orderByGalleryId($order = Criteria::ASC) Order by the gallery_id column
  * @method     AlbumQuery orderByCoverPhotoId($order = Criteria::ASC) Order by the cover_photo_id column
@@ -18,6 +19,7 @@
  *
  * @method     AlbumQuery groupById() Group by the id column
  * @method     AlbumQuery groupByTitle() Group by the title column
+ * @method     AlbumQuery groupByTitleSlug() Group by the title_slug column
  * @method     AlbumQuery groupByDescription() Group by the description column
  * @method     AlbumQuery groupByGalleryId() Group by the gallery_id column
  * @method     AlbumQuery groupByCoverPhotoId() Group by the cover_photo_id column
@@ -43,6 +45,7 @@
  *
  * @method     Album findOneById(int $id) Return the first Album filtered by the id column
  * @method     Album findOneByTitle(string $title) Return the first Album filtered by the title column
+ * @method     Album findOneByTitleSlug(string $title_slug) Return the first Album filtered by the title_slug column
  * @method     Album findOneByDescription(string $description) Return the first Album filtered by the description column
  * @method     Album findOneByGalleryId(int $gallery_id) Return the first Album filtered by the gallery_id column
  * @method     Album findOneByCoverPhotoId(int $cover_photo_id) Return the first Album filtered by the cover_photo_id column
@@ -53,6 +56,7 @@
  *
  * @method     array findById(int $id) Return Album objects filtered by the id column
  * @method     array findByTitle(string $title) Return Album objects filtered by the title column
+ * @method     array findByTitleSlug(string $title_slug) Return Album objects filtered by the title_slug column
  * @method     array findByDescription(string $description) Return Album objects filtered by the description column
  * @method     array findByGalleryId(int $gallery_id) Return Album objects filtered by the gallery_id column
  * @method     array findByCoverPhotoId(int $cover_photo_id) Return Album objects filtered by the cover_photo_id column
@@ -206,6 +210,28 @@ abstract class BaseAlbumQuery extends ModelCriteria
 			}
 		}
 		return $this->addUsingAlias(AlbumPeer::TITLE, $title, $comparison);
+	}
+
+	/**
+	 * Filter the query on the title_slug column
+	 * 
+	 * @param     string $titleSlug The value to use as filter.
+	 *            Accepts wildcards (* and % trigger a LIKE)
+	 * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+	 *
+	 * @return    AlbumQuery The current query, for fluid interface
+	 */
+	public function filterByTitleSlug($titleSlug = null, $comparison = null)
+	{
+		if (null === $comparison) {
+			if (is_array($titleSlug)) {
+				$comparison = Criteria::IN;
+			} elseif (preg_match('/[\%\*]/', $titleSlug)) {
+				$titleSlug = str_replace('*', '%', $titleSlug);
+				$comparison = Criteria::LIKE;
+			}
+		}
+		return $this->addUsingAlias(AlbumPeer::TITLE_SLUG, $titleSlug, $comparison);
 	}
 
 	/**

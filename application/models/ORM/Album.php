@@ -5,7 +5,7 @@
 /**
  * Skeleton subclass for representing a row from the 'album' table.
  *
- * 
+ *
  *
  * You should add additional methods to this class to meet the
  * application requirements.  This class will only be generated as
@@ -16,11 +16,20 @@
 class Album extends BaseAlbum {
 
 	public function getCoverPhoto() {
-	
+
 		if ($this->getCoverPhotoId() > 0) {
 			$photo = PhotosPeer::retrieveByPK($this->getCoverPhotoId());
 		}
 		return (@$photo instanceof Photos) ? $photo : new Photos();
-	
 	}
+
+    public function getCoverPhotoFullPath ($width = "") {
+        if ($this->getCoverPhotoId() > 0) {
+			$photo = PhotosPeer::retrieveByPK($this->getCoverPhotoId());
+            return $photo->getImage()->getFullPath($width);
+		}
+        return "";
+    }
+
+    
 } // Album

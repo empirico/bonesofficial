@@ -84,6 +84,7 @@ CREATE TABLE `album`
 (
 	`id` INTEGER(11)  NOT NULL AUTO_INCREMENT,
 	`title` VARCHAR(500)  NOT NULL,
+	`title_slug` VARCHAR(255)  NOT NULL,
 	`description` VARCHAR(500),
 	`gallery_id` INTEGER(11)  NOT NULL,
 	`cover_photo_id` INTEGER(11),

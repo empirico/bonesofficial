@@ -39,6 +39,7 @@ class AlbumTableMap extends TableMap {
 		// columns
 		$this->addPrimaryKey('ID', 'Id', 'INTEGER', true, 11, null);
 		$this->addColumn('TITLE', 'Title', 'VARCHAR', true, 500, null);
+		$this->addColumn('TITLE_SLUG', 'TitleSlug', 'VARCHAR', true, 255, null);
 		$this->addColumn('DESCRIPTION', 'Description', 'VARCHAR', false, 500, null);
 		$this->addForeignKey('GALLERY_ID', 'GalleryId', 'INTEGER', 'gallery', 'ID', true, 11, null);
 		$this->addColumn('COVER_PHOTO_ID', 'CoverPhotoId', 'INTEGER', false, 11, null);

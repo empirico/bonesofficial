@@ -26,7 +26,7 @@ abstract class BaseAlbumPeer {
 	const TM_CLASS = 'AlbumTableMap';
 	
 	/** The total number of columns. */
-	const NUM_COLUMNS = 9;
+	const NUM_COLUMNS = 10;
 
 	/** The number of lazy-loaded columns. */
 	const NUM_LAZY_LOAD_COLUMNS = 0;
@@ -36,6 +36,9 @@ abstract class BaseAlbumPeer {
 
 	/** the column name for the TITLE field */
 	const TITLE = 'album.TITLE';
+
+	/** the column name for the TITLE_SLUG field */
+	const TITLE_SLUG = 'album.TITLE_SLUG';
 
 	/** the column name for the DESCRIPTION field */
 	const DESCRIPTION = 'album.DESCRIPTION';
@@ -74,12 +77,12 @@ abstract class BaseAlbumPeer {
 	 * e.g. self::$fieldNames[self::TYPE_PHPNAME][0] = 'Id'
 	 */
 	private static $fieldNames = array (
-		BasePeer::TYPE_PHPNAME => array ('Id', 'Title', 'Description', 'GalleryId', 'CoverPhotoId', 'Rank', 'IsPublic', 'MaxWidth', 'MaxHeight', ),
-		BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'title', 'description', 'galleryId', 'coverPhotoId', 'rank', 'isPublic', 'maxWidth', 'maxHeight', ),
-		BasePeer::TYPE_COLNAME => array (self::ID, self::TITLE, self::DESCRIPTION, self::GALLERY_ID, self::COVER_PHOTO_ID, self::RANK, self::IS_PUBLIC, self::MAX_WIDTH, self::MAX_HEIGHT, ),
-		BasePeer::TYPE_RAW_COLNAME => array ('ID', 'TITLE', 'DESCRIPTION', 'GALLERY_ID', 'COVER_PHOTO_ID', 'RANK', 'IS_PUBLIC', 'MAX_WIDTH', 'MAX_HEIGHT', ),
-		BasePeer::TYPE_FIELDNAME => array ('id', 'title', 'description', 'gallery_id', 'cover_photo_id', 'rank', 'is_public', 'max_width', 'max_height', ),
-		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
+		BasePeer::TYPE_PHPNAME => array ('Id', 'Title', 'TitleSlug', 'Description', 'GalleryId', 'CoverPhotoId', 'Rank', 'IsPublic', 'MaxWidth', 'MaxHeight', ),
+		BasePeer::TYPE_STUDLYPHPNAME => array ('id', 'title', 'titleSlug', 'description', 'galleryId', 'coverPhotoId', 'rank', 'isPublic', 'maxWidth', 'maxHeight', ),
+		BasePeer::TYPE_COLNAME => array (self::ID, self::TITLE, self::TITLE_SLUG, self::DESCRIPTION, self::GALLERY_ID, self::COVER_PHOTO_ID, self::RANK, self::IS_PUBLIC, self::MAX_WIDTH, self::MAX_HEIGHT, ),
+		BasePeer::TYPE_RAW_COLNAME => array ('ID', 'TITLE', 'TITLE_SLUG', 'DESCRIPTION', 'GALLERY_ID', 'COVER_PHOTO_ID', 'RANK', 'IS_PUBLIC', 'MAX_WIDTH', 'MAX_HEIGHT', ),
+		BasePeer::TYPE_FIELDNAME => array ('id', 'title', 'title_slug', 'description', 'gallery_id', 'cover_photo_id', 'rank', 'is_public', 'max_width', 'max_height', ),
+		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, )
 	);
 
 	/**
@@ -89,12 +92,12 @@ abstract class BaseAlbumPeer {
 	 * e.g. self::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
 	 */
 	private static $fieldKeys = array (
-		BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Title' => 1, 'Description' => 2, 'GalleryId' => 3, 'CoverPhotoId' => 4, 'Rank' => 5, 'IsPublic' => 6, 'MaxWidth' => 7, 'MaxHeight' => 8, ),
-		BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'title' => 1, 'description' => 2, 'galleryId' => 3, 'coverPhotoId' => 4, 'rank' => 5, 'isPublic' => 6, 'maxWidth' => 7, 'maxHeight' => 8, ),
-		BasePeer::TYPE_COLNAME => array (self::ID => 0, self::TITLE => 1, self::DESCRIPTION => 2, self::GALLERY_ID => 3, self::COVER_PHOTO_ID => 4, self::RANK => 5, self::IS_PUBLIC => 6, self::MAX_WIDTH => 7, self::MAX_HEIGHT => 8, ),
-		BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'TITLE' => 1, 'DESCRIPTION' => 2, 'GALLERY_ID' => 3, 'COVER_PHOTO_ID' => 4, 'RANK' => 5, 'IS_PUBLIC' => 6, 'MAX_WIDTH' => 7, 'MAX_HEIGHT' => 8, ),
-		BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'title' => 1, 'description' => 2, 'gallery_id' => 3, 'cover_photo_id' => 4, 'rank' => 5, 'is_public' => 6, 'max_width' => 7, 'max_height' => 8, ),
-		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
+		BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Title' => 1, 'TitleSlug' => 2, 'Description' => 3, 'GalleryId' => 4, 'CoverPhotoId' => 5, 'Rank' => 6, 'IsPublic' => 7, 'MaxWidth' => 8, 'MaxHeight' => 9, ),
+		BasePeer::TYPE_STUDLYPHPNAME => array ('id' => 0, 'title' => 1, 'titleSlug' => 2, 'description' => 3, 'galleryId' => 4, 'coverPhotoId' => 5, 'rank' => 6, 'isPublic' => 7, 'maxWidth' => 8, 'maxHeight' => 9, ),
+		BasePeer::TYPE_COLNAME => array (self::ID => 0, self::TITLE => 1, self::TITLE_SLUG => 2, self::DESCRIPTION => 3, self::GALLERY_ID => 4, self::COVER_PHOTO_ID => 5, self::RANK => 6, self::IS_PUBLIC => 7, self::MAX_WIDTH => 8, self::MAX_HEIGHT => 9, ),
+		BasePeer::TYPE_RAW_COLNAME => array ('ID' => 0, 'TITLE' => 1, 'TITLE_SLUG' => 2, 'DESCRIPTION' => 3, 'GALLERY_ID' => 4, 'COVER_PHOTO_ID' => 5, 'RANK' => 6, 'IS_PUBLIC' => 7, 'MAX_WIDTH' => 8, 'MAX_HEIGHT' => 9, ),
+		BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'title' => 1, 'title_slug' => 2, 'description' => 3, 'gallery_id' => 4, 'cover_photo_id' => 5, 'rank' => 6, 'is_public' => 7, 'max_width' => 8, 'max_height' => 9, ),
+		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, )
 	);
 
 	/**
@@ -168,6 +171,7 @@ abstract class BaseAlbumPeer {
 		if (null === $alias) {
 			$criteria->addSelectColumn(AlbumPeer::ID);
 			$criteria->addSelectColumn(AlbumPeer::TITLE);
+			$criteria->addSelectColumn(AlbumPeer::TITLE_SLUG);
 			$criteria->addSelectColumn(AlbumPeer::DESCRIPTION);
 			$criteria->addSelectColumn(AlbumPeer::GALLERY_ID);
 			$criteria->addSelectColumn(AlbumPeer::COVER_PHOTO_ID);
@@ -178,6 +182,7 @@ abstract class BaseAlbumPeer {
 		} else {
 			$criteria->addSelectColumn($alias . '.ID');
 			$criteria->addSelectColumn($alias . '.TITLE');
+			$criteria->addSelectColumn($alias . '.TITLE_SLUG');
 			$criteria->addSelectColumn($alias . '.DESCRIPTION');
 			$criteria->addSelectColumn($alias . '.GALLERY_ID');
 			$criteria->addSelectColumn($alias . '.COVER_PHOTO_ID');

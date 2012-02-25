@@ -37,6 +37,12 @@ abstract class BaseAlbum extends BaseObject  implements Persistent
 	protected $title;
 
 	/**
+	 * The value for the title_slug field.
+	 * @var        string
+	 */
+	protected $title_slug;
+
+	/**
 	 * The value for the description field.
 	 * @var        string
 	 */
@@ -144,6 +150,16 @@ abstract class BaseAlbum extends BaseObject  implements Persistent
 	public function getTitle()
 	{
 		return $this->title;
+	}
+
+	/**
+	 * Get the [title_slug] column value.
+	 * 
+	 * @return     string
+	 */
+	public function getTitleSlug()
+	{
+		return $this->title_slug;
 	}
 
 	/**
@@ -255,6 +271,26 @@ abstract class BaseAlbum extends BaseObject  implements Persistent
 
 		return $this;
 	} // setTitle()
+
+	/**
+	 * Set the value of [title_slug] column.
+	 * 
+	 * @param      string $v new value
+	 * @return     Album The current object (for fluent API support)
+	 */
+	public function setTitleSlug($v)
+	{
+		if ($v !== null) {
+			$v = (string) $v;
+		}
+
+		if ($this->title_slug !== $v) {
+			$this->title_slug = $v;
+			$this->modifiedColumns[] = AlbumPeer::TITLE_SLUG;
+		}
+
+		return $this;
+	} // setTitleSlug()
 
 	/**
 	 * Set the value of [description] column.
@@ -442,13 +478,14 @@ abstract class BaseAlbum extends BaseObject  implements Persistent
 
 			$this->id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
 			$this->title = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-			$this->description = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-			$this->gallery_id = ($row[$startcol + 3] !== null) ? (int) $row[$startcol + 3] : null;
-			$this->cover_photo_id = ($row[$startcol + 4] !== null) ? (int) $row[$startcol + 4] : null;
-			$this->rank = ($row[$startcol + 5] !== null) ? (int) $row[$startcol + 5] : null;
-			$this->is_public = ($row[$startcol + 6] !== null) ? (int) $row[$startcol + 6] : null;
-			$this->max_width = ($row[$startcol + 7] !== null) ? (int) $row[$startcol + 7] : null;
-			$this->max_height = ($row[$startcol + 8] !== null) ? (int) $row[$startcol + 8] : null;
+			$this->title_slug = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+			$this->description = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+			$this->gallery_id = ($row[$startcol + 4] !== null) ? (int) $row[$startcol + 4] : null;
+			$this->cover_photo_id = ($row[$startcol + 5] !== null) ? (int) $row[$startcol + 5] : null;
+			$this->rank = ($row[$startcol + 6] !== null) ? (int) $row[$startcol + 6] : null;
+			$this->is_public = ($row[$startcol + 7] !== null) ? (int) $row[$startcol + 7] : null;
+			$this->max_width = ($row[$startcol + 8] !== null) ? (int) $row[$startcol + 8] : null;
+			$this->max_height = ($row[$startcol + 9] !== null) ? (int) $row[$startcol + 9] : null;
 			$this->resetModified();
 
 			$this->setNew(false);
@@ -457,7 +494,7 @@ abstract class BaseAlbum extends BaseObject  implements Persistent
 				$this->ensureConsistency();
 			}
 
-			return $startcol + 9; // 9 = AlbumPeer::NUM_COLUMNS - AlbumPeer::NUM_LAZY_LOAD_COLUMNS).
+			return $startcol + 10; // 10 = AlbumPeer::NUM_COLUMNS - AlbumPeer::NUM_LAZY_LOAD_COLUMNS).
 
 		} catch (Exception $e) {
 			throw new PropelException("Error populating Album object", $e);
@@ -809,24 +846,27 @@ abstract class BaseAlbum extends BaseObject  implements Persistent
 				return $this->getTitle();
 				break;
 			case 2:
-				return $this->getDescription();
+				return $this->getTitleSlug();
 				break;
 			case 3:
-				return $this->getGalleryId();
+				return $this->getDescription();
 				break;
 			case 4:
-				return $this->getCoverPhotoId();
+				return $this->getGalleryId();
 				break;
 			case 5:
-				return $this->getRank();
+				return $this->getCoverPhotoId();
 				break;
 			case 6:
-				return $this->getIsPublic();
+				return $this->getRank();
 				break;
 			case 7:
-				return $this->getMaxWidth();
+				return $this->getIsPublic();
 				break;
 			case 8:
+				return $this->getMaxWidth();
+				break;
+			case 9:
 				return $this->getMaxHeight();
 				break;
 			default:
@@ -855,13 +895,14 @@ abstract class BaseAlbum extends BaseObject  implements Persistent
 		$result = array(
 			$keys[0] => $this->getId(),
 			$keys[1] => $this->getTitle(),
-			$keys[2] => $this->getDescription(),
-			$keys[3] => $this->getGalleryId(),
-			$keys[4] => $this->getCoverPhotoId(),
-			$keys[5] => $this->getRank(),
-			$keys[6] => $this->getIsPublic(),
-			$keys[7] => $this->getMaxWidth(),
-			$keys[8] => $this->getMaxHeight(),
+			$keys[2] => $this->getTitleSlug(),
+			$keys[3] => $this->getDescription(),
+			$keys[4] => $this->getGalleryId(),
+			$keys[5] => $this->getCoverPhotoId(),
+			$keys[6] => $this->getRank(),
+			$keys[7] => $this->getIsPublic(),
+			$keys[8] => $this->getMaxWidth(),
+			$keys[9] => $this->getMaxHeight(),
 		);
 		if ($includeForeignObjects) {
 			if (null !== $this->aGallery) {
@@ -905,24 +946,27 @@ abstract class BaseAlbum extends BaseObject  implements Persistent
 				$this->setTitle($value);
 				break;
 			case 2:
-				$this->setDescription($value);
+				$this->setTitleSlug($value);
 				break;
 			case 3:
-				$this->setGalleryId($value);
+				$this->setDescription($value);
 				break;
 			case 4:
-				$this->setCoverPhotoId($value);
+				$this->setGalleryId($value);
 				break;
 			case 5:
-				$this->setRank($value);
+				$this->setCoverPhotoId($value);
 				break;
 			case 6:
-				$this->setIsPublic($value);
+				$this->setRank($value);
 				break;
 			case 7:
-				$this->setMaxWidth($value);
+				$this->setIsPublic($value);
 				break;
 			case 8:
+				$this->setMaxWidth($value);
+				break;
+			case 9:
 				$this->setMaxHeight($value);
 				break;
 		} // switch()
@@ -951,13 +995,14 @@ abstract class BaseAlbum extends BaseObject  implements Persistent
 
 		if (array_key_exists($keys[0], $arr)) $this->setId($arr[$keys[0]]);
 		if (array_key_exists($keys[1], $arr)) $this->setTitle($arr[$keys[1]]);
-		if (array_key_exists($keys[2], $arr)) $this->setDescription($arr[$keys[2]]);
-		if (array_key_exists($keys[3], $arr)) $this->setGalleryId($arr[$keys[3]]);
-		if (array_key_exists($keys[4], $arr)) $this->setCoverPhotoId($arr[$keys[4]]);
-		if (array_key_exists($keys[5], $arr)) $this->setRank($arr[$keys[5]]);
-		if (array_key_exists($keys[6], $arr)) $this->setIsPublic($arr[$keys[6]]);
-		if (array_key_exists($keys[7], $arr)) $this->setMaxWidth($arr[$keys[7]]);
-		if (array_key_exists($keys[8], $arr)) $this->setMaxHeight($arr[$keys[8]]);
+		if (array_key_exists($keys[2], $arr)) $this->setTitleSlug($arr[$keys[2]]);
+		if (array_key_exists($keys[3], $arr)) $this->setDescription($arr[$keys[3]]);
+		if (array_key_exists($keys[4], $arr)) $this->setGalleryId($arr[$keys[4]]);
+		if (array_key_exists($keys[5], $arr)) $this->setCoverPhotoId($arr[$keys[5]]);
+		if (array_key_exists($keys[6], $arr)) $this->setRank($arr[$keys[6]]);
+		if (array_key_exists($keys[7], $arr)) $this->setIsPublic($arr[$keys[7]]);
+		if (array_key_exists($keys[8], $arr)) $this->setMaxWidth($arr[$keys[8]]);
+		if (array_key_exists($keys[9], $arr)) $this->setMaxHeight($arr[$keys[9]]);
 	}
 
 	/**
@@ -971,6 +1016,7 @@ abstract class BaseAlbum extends BaseObject  implements Persistent
 
 		if ($this->isColumnModified(AlbumPeer::ID)) $criteria->add(AlbumPeer::ID, $this->id);
 		if ($this->isColumnModified(AlbumPeer::TITLE)) $criteria->add(AlbumPeer::TITLE, $this->title);
+		if ($this->isColumnModified(AlbumPeer::TITLE_SLUG)) $criteria->add(AlbumPeer::TITLE_SLUG, $this->title_slug);
 		if ($this->isColumnModified(AlbumPeer::DESCRIPTION)) $criteria->add(AlbumPeer::DESCRIPTION, $this->description);
 		if ($this->isColumnModified(AlbumPeer::GALLERY_ID)) $criteria->add(AlbumPeer::GALLERY_ID, $this->gallery_id);
 		if ($this->isColumnModified(AlbumPeer::COVER_PHOTO_ID)) $criteria->add(AlbumPeer::COVER_PHOTO_ID, $this->cover_photo_id);
@@ -1040,6 +1086,7 @@ abstract class BaseAlbum extends BaseObject  implements Persistent
 	public function copyInto($copyObj, $deepCopy = false)
 	{
 		$copyObj->setTitle($this->title);
+		$copyObj->setTitleSlug($this->title_slug);
 		$copyObj->setDescription($this->description);
 		$copyObj->setGalleryId($this->gallery_id);
 		$copyObj->setCoverPhotoId($this->cover_photo_id);
@@ -1294,6 +1341,7 @@ abstract class BaseAlbum extends BaseObject  implements Persistent
 	{
 		$this->id = null;
 		$this->title = null;
+		$this->title_slug = null;
 		$this->description = null;
 		$this->gallery_id = null;
 		$this->cover_photo_id = null;
