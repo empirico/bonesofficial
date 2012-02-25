@@ -25,6 +25,7 @@ class Bones_Controller_Default extends Bones_Controller_Base
         $this->view->headLink()->appendStylesheet('/css/prettyPhoto.css');
 
         $this->view->page_title = ucfirst(strtolower(str_replace("Controller", "", get_class($this))));
+        $this->view->controller_name = $this->getRequest()->getControllerName();
         $this->view->body_class = "generic";
         $this->view->docType('XHTML1_STRICT');
 

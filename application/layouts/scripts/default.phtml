@@ -19,16 +19,22 @@
 
             var _gaq = _gaq || [];
             _gaq.push(['_setAccount', 'UA-12833462-1']);
-            <? if ($_SERVER['HTTP_HOST'] == 'www.bonesofficial.com') { ?>
-            _gaq.push(['_trackPageview']);
-            <? } ?>
+                <? if ($_SERVER['HTTP_HOST'] == 'www.bonesofficial.com') { ?>
+                                    _gaq.push(['_trackPageview']);
+                <? } ?>
 
-            (function() {
-                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-            })();
+                (function() {
+                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();
 
+        </script>
+
+        <script>
+            $(document).ready(function() {
+                $("#<? echo $this->controller_name ?>_nav").addClass("higlight text_shadow_clear");
+            });
         </script>
     </head>
     <body class="<? echo $this->body_class; ?>">
@@ -41,14 +47,14 @@
                         </h1>
                         <div id="main_menu_container">
                             <ul id="main_menu" class="menu">
-                                <li><a href="/">Home</a></li>
-                                <li><a href="/news">News</a></li>
-                                <li><a href="/tour">Tour</a></li>
-                                <li><a href="/biography">Biography</a></li>
-                                <li><a href="/music">Music</a></li>
-                                <!--li><a href="/media">Media</a></li-->
+                                <li><a href="/"">Home</a></li>
+                                <li><a href="/news" id="news_nav">News</a></li>
+                                <li><a href="/tour" id="tour_nav">Tour</a></li>
+                                <li><a href="/biography" id="biography_nav">Biography</a></li>
+                                <li><a href="/music" id="music_nav">Music</a></li>
+                                <li><a href="/media" id="media_nav">Media</a></li>
                                 <!--li><a href="#">Store</a></li-->
-                                <li><a href="/contacts">Contacts</a></li>
+                                <li><a href="/contacts" id="contacts_nav">Contacts</a></li>
                             </ul>
                         </div>
                     </div>
