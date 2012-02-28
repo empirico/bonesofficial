@@ -4,6 +4,10 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Bones & Comfort Official | <?php echo $this->page_title ?></title>
         <meta property="fb:page_id" content="52988616067" />
+        <meta property="fb:app_id" content="190551664332051"/>
+        <meta property="og:site_name" content="Bones & Comfort Official"/>
+        <meta property="og:type" content="music"/>
+        <meta property="og:image" content="http://www.bonesofficial.com/images/fb_share_image.jpg"/>
         <?php echo $this->headMeta() ?>
         <?php echo $this->headLink() ?>
         <?php echo $this->headStyle() ?>
@@ -15,7 +19,9 @@
 
             var _gaq = _gaq || [];
             _gaq.push(['_setAccount', 'UA-12833462-1']);
+            <? if ($_SERVER['HTTP_HOST'] == 'www.bonesofficial.com') { ?>
             _gaq.push(['_trackPageview']);
+            <? } ?>
 
             (function() {
                 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;

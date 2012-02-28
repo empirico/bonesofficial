@@ -2,7 +2,8 @@
 
 <? foreach ($this->news as $news) { ?>
     <div class="post">
-        <h4><? echo $news->getTitle() ?> <span class="post_date">( <?echo $news->getSmartStartDate(); ?> ) </span></h4>
+        <p class="post_date"> <?echo $news->getSmartStartDate(); ?>  </p>
+        <h4><? echo $news->getTitle() ?></h4>
         <div class="post_content"><? echo $news->getAbstractFromContent() ?></div>
         <div class="read_more"><a href="<?echo $this->url(array('controller'=> 'news', 'action' => 'post', 'slug'=> $news->getTitleSlug()),'news',true) ?>" >read more &raquo;</a></div>
         <div class="main_separator clear"></div>

@@ -18,7 +18,7 @@
                 <div class="post_date left">Date: <? echo $this->first_news->getSmartStartDate(); ?></div>
                 <div class="post_share right">
                     Share on
-                    <span><a target="_blank" href="http://www.facebook.com/share.php?u=<? echo urlencode('http://' .$_SERVER['HTTP_HOST'] . $this->url(array('controller'=>'news', 'action' => 'post', 'slug'=> $this->first_news->getTitleSlug()), 'news', true)); ?>">Facebook</a></span>
+                    <span><a target="_blank" href="http://www.facebook.com/share.php?u=<? echo urlencode('http://' .$_SERVER['HTTP_HOST'] . $this->url(array('controller'=>'news', 'action' => 'post', 'slug'=> $this->first_news->getTitleSlug()), 'news', true)); ?>&t=<? echo urlencode($this->first_news->getTitle())?>">Facebook</a></span>
                 </div>
             </div>
             <div class="big_separator clear"></div>

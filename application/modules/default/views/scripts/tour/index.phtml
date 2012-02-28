@@ -1,7 +1,7 @@
 <img src="/images/upcoming_shows.png"/>
 <? foreach ($this->news as $news) { ?>
     <div class="post">
-        <h4><? echo $news->getTitle() ?> <span class="post_date">( <?echo $news->getSmartStartDate(); ?> ) </span></h4>
+        <h4><?echo $news->getSmartStartDate(); ?> - <? echo $news->getTitle() ?></h4>
         <div class="post_content"><? echo $news->getContent() ?></div>
         <div class="main_separator clear"></div>
     </div>

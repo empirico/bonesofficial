@@ -113,10 +113,11 @@ a:hover {text-decoration: underline;}
 .main_post .post_image {margin: 10px;text-align:center;}
 .main_post .post_content {margin-bottom: 20px;}
 
-.post {margin-bottom: 30px;}
+.post {margin: 10px 0 20px;}
 .post h4 {font-size: 18px; text-transform:uppercase;}
 .post h4
 .post .post_content {padding: 0 10px;margin-bottom:10px;}
+.post .post_date {font-size: 12px; font-style: italic;}
 .post .read_more {float: right;font-weight: bold;}
 .post_footer {height: 70px;background: url("../images/bg_footer.png") no-repeat 0 -30px  transparent;font-family: 'Alegreya', serif;}
 .post_footer_content {height:54px;}
