@@ -25,8 +25,7 @@ class NewsController extends Bones_Controller_Default
     }
 
     public function postAction(){
-
-        $this->view->left_side .= $this->get_latest_news(5);
+        $this->view->left_side = $this->get_latest_shows() . $this->get_latest_news(5) . $this->get_twitter_stream();
         $this->view->first_news = Journal::getPostBySlug(self::JOURNAL_ID, $this->getRequest()->getParam('slug'));
         $this->view->page_title .= " - " . $this->view->first_news->getTitle();
     }
