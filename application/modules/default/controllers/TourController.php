@@ -6,6 +6,7 @@ class TourController extends Bones_Controller_Default
 
     public function init(){
         parent::init();
+        $this->set_meta_description("Discover where the band will play next time. Maybe it will be on your favourite venue");
         $this->view->left_side = $this->get_latest_news() . $this->get_latest_shows() . $this->get_twitter_stream();
     }
 

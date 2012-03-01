@@ -6,6 +6,7 @@ class NewsController extends Bones_Controller_Default
 
     public function init() {
         parent::init();
+        $this->set_meta_description("Stay tuned with Bones &amp; comfort: read the news about the band. ");
         $this->view->left_side = $this->get_latest_shows() . $this->get_twitter_stream();
     }
 	public function indexAction()
