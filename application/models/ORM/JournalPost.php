@@ -35,14 +35,15 @@ class JournalPost extends BaseJournalPost {
     public function getAbstractFromContent($lenght = 3) {
         $abstract = "";
         $text = $this->getContent();
-        $text = stripslashes(strip_tags($text));
-        $text_array = explode(".", $text);
+        //$text = stripslashes(strip_tags($text));
+        $text_array = explode("<br />", $text);
+        $ceil = min($lenght, count($text_array)-1);
         $i = 0;
-        for ($i == 0; $i <= $lenght; $i++) {
-            $sentence = $text_array[$i];
-            $abstract .= trim($sentence).  ".";
+        for ($i == 0; $i <= $ceil; $i++) {
+            $sentence = stripslashes(strip_tags($text_array[$i]));
+            $abstract .= trim($sentence).  "\n";
         }
-        return $abstract;
+        return nl2br($abstract);
     }
 
     public function getSmartCreated() {
