@@ -21,7 +21,7 @@
         <table border="0">
             <? foreach ($this->journals as $journal) { ?>
                 <tr>
-                    <td><? echo $journal->getTitle() ?></td>
+                    <td><a href="<?echo $this->url(array("controller"=>"journal", "action"=>"show", "journal_id" => $journal->getId())); ?>"><? echo $journal->getTitle() ?></a></td>
                     <td>&raquo;</td>
                 </tr>
             <? } ?>
@@ -35,7 +35,7 @@
         <table border="0">
             <? foreach ($this->posts as $post) { ?>
                 <tr>
-                    <td><? echo $post->getTitle() ?></td>
+                    <td><a href="<?echo $this->url(array("controller"=>"journal", "action"=>"edit-post", "journal_id" => $post->getJournalId(), "postId"=>$post->getId())); ?>"><? echo $post->getTitle() ?></a></td>
                     <td>&raquo;</td>
                 </tr>
             <? } ?>

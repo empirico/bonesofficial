@@ -1,7 +1,5 @@
 <?php
 
-
-
 /**
  * Skeleton subclass for representing a row from the 'journal_post' table.
  *
@@ -14,34 +12,37 @@
  * @package    propel.generator.ORM
  */
 class JournalPost extends BaseJournalPost {
-
     const FILE_IMG = 'IMG';
     const FILE_DOC = 'DOC';
 
-    public function getFile(){
+    public function getFile() {
 
         switch ($this->getFileType()) {
-            case self::FILE_IMG:  {
-               return Bones_Files_Image::createFromFile($this->getFiles());
-            }
-            break;
+            case self::FILE_IMG: {
+                    return Bones_Files_Image::createFromFile($this->getFiles());
+                }
+                break;
             case self::FILE_DOC: {
-               return Bones_Files_Doc::createFromFile($this->getFiles());
-            }
-            break;
+                    return Bones_Files_Doc::createFromFile($this->getFiles());
+                }
+                break;
             default:
                 return null;
-            break;
-
+                break;
         }
     }
 
-
-    public function getAbstractFromContent($lenght = 255) {
-
+    public function getAbstractFromContent($lenght = 3) {
+        $abstract = "";
         $text = $this->getContent();
-        $text = substr(stripslashes(strip_tags($text)), 0, $lenght);
-        return $text . " ...";
+        $text = stripslashes(strip_tags($text));
+        $text_array = explode(".", $text);
+        $i = 0;
+        for ($i == 0; $i <= $lenght; $i++) {
+            $sentence = $text_array[$i];
+            $abstract .= trim($sentence).  ".";
+        }
+        return $abstract;
     }
 
     public function getSmartCreated() {
@@ -53,4 +54,7 @@ class JournalPost extends BaseJournalPost {
         $date = new Zend_Date($this->getStartDate(), 'it_IT');
         return $date->get(Zend_Date::DATE_MEDIUM, 'en_US');
     }
-} // JournalPost
+
+}
+
+// JournalPost
