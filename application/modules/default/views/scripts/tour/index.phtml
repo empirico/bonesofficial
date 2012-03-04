@@ -2,7 +2,16 @@
 <? foreach ($this->news as $news) { ?>
     <div class="post">
         <h4><?echo $news->getSmartStartDate(); ?> - <? echo $news->getTitle() ?></h4>
-        <div class="post_content"><? echo $news->getContent() ?></div>
+        <div class="post_content">
+           <?if ($news->getFileType() == JournalPost::FILE_IMG) {
+                $image = $news->getFile();
+                ?>
+                <div style="width:150px;height:181px;position:relative;float:left;margin-right:10px;margin-bottom:10px;">
+                    <a href="<? echo  $image->getFullPath(1024) ?>" rel="photogallery[bonesGallery]"><img src="/images/flyer_frame_mid.png" style="position:absolute;top:0;left:0;z-index:5;border:0px;"/></a>
+                    <div style="background: url('<? echo $image->getFullPath(130); ?>') no-repeat center center #03263C;width:130px; height:181px; position:absolute; top:0px; left:8px;z-index:1;"/></div>
+                </div>
+        <? }
+        echo $news->getAbstractFromContent() ?></div>
         <div class="main_separator clear"></div>
     </div>
     <?

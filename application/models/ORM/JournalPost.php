@@ -56,6 +56,21 @@ class JournalPost extends BaseJournalPost {
         return $date->get(Zend_Date::DATE_MEDIUM, 'en_US');
     }
 
+    public function getAllPostImages($lenght = 3) {
+
+        $sources = array();
+        $html = $this->getContent();
+        $sources = Bones_Utils_Filter::extract_img_sources($html);
+        if ($this->getFileType() == self::FILE_IMG) {
+            $post_image = Bones_Files_Image::createFromFile($this->getFiles());
+            array_unshift($sources, $post_image->getFullPath(1024));
+        }
+        $lenght = min (count($sources), $lenght);
+        $sources = array_slice($sources, 0, $lenght);
+        return $sources;
+
+    }
+
 }
 
 // JournalPost

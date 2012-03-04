@@ -27,7 +27,7 @@ var boot = { index: function(){
 			},
 			photos : function(){
 				//alert('IM BOOTING PHOTOS');
-				$("a[rel^='bonesPhotogallery']").prettyPhoto({animationSpeed:'fast',slideshow:10000});
+				$("a[rel^='photogallery']").prettyPhoto({animationSpeed:'fast',slideshow:10000, show_title: false});
 			}
 		};
 

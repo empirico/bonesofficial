@@ -9,8 +9,7 @@ class NewsController extends Bones_Controller_Default
         $this->set_meta_description("Stay tuned with Bones &amp; comfort: read the news about the band. ");
         $this->view->left_side = $this->get_latest_shows() . $this->get_twitter_stream();
     }
-	public function indexAction()
-    {
+	public function indexAction() {
         $offset = $this->getRequest()->getParam('offset', 1);
     	$query = JournalPostQuery::create()
                 ->filterByJournalId(self::JOURNAL_ID)
@@ -22,7 +21,6 @@ class NewsController extends Bones_Controller_Default
 		$this->view->pager =  $pager;
 		$this->view->offset = $offset;
         $this->view->news = $pager->getResult();
-
     }
 
     public function postAction(){

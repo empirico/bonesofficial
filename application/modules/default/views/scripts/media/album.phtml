@@ -4,7 +4,7 @@
 	<?php  $image = $photo->getImage();?>
 		<div style="line-height: 100px;margin: 10px;padding: 10px;text-align:center;float:left; width:150px; border: 1px solid #666;" class="ui-corner-all">
 			<div style="border:1px solid black;height:100px;overflow:hidden;width:100%;padding:0px;">
-                <a href="<? echo  $image->getFullPath(1024) ?>" rel="bonesGallery"><img border="0" src="<?php echo $image->getFullPath(Bones_Files_Image::THUMB_WIDTH)?>" style="width:100%;" align="middle"/></a></div>
+                <a href="<? echo  $image->getFullPath(1024) ?>" rel="photogallery[bonesGallery]"><img border="0" src="<?php echo $image->getFullPath(Bones_Files_Image::THUMB_WIDTH)?>" style="width:100%;" align="middle"/></a></div>
 		</div>
 <?php }?>
 </div>
