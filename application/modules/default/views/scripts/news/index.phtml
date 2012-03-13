@@ -2,16 +2,17 @@
 
 <? foreach ($this->news as $news) { ?>
     <div class="post">
+ <div class="post_thumb_container" >
         <?
             //$news = new JournalPost();
             if ($news->getFileType() == JournalPost::FILE_IMG) {
                 $image = $news->getFile();
-                ?>
-                <div class="post_thumb_container" >
-                    <a href="<? echo  $image->getFullPath(1024) ?>" rel="photogallery[bonesGallery]"><img src="/images/photo_frame_mid.png"/></a>
+                ?><a href="<? echo  $image->getFullPath(1024) ?>" rel="photogallery[bonesGallery]"><img src="/images/photo_frame_mid.png"/></a>
                     <div class="post_thumb" style="background: url('<? echo $image->getFullPath(200); ?>') no-repeat center center #03263C;"/></div>
-                </div>
-        <? } ?>
+            <? } else { ?>
+            <img src="/images/default_news.png"/>
+        <? }?>
+</div>
         <p class="post_date"> <? echo $news->getSmartStartDate(); ?>  </p>
         <h4><? echo $news->getTitle() ?></h4>
         <div class="post_content">
