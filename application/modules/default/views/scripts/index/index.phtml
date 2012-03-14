@@ -3,7 +3,7 @@
     <div class="clear"></div>
     <? if (($this->first_news->getFileId() > 0) && ($this->first_news->getFileType() == 'IMG')) { ?>
         <div class="post_image">
-            <img src="<?php echo $this->first_news->getFile()->getFullPath(400); ?>"/>
+            <img src="<?php echo $this->first_news->getFile()->getFullPath(550); ?>"/>
         </div>
     <? } ?>
     <div class="post_content">
