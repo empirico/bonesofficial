@@ -16,7 +16,7 @@ class JournalPost extends BaseJournalPost {
     const FILE_DOC = 'DOC';
 
     public function getFile() {
-
+        if (!($this->getFiles() instanceof Files)) return null;
         switch ($this->getFileType()) {
             case self::FILE_IMG: {
                     return Bones_Files_Image::createFromFile($this->getFiles());

@@ -133,12 +133,18 @@ class Admin_JournalController extends Bones_Controller_Admin {
         $start_date = empty($params['start_date']) ? date('Y-m-d H:i:s') : $params['start_date'];
         $this->post->setStartDate($start_date);
 
+        if (@$params['DEL_FILE'] && ($this->post->getFile() instanceof Bones_Files_Base)) {
+            $file = $this->post->getFile();
+            $this->post->setFileId(null);
+            $file->delete();
+        }
         $rank = empty($rank) ? 1 : $rank++;
         $this->post->setRank($rank);
         $this->post->save();
 
         if ($this->journal->getShowFileUpload()) {
 
+            $old_file = $this->post->getFile();
             if (!empty($_FILES['post_file_upload']['name'])) {
 
                 switch ($_POST['file_type']) {
@@ -157,8 +163,8 @@ class Admin_JournalController extends Bones_Controller_Admin {
                     $this->post->setFileType($_POST['file_type']);
                     $this->post->setFileId($uploader->getId());
                     $this->post->save();
+                    if ($old_file instanceof Bones_Files_Base) $old_file->delete();
                 } catch (Bones_Files_Exception $e) {
-
                     foreach ($uploader->getErrorMessages() as $msg) {
                         $this->setErrorMessage($msg);
                     }

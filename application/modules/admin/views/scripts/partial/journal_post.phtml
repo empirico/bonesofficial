@@ -21,22 +21,23 @@
                 <?php } ?>
             </div>
             <div style="margin-bottom: 10px">
-                <?php if ($this->journal->getShowAbstract()) { /*?>
-                    <h3 style="margin-bottom: 5px;">Abstract</h3>
-                    <div>
-                        <!-- <textarea id="text_abstract" name="text_abstract" style="width:100%;height:200px;padding: 5px;"><?php echo $this->post->getTextAbstract(); ?></textarea>-->
-                        <?php
-                        $content = new Bones_Utils_Editor('text_abstract');
-                        $content->setHeight('200');
-                        $content->setToolbarSet(Bones_Utils_Editor::TOOLBAR_MINIMAL);
-                        $content->setValue($this->post->getTextAbstract());
-                        $content->create();
-                        ?>
-                    </div>
-                <?php  */}?>
+                <?php if ($this->journal->getShowAbstract()) { /* ?>
+                  <h3 style="margin-bottom: 5px;">Abstract</h3>
+                  <div>
+                  <!-- <textarea id="text_abstract" name="text_abstract" style="width:100%;height:200px;padding: 5px;"><?php echo $this->post->getTextAbstract(); ?></textarea>-->
+                  <?php
+                  $content = new Bones_Utils_Editor('text_abstract');
+                  $content->setHeight('200');
+                  $content->setToolbarSet(Bones_Utils_Editor::TOOLBAR_MINIMAL);
+                  $content->setValue($this->post->getTextAbstract());
+                  $content->create();
+                  ?>
+                  </div>
+                  <?php */
+                } ?>
             </div>
         </div>
-        <?php if ($this->journal->getShowFullText()) { ?>
+<?php if ($this->journal->getShowFullText()) { ?>
             <h3><a href="#">Contenuto</a></h3>
             <div>
                 <?php
@@ -47,7 +48,7 @@
                 $content->create();
                 ?>
             </div>
-        <?php } ?>
+<?php } ?>
 
     </div>
     <div style="float:left;width:250px;">
@@ -59,32 +60,30 @@
                     <tr><td><input id="start_date" name="start_date" type="text" class="input_calendar" value="<? echo $this->post->getStartDate() ?>"></td></tr>
                     <tr><th>Pubblico</th></tr>
                     <tr><td><input id="is_public" name="is_public" type="checkbox" value="1" <?php
-                    if ($this->post->getIsPublic() == 1) {
-                        echo "checked";
-                    }
-                    ?>></td></tr>
+if ($this->post->getIsPublic() == 1) {
+    echo "checked";
+}
+?>></td></tr>
                 </table>
 
             </div>
-        <?php if ($this->journal->getShowFileUpload()) {?>
-        <h3><a href="#">File</a></h3>
-        <div>
-            <div>
-                <?php if ($this->post->getFileId() > 0) { ?>
-                    <b>File Caricato</b>:
-                    <br>
-                    <a href="<?php echo $this->post->getFile()->getFullPath(); ?>" target="_blank"><?php echo $this->post->getFiles()->getFilename() ?></a>
-                    <?php } else { ?>
+            <?php if ($this->journal->getShowFileUpload()) { ?>
+                <h3><a href="#">File</a></h3>
+                <div>
+                    <div>
+                    <?php if ($this->post->getFileId() > 0) { ?>
+                            <div style="margin: 5px 0;"><b>File</b>:<a style="font-size: 16px;"href="<?php echo $this->post->getFile()->getFullPath(); ?>" target="_blank"><?php echo $this->post->getFiles()->getFilename() ?></a></div>
+                            <div style="margin: 5px 0;font-size:16px;line-height:16px;"><input type="checkbox" name="DEL_FILE" value="1" style="line-height:16px"/> delete file</div>
+                    <?php } ?>
+                     <select name="file_type">
+                                <option value="DOC">document</option>
+                                <option value="IMG">image</option>
+                            </select>
+                            <input type="file" name="post_file_upload" id="post_file_upload"/>
+                    </div>
 
-                    <? } ?>
-            </div>
-                <select name="file_type">
-                    <option value="DOC">document</option>
-                    <option value="IMG">image</option>
-                </select>
-            <input type="file" name="post_file_upload" id="post_file_upload"/>
-        </div>
-        <?php } ?>
+                </div>
+            <?php } ?>
         </div>
     </div>
 </form>
