@@ -20,7 +20,7 @@ function activate_emails() {
 	  $("a#mail_info").attr('href', "mailto:" + info).html(info);
 }
 
-var boot = { index: function(){
+var boot = {index: function(){
 			   activate_ajaxLinks();
 
 			    $("a[rel^='bonesGallery']").prettyPhoto({animationSpeed:'fast',slideshow:10000});
@@ -32,14 +32,16 @@ var boot = { index: function(){
 		};
 
 function open_popup(url, width, height) {
-    window.open(url,'','resizable=no,location=no,menubar=no,scrollbars=no,status=no,toolbar=no,fullscreen=no,dependent=no,width=' + width + ',height='+ height + ',status'); return
+    window.open(url,'','resizable=no,location=no,menubar=no,scrollbars=no,status=no,toolbar=no,fullscreen=no,dependent=no,width=' + width + ',height='+ height + ',status');return
 }
 
 $(document).ready(function(){
     boot.index();
     boot.photos();
-   	// initialize scrollable
-	$("#home_scroller").scrollable({circular: true}).autoscroll({
+    // initialize scrollable
+    $("#home_scroller").scrollable({
+        circular: true
+    }).autoscroll({
         interval: 5000
     }).navigator();
     Shadowbox.init();
