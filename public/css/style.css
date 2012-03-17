@@ -102,14 +102,14 @@ a:hover {text-decoration: underline;}
 .generic_box h2 {margin: 20px 0;}
 .generic_box .box_content {background: url("../images/body_bg.jpg"); color: #f4cfa3 ;border: 0;}
 .generic_box .box_content .lucid_border {background: url("../images/white10percent.png"); height:10px; }
-.generic_box h3 {text-transform: uppercase;font-size: 18px;}
+.generic_box h3 {font-size: 18px;}
 .twitter_pad {margin-bottom:40px;}
 .box_content .item {border-bottom: 2px solid #f4cfa3; padding: 5px;}
 .box_content a {color: #f4cfa3;}
 .background_cd {background: url("../images/box_cd_bg.jpg") no-repeat;height:392px;width: 300px; overflow: hidden;}
 
 .generic_box.shows .date {font-size: 15px;font-style: italic;padding: 0px;line-height: 15px;}
-.generic_box.shows .title {text-transform: uppercase;font-size: 18px;font-weight:bold; line-height: 18px;}
+.generic_box.shows .title {font-size: 18px;font-weight:bold; line-height: 18px;}
 
 /* NEWS */
 
