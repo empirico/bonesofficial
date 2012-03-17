@@ -108,6 +108,8 @@ a:hover {text-decoration: underline;}
 .box_content a {color: #f4cfa3;}
 .background_cd {background: url("../images/box_cd_bg.jpg") no-repeat;height:392px;width: 300px; overflow: hidden;}
 
+
+.generic_box.fbox .box_content {background-image: none;background: #03263C; }
 .generic_box.shows .date {font-size: 15px;font-style: italic;padding: 0px;line-height: 15px;}
 .generic_box.shows .title {font-size: 18px;font-weight:bold; line-height: 18px;}
 
