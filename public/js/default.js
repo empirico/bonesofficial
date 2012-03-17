@@ -31,7 +31,9 @@ var boot = { index: function(){
 			}
 		};
 
-
+function open_popup(url, width, height) {
+    window.open(url,'','resizable=no,location=no,menubar=no,scrollbars=no,status=no,toolbar=no,fullscreen=no,dependent=no,width=' + width + ',height='+ height + ',status'); return
+}
 
 $(document).ready(function(){
     boot.index();
@@ -40,6 +42,6 @@ $(document).ready(function(){
 	$("#home_scroller").scrollable({circular: true}).autoscroll({
         interval: 5000
     }).navigator();
-
+    Shadowbox.init();
 
 });
