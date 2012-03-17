@@ -6,7 +6,7 @@ class IndexController extends Bones_Controller_Default {
         parent::init();
         $this->view->headLink()->appendStylesheet('/css/home.css');
         $this->view->body_class = "home";
-        $this->view->left_side = $this->get_latest_shows() . $this->get_latest_news(2) . $this->get_twitter_stream();//. $this->get_bandcamp_player();
+        $this->view->left_side = $this->get_latest_shows() . $this->get_latest_news() . $this->get_twitter_stream();//. $this->get_bandcamp_player();
         $this->view->is_home = true;
     }
 
