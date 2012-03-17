@@ -32,7 +32,7 @@ var boot = {index: function(){
 		};
 
 function open_popup(url, width, height) {
-    window.open(url,'','resizable=no,location=no,menubar=no,scrollbars=no,status=no,toolbar=no,fullscreen=no,dependent=no,width=' + width + ',height='+ height + ',status');return
+    window.open(url,'','resizable=no,location=no,menubar=no,scrollbars=no,status=no,toolbar=no,fullscreen=no,dependent=no,width=' + width + ',height='+ height + ',status');return false;
 }
 
 $(document).ready(function(){

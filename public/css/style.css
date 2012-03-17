@@ -116,7 +116,8 @@ a:hover {text-decoration: underline;}
 .main_post {
     margin-bottom: 40px;
 }
-.main_post h3 {font-size: 25px; text-transform: uppercase;line-height: 25px;}
+.main_post h3 {font-size: 25px; text-transform: uppercase;line-height: 25px;margin-bottom: 20px;text-align: center;text-transform: uppercase;width: 600px;}
+
 .main_post .post_date {font-size: 16px;margin-bottom: 10px;}
 .main_post .post_image {margin: 10px;text-align:center;}
 .main_post .post_content {margin-bottom: 20px;}
