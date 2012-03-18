@@ -159,6 +159,8 @@ a:hover {text-decoration: underline;}
 #contact_form .field textarea {font-family: verdana;width: 440px; height: 200px;padding: 5px;}
 #contact_form .field input {padding: 5px;width:290px;}
 #contact_form #send_button {display:block; text-align:center;height: 25px; width:80px;padding: 5px 0;cursor:pointer; border: 1px solid #03263C; background:#03263C; color:#F4CFA3}
+#mail_form_container p.ok_response span {font-weight:bold;}
+#mail_form_container p.ko_response {font-weight:bold;color: crimson;}
 
 #social_media {margin-top: 30px;}
 #social_media .icons {margin: 0 auto;width: 800px}

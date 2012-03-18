@@ -35,6 +35,15 @@ function open_popup(url, width, height) {
     window.open(url,'','resizable=no,location=no,menubar=no,scrollbars=no,status=no,toolbar=no,fullscreen=no,dependent=no,width=' + width + ',height='+ height + ',status');return false;
 }
 
+function send_email() {
+	src = '<img src="/images/loading.gif" widht="24" height="24" style="margin:10px 50%"/>';
+    input_data = $('#contact_form').serialize()
+	$('#mail_form_container').html(src);
+    $.post("/contacts/send", input_data,function(data){
+        $('#mail_form_container').html(data);
+    })
+}
+
 $(document).ready(function(){
     boot.index();
     boot.photos();

@@ -1,0 +1,12 @@
+<form name="contact_form" id="contact_form" action="javascript:void(0)" method="post">
+    <p class="field">
+        <input class="rounded-corners" type="text" name="sender_email" value="your email address" onfocus="if($(this).val() == 'your email address'){$(this).val('');}" onblur="if($(this).val() == ''){$(this).val('your email address')}">
+    </p>
+    <p class="field">
+        <input class="rounded-corners" type="text" name="mail_subject" value="subject" onfocus="if($(this).val() == 'subject'){$(this).val('');}" onblur="if($(this).val() == ''){$(this).val('subject')}">
+    </p>
+    <p class="field">
+        <textarea class="rounded-corners" name="message" subject onfocus="if($(this).val() == 'message..'){$(this).val('');}" onblur="if($(this).val() == ''){$(this).val('message..')}">message..</textarea>
+    </p>
+    <span href="javascript:void(0)" id="send_button" class="rounded-corners" onclick="javascript:send_email()">send</span>
+</form>

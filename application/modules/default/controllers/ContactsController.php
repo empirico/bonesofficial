@@ -14,6 +14,24 @@ class ContactsController extends Bones_Controller_Default
         // action body
     }
 
-
+    public function sendAction() {
+        $valid = false;
+        $post_data = $this->getRequest()->getPost();
+        $email_validator  = new Zend_Validate_EmailAddress();
+        if ($email_validator->isValid(@$post_data['sender_email'])) {
+            $mail = new Zend_Mail();
+            $mail->setSubject(@$post_data['mail_subject']);
+            $mail->setBodyText(@$post_data['message']);
+            $mail->setFrom(@$post_data['sender_email']);
+            $mail->addTo("bonesrock+from_site@gmail.com");
+            try {
+            $mail->send();
+            $valid = true;
+            } catch (Exception $e) {
+                $valid = true;
+            }
+        }
+        $this->view->is_valid = $valid;
+    }
 }
 
