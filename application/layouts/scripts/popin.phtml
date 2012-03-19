@@ -39,54 +39,16 @@
             });
         </script>
     </head>
-    <body class="<? echo $this->body_class; ?>">
+    <body class="<? echo $this->body_class; ?> popin">
         <div id="main_content">
-            <div id="header_main_container">
-                <div class="site_width">
-                    <div class="nav_main">
-                        <h1>
-                            <a href="/" border="0"><img src="/images/main_logo.png" height="125"/></a>
-                        </h1>
-                        <div id="main_menu_container">
-                            <ul id="main_menu" class="menu">
-                                <li><a href="/"">Home</a></li>
-                                <li><a href="/news" id="news_nav">News</a></li>
-                                <li><a href="/tour" id="tour_nav">Tour</a></li>
-                                <li><a href="/biography" id="biography_nav">Biography</a></li>
-                                <li><a href="/music" id="music_nav">Music</a></li>
-                                <!--li><a href="/media" id="media_nav">Media</a></li -->
-                                <!--li><a href="#">Store</a></li-->
-                                <li><a href="/contacts" id="contacts_nav">Contacts</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <?
-                    if ($this->is_home) {
-                        echo $this->partial("partial/home_display.phtml");
-                    }
-                    ?>
-                </div>
-            </div>
-            <div id="header_bottom"></div>
             <div class="page_container">
                 <div class="site_width">
-                    <div class="left_side_wrap">
-                        <? echo $this->left_side ?>
-                        <? echo $this->partial("/partial/fb_fanbox.phtml") ?>
-                    </div>
                     <div class="page_maincontent">
                         <?php echo $this->layout()->content ?>
                     </div>
                     <div class="clear"></div>
-                    <? echo $this->partial("/partial/social_media.phtml") ?>
                 </div>
             </div>
         </div>
-        <div id="footer_container">
-            <div class="site_width">
-
-            </div>
-        </div>
-
-    </body>
+       </body>
 </html>

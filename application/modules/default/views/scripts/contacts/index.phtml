@@ -3,12 +3,16 @@
     <script type="text/javascript">
         $(document).ready(function(){
             activate_emails();
+            $('#contact_form').find('input').uniform();
+
         });
     </script>
-    <p>Contact te band using email addresses below, or find our profile on social network websites.</p>
+    <p>You can contact the band using the addresses below or writing directly using the form on this page.</p>
     <p class="addresses">
         <span>info:</span> <a id="mail_info" href="#"></a><br/>
         <span>booking: </span> <a id="booking" href="#"></a><br/>
-        <span>website: </span>  <a href="http://www.bonesofficial.com" target="_blank"/>http://www.bonesofficial.com</a>
     </p>
+    <div id="mail_form_container">
+      <? echo $this->partial('partial/contacts_form.phtml'); ?>
+    </div>
 </div>

@@ -12,10 +12,10 @@ body.home #header_bottom {
 }
 #higlight_panel .panel_content {padding: 10px;text-align: center;}
 
-.panel_content.perkele h2 {font-size: 20px;}
-.panel_content.perkele .head {font-style: italic;}
-.perkele .download_link {font-weight:bold;}
-.perkele .album_cover img {margin: 10px auto;display:block;}
+.panel_content.mothersheep h2 {font-size: 20px;}
+.panel_content.mothersheep .head {font-style: italic;}
+.mothersheep .download_link {font-weight:bold;}
+.mothersheep .album_cover img {margin: 0px auto;display:block;}
 /*
 	root element for the scrollable.
 	when scrolling occurs this element stays still.

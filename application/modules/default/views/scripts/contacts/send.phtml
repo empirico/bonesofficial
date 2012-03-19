@@ -1,0 +1,18 @@
+<?php if ($this->is_valid) { ?>
+<p class="ok_response">
+    <span>Thank you for contacting us!</span><br/>
+    <br/>
+    We give you a feedback as soon as possible.<br/>
+    In the meantime why not take another look around our site or <a href="http://www.facebook.com/bonesofficial" target="_blank"><b>visit our facebook page</b></a>?
+    <br/>
+    It is surely another great way to keep in touch with us!<br/>
+    <br/>
+    Cheers<br/>
+    <em>Bones &amp; Comfort</em>
+    <br/><br/><br/>
+    <img src="/images/band/band_03.jpg">
+</p>
+<?php } else { ?>
+    <p class="ko_response">Some error occurred, please try again!</p>
+    <? echo $this->partial('partial/contacts_form.phtml'); ?>
+<? } ?>

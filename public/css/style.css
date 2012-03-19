@@ -80,6 +80,17 @@ a:hover {text-decoration: underline;}
 	width: 600px;
 }
 
+body.popin .page_maincontent {
+	clear:both;
+    width:auto;
+}
+body.popin .site_width {width:auto;margin: 0; padding: 0;}
+
+body.popin #main_content {
+	background: url("../images/main_bg.jpg") repeat scroll 0 0 #f4cfa3;
+	padding-bottom: 0px;
+}
+
 /* general classes */
 .clear {clear: both;}
 .left {float:left;}
@@ -102,13 +113,16 @@ a:hover {text-decoration: underline;}
 .generic_box h2 {margin: 20px 0;}
 .generic_box .box_content {background: url("../images/body_bg.jpg"); color: #f4cfa3 ;border: 0;}
 .generic_box .box_content .lucid_border {background: url("../images/white10percent.png"); height:10px; }
-.generic_box h3 {text-transform: uppercase;font-size: 18px;}
+.generic_box h3 {font-size: 18px;}
+.twitter_pad {margin-bottom:40px;}
 .box_content .item {border-bottom: 2px solid #f4cfa3; padding: 5px;}
 .box_content a {color: #f4cfa3;}
 .background_cd {background: url("../images/box_cd_bg.jpg") no-repeat;height:392px;width: 300px; overflow: hidden;}
 
+
+.generic_box.fbox .box_content {background-image: none;background: #03263C; }
 .generic_box.shows .date {font-size: 15px;font-style: italic;padding: 0px;line-height: 15px;}
-.generic_box.shows .title {text-transform: uppercase;font-size: 18px;font-weight:bold; line-height: 18px;}
+.generic_box.shows .title {font-size: 18px;font-weight:bold; line-height: 18px;}
 
 /* NEWS */
 
@@ -134,13 +148,13 @@ a:hover {text-decoration: underline;}
 .post_footer_content .post_share {text-align: right; width: 300px;}
 
 #compilations {margin: 20px 0;}
-.compilation {float: left; width: 170px; padding: 20px 10px;text-align: center; background: url("../images/compilation_bg.png") no-repeat 6px -10px;}
+.compilation {float: left; width: 170px; padding: 20px 10px;text-align: center; background: url("../images/compilation_bg.png") no-repeat 10px 10px;}
 .compilation p.title {color: #000; text-shadow: 0 1px 1px #4C5046;font-size: 18px; font-weight:bold;line-height:18px; margin-top: 10px;}
 .compilation p.label {font-style: italic}
 
 #albums {margin: 0px 0;}
 #albums .album_description {float:left; width:240px;font-size:16px;padding-top: 15px;}
-#albums .album_cover {float:left; width:360px;background: url("../images/albums_bg.png") no-repeat -10px 0;}
+#albums .album_cover {float:left; width:360px;background: url("../images/albums_bg.png") no-repeat 0 0;}
 #albums .album_cover img {margin: 25px auto;width:300px;display:block;}
 #albums .big_separator {margin-top: 20px;}
 .album_description h2 {font-size: 20px; text-shadow: 0 1px 1px #4C5046; margin-bottom: 10px;}
@@ -150,6 +164,13 @@ a:hover {text-decoration: underline;}
 
 #bio p, #contacts p {margin: 20px 0;}
 #contacts p.addresses span {display:block; width: 150px; float: left;}
+
+#contact_form .field {margin: 10px 0;clear:both;}
+#contact_form .field textarea {font-family: verdana;width: 440px; height: 200px;padding: 5px;}
+#contact_form .field input {padding: 5px;width:290px;}
+#contact_form #send_button {display:block; text-align:center;height: 25px; width:80px;padding: 5px 0;cursor:pointer; border: 1px solid #03263C; background:#03263C; color:#F4CFA3}
+#mail_form_container p.ok_response span {font-weight:bold;}
+#mail_form_container p.ko_response {font-weight:bold;color: crimson;}
 
 #social_media {margin-top: 30px;}
 #social_media .icons {margin: 0 auto;width: 800px}
