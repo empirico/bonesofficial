@@ -12,5 +12,8 @@ class MusicController extends Bones_Controller_Default {
         // action body
     }
 
+    public function mothersheepAction(){
+        $this->_helper->layout->setLayout('popin');
+    }
 }
 

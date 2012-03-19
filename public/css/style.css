@@ -80,6 +80,17 @@ a:hover {text-decoration: underline;}
 	width: 600px;
 }
 
+body.popin .page_maincontent {
+	clear:both;
+    width:auto;
+}
+body.popin .site_width {width:auto;margin: 0; padding: 0;}
+
+body.popin #main_content {
+	background: url("../images/main_bg.jpg") repeat scroll 0 0 #f4cfa3;
+	padding-bottom: 0px;
+}
+
 /* general classes */
 .clear {clear: both;}
 .left {float:left;}
