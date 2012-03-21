@@ -1,0 +1,49 @@
+BODY{
+background-color: #000000;
+text-colour: FFCC99;
+margin-top: 0px;
+margin-left: 0px;
+scrollbar-face-color:#000000;
+scrollbar-highlight-color:#FFCC99;
+scrollbar-3dlight-color:#000000;
+scrollbar-darkshadow-color:#000000;
+scrollbar-shadow-color:#FFCC99;
+scrollbar-arrow-color:#FFCC99;
+scrollbar-track-color:#000000;
+}
+
+A:link{
+	color: #FFCC99;
+	text-decoration: none;
+	font-weight: bold;
+	}
+	
+A:visited{
+	color: #FFCC99;
+	text-decoration: none;
+	font-weight: bold;
+	}
+
+A:hover{
+	color: #FFCC99;
+	text-decoration: none;
+	font-weight: bold;
+	}
+
+TD{
+	font-family: Verdana;
+	color: #FFCC99;
+	font-size: 10px;
+ }
+
+.tit{
+	font-family: Verdana;
+	color: #FFCC99;
+	font-size: 10px;
+	font-weight: bold;
+ }
+
+IMG.imm{
+	border: 1px solid;
+	border-color: #FFCC99;
+}
