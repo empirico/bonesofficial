@@ -2,7 +2,7 @@
 class TourController extends Bones_Controller_Default
 {
     const JOURNAL_ID = 2;
-    const PER_PAGE = 10;
+    const PER_PAGE = 5;
 
     public function init(){
         parent::init();

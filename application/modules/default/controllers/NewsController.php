@@ -1,7 +1,7 @@
 <?php
 class NewsController extends Bones_Controller_Default
 {
-    const PER_PAGE = 10;
+    const PER_PAGE = 5;
     const JOURNAL_ID = 1;
 
     public function init() {
