@@ -136,7 +136,7 @@ body.popin #main_content {
 
 .post {margin: 10px 0 20px;}
 .post h4 {font-size: 18px; text-transform:uppercase;}
-.post h4
+.post h4 span {font-weight:normal;}
 .post .post_content {padding: 0 10px;margin-bottom:10px;}
 .post .post_date {font-size: 12px; font-style: italic;}
 .post .read_more {float: right;font-weight: bold;}
@@ -146,6 +146,7 @@ body.popin #main_content {
 .post_footer_content .post_date {width: 150px;border-right: 1px dashed #666;}
 .post_footer_content .post_date span {font-weight: bold;}
 .post_footer_content .post_share {text-align: right; width: 300px;}
+
 
 #compilations {margin: 20px 0;}
 .compilation {float: left; width: 170px; padding: 20px 10px;text-align: center; background: url("../images/compilation_bg.png") no-repeat 10px 10px;}
@@ -177,6 +178,24 @@ body.popin #main_content {
 #social_media a {display:block; float:left;}
 #social_media img {width: 150px;}
 
+
+.post .tour_date {
+        display:block;
+        width: 100px;
+        height: 20px;
+        position:absolute;
+        bottom:10px;
+        left: 40px;
+        z-index:2;
+        background:#ECC59E;
+        padding: 10px;
+        border:1px solid #846041;
+        font-size:16px;
+        font-weight: bold;
+
+    }
+.post.tour .post_content {padding-top: 20px;width:380px;font-size:14px;}
+.post.tour .post_content h4 {margin-bottom: 15px;}
 .flyer_container {
     width:190px;
     height:240px;
@@ -184,12 +203,12 @@ body.popin #main_content {
     float:left;
     margin-right:10px;
     margin-bottom:10px;
-}
+ }
 .flyer_container img {
     position:absolute;
     top:0;
     left:0;
-    z-index:1;
+    z-index:10;
     border:0px;
 }
 .flyer_container .flyer_img {
@@ -201,6 +220,7 @@ body.popin #main_content {
      z-index:2;
 
 }
+
 
 .post_thumb_container {width:150px;height:181px;position:relative;float:left;margin-right:10px;}
 .post_thumb_container img {position:absolute;top:0;left:0;z-index:5;border:0px;}

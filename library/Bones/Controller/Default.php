@@ -26,9 +26,13 @@ class Bones_Controller_Default extends Bones_Controller_Base {
         }
     }
 
-    public function get_latest_shows($items = 3) {
-        $shows_journal = JournalPeer::retrieveByPK(2);
-        $items = $shows_journal->getLatestPublicPost($items);
+    public function get_latest_shows($number = 3) {
+        $items = JournalPostQuery::create()
+                ->filterByJournalId(2)
+                ->filterByIsPublic(1)
+                ->filterByStartDate(date('Y-m-d'), Criteria::GREATER_EQUAL)
+                ->limit($number)
+                ->orderByStartDate(Criteria::ASC)->find();
         return $this->view->partial("partial/shows_left_box.phtml", array("posts" => $items));
     }
 

@@ -1,6 +1,6 @@
 <img src="/images/upcoming_shows.png"/>
 <? foreach ($this->news as $news) { ?>
-    <div class="post">
+    <div class="post tour">
         <div class="flyer_container">
             <?if ($news->getFileType() == JournalPost::FILE_IMG) {
                 $image = $news->getFile(); ?>
@@ -10,8 +10,10 @@
                 <a class="flyer_img" style="background: url('/images/flyer_default.jpg') no-repeat center center;display:block;"><img  src="/images/scotch.png"/></a>
             <? }?>
         </div>
-        <h4><?echo $news->getSmartStartDate(); ?> - <? echo $news->getTitle() ?></h4>
-        <div class="post_content left"><? echo $news->getAbstractFromContent() ?></div>
+
+        <div class="post_content left">
+            <h4><?echo $news->getSmartStartDate(); ?> - <? echo $news->getTitle() ?></h4>
+            <? echo $news->getAbstractFromContent() ?></div>
         <div style="height: 10px" class="clear">&nbsp;</div>
         <div class="main_separator clear"></div>
     </div>
