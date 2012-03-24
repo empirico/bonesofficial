@@ -2,7 +2,7 @@
 class TourController extends Bones_Controller_Default
 {
     const JOURNAL_ID = 2;
-    const PER_PAGE = 5;
+    const PER_PAGE = 9;
 
     public function init(){
         parent::init();
@@ -10,8 +10,7 @@ class TourController extends Bones_Controller_Default
         $this->view->left_side = $this->get_latest_news() . $this->get_latest_shows() . $this->get_twitter_stream();
     }
 
-	public function indexAction()
-    {
+	public function indexAction() {
         $offset = $this->getRequest()->getParam('offset', 1);
     	$query = JournalPostQuery::create()
                 ->filterByJournalId(self::JOURNAL_ID)
@@ -24,6 +23,15 @@ class TourController extends Bones_Controller_Default
 		$this->view->pager =  $pager;
 		$this->view->offset = $offset;
         $this->view->news = $pager->getResult();
+
+        $query = JournalPostQuery::create()
+                ->filterByJournalId(self::JOURNAL_ID)
+                ->filterByIsPublic(1)
+                ->filterByStartDate(date('Y-m-d'), Criteria::LESS_THAN)
+                ->limit(10)
+                ->orderByStartDate(Criteria::DESC);
+
+        $this->view->past_events = $query->find();
 
     }
 
@@ -43,7 +51,12 @@ class TourController extends Bones_Controller_Default
         $this->view->news = $pager->getResult();
     }
 
+    public function gigAction() {
+        $slug = $this->getRequest()->getParam('slug');
+        $this->view->post = JournalPostQuery::create()->findOneByTitleSlug($slug);
+        $this->_helper->layout->setLayout('popin');
 
+    }
 
 
 }

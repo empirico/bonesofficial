@@ -179,7 +179,19 @@ body.popin #main_content {
 #social_media img {width: 150px;}
 
 
-.post .tour_date {
+.post.tour .post_content {padding-top: 20px;width:380px;font-size:14px;}
+.post.tour .post_content h4 {margin-bottom: 15px;}
+.post.past_event { border-bottom: 1px dashed #846041; padding: 5px 0;}
+.past_event span {font-weight: bold;}
+.flyer_container {
+    width:190px;
+    height:240px;
+    position:relative;
+    float:left;
+    margin-right:10px;
+    margin-bottom:10px;
+ }
+.flyer_container .tour_date {
         display:block;
         width: 100px;
         height: 20px;
@@ -194,16 +206,6 @@ body.popin #main_content {
         font-weight: bold;
 
     }
-.post.tour .post_content {padding-top: 20px;width:380px;font-size:14px;}
-.post.tour .post_content h4 {margin-bottom: 15px;}
-.flyer_container {
-    width:190px;
-    height:240px;
-    position:relative;
-    float:left;
-    margin-right:10px;
-    margin-bottom:10px;
- }
 .flyer_container img {
     position:absolute;
     top:0;
@@ -220,7 +222,7 @@ body.popin #main_content {
      z-index:2;
 
 }
-
+.post.gig {padding: 10px;height:350px; overflow:hidden;}
 
 .post_thumb_container {width:150px;height:181px;position:relative;float:left;margin-right:10px;}
 .post_thumb_container img {position:absolute;top:0;left:0;z-index:5;border:0px;}

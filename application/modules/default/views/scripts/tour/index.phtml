@@ -1,22 +1,26 @@
 <img src="/images/upcoming_shows.png"/>
+<br class="clear"/>
 <? foreach ($this->news as $news) { ?>
-    <div class="post tour">
         <div class="flyer_container">
             <?if ($news->getFileType() == JournalPost::FILE_IMG) {
-                $image = $news->getFile(); ?>
-                <a class="flyer_img" href="<? echo  $image->getFullPath(1024) ?>" rel="photogallery[bonesGallery]" style="display:block;background: url('<? echo $image->getFullPath(150); ?>')  no-repeat center center;"><img src="/images/scotch.png"/></a>
-            <? } else { ?>
-                <a class="flyer_img" style="background: url('/images/flyer_default.jpg') no-repeat center center;display:block;"><img  src="/images/scotch.png"/></a>
-            <? }?>
-                <span class="tour_date rounded-corners"><? echo $news->getSmartStartDate(); ?></span>
+                $image = $news->getFile();
+                $img_url = $image->getFullPath(150);
+            } else {
+                $img_url = '/images/flyer_default.jpg';
+            } ?>
+            <a class="flyer_img" title="<? echo $news->getTitle() ?>" alt="<? echo $news->getTitle() ?>" href="<? echo $this->url(array('action'=>'gig', 'slug' => $news->getTitleSlug()));?>" rel="shadowbox[gig];width=800;height=400;" style="display:block;background: url('<? echo $img_url ?>')  no-repeat center center;"><img src="/images/scotch.png"/></a>
+            <span class="tour_date rounded-corners"><? echo $news->getSmartStartDate(); ?></span>
         </div>
-        <div class="post_content left">
-            <h4><? echo $news->getTitle() ?></h4>
-            <? echo $news->getAbstractFromContent() ?></div>
-        <div style="height: 10px" class="clear">&nbsp;</div>
-        <div class="main_separator clear"></div>
+    <?
+}?>
+<div class="main_separator clear"></div>
+<br class="clear"/>
+<img src="/images/past_events.png"/>
+<? foreach ($this->past_events as $news) { ?>
+    <div class="post past_event">
+            <? echo $news->getSmartStartDate(); ?> - <span><a class="flyer_img" title="<? echo $news->getTitle() ?>" alt="<? echo $news->getTitle() ?>" href="<? echo $this->url(array('action'=>'gig', 'slug' => $news->getTitleSlug()));?>" rel="shadowbox[past_gig];width=800;height=400;"><? echo $news->getTitle() ?></a></span>
     </div>
     <?
 }?>
-
 <?php echo $this->partial('partial/paginator.phtml', array('pager' => $this->pager)); ?>
+
