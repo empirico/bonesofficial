@@ -16,7 +16,8 @@ class TourController extends Bones_Controller_Default
     	$query = JournalPostQuery::create()
                 ->filterByJournalId(self::JOURNAL_ID)
                 ->filterByIsPublic(1)
-                ->orderByStartDate(Criteria::DESC);
+                ->filterByStartDate(date('Y-m-d'), Criteria::GREATER_EQUAL)
+                ->orderByStartDate(Criteria::ASC);
 
     	$pager = new PropelPager($query,'JournalPostPeer','doSelect',$offset, self::PER_PAGE);
 
@@ -24,6 +25,22 @@ class TourController extends Bones_Controller_Default
 		$this->view->offset = $offset;
         $this->view->news = $pager->getResult();
 
+    }
+
+    public function pastAction() {
+
+        $offset = $this->getRequest()->getParam('offset', 1);
+    	$query = JournalPostQuery::create()
+                ->filterByJournalId(self::JOURNAL_ID)
+                ->filterByIsPublic(1)
+                ->filterByStartDate(date('Y-m-d'), Criteria::LESS_THAN)
+                ->orderByStartDate(Criteria::DESC);
+
+    	$pager = new PropelPager($query,'JournalPostPeer','doSelect',$offset, 20);
+
+		$this->view->pager =  $pager;
+		$this->view->offset = $offset;
+        $this->view->news = $pager->getResult();
     }
 
 
