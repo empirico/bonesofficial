@@ -6,7 +6,7 @@ class ContactsController extends Bones_Controller_Default
     public function init() {
         parent::init();
         $this->set_meta_description("Feel free to contact us using the email addresses below, or find our profiles on the most important social networks!");
-        $this->view->left_side = $this->get_latest_shows() . $this->get_latest_news() . $this->get_twitter_stream();//. $this->get_bandcamp_player();
+        $this->setup_sidebar(array(self::BAR_FACEBOOK =>'', self::BAR_NEWS => 5, self::BAR_SHOWS => 3, self::BAR_TWITTER =>''));
     }
 
     public function indexAction()
