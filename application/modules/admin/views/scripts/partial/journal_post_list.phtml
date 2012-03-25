@@ -10,7 +10,7 @@
             <?php foreach($this->post_list as $post) {?>
             <tr>
            		<td><?php echo $post->getId();?></td>
-                <td><a href="<?php echo $this->url(array('controller' => 'journal', 'action' => 'edit-post', 'journal_id' => $this->journal->getId(),'postId'=> $post->getId(), 'lang' => $this->lang),'admin', true);?>"><?php echo $post->getTitle();?></a></td>
+                <td><a href="<?php echo $this->url(array('controller' => 'journal', 'action' => 'edit-post', 'journal_id' => $this->journal->getId(),'postId'=> $post->getId(), 'lang' => $this->lang),'admin', true);?>"><u><?php echo $post->getTitle();?></u></a></td>
                 <td><?php  $date = new Zend_Date($post->getStartDate(), 'it_IT'); echo $date->get(Zend_Date::DATE_FULL, 'en_US');?></td>
                 <td><?php echo $post->getRank();?></td>
                 <td>
