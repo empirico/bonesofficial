@@ -183,4 +183,13 @@ class Admin_JournalController extends Bones_Controller_Admin {
         }
     }
 
+    public function togglePublicPostAction(){
+        $post_id = $this->getRequest()->getParam('post_id');
+        $post = JournalPostQuery::create()->findOneById($post_id);
+        $is_public = $post->getIsPublic();
+        $post->setIsPublic(!$is_public);
+        $post->save();
+        $this->_redirect($this->view->url(array('action' => 'show', 'journal_id' => $post->getJournalId())));
+
+    }
 }
