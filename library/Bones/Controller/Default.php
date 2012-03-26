@@ -6,6 +6,11 @@ class Bones_Controller_Default extends Bones_Controller_Base {
     protected $_language;
     protected $_facebookApp;
     const DESC_LIMIT = 30;
+    const BAR_SHOWS = "SHOWS";
+    const BAR_NEWS = "NEWS";
+    const BAR_BANDCAMP = "BANDCAMP";
+    const BAR_TWITTER = "TWITTER";
+    const BAR_FACEBOOK = "FACEBOOK";
 
     public function init() {
         parent::init();
@@ -51,6 +56,10 @@ class Bones_Controller_Default extends Bones_Controller_Base {
         return $this->view->partial("/partial/twitter_stream.phtml");
     }
 
+    public function get_facebook_box(){
+        return $this->view->partial("/partial/fb_fanbox.phtml");
+    }
+
     protected function prepare_html_header() {
 
         $this->view->headLink()->appendStylesheet('/css/bones/jquery-ui-1.8.4.custom.css');
@@ -80,5 +89,31 @@ class Bones_Controller_Default extends Bones_Controller_Base {
         $this->view->meta_description = $meta_description;
     }
 
+    protected function setup_sidebar($items = array()) {
+
+        $sidebar = "";
+        foreach($items as $item=>$value) {
+
+            switch($item){
+
+                case self::BAR_BANDCAMP:
+                    $sidebar .= $this->get_bandcamp_player();
+                    break;
+                case self::BAR_FACEBOOK:
+                    $sidebar .= $this->get_facebook_box();
+                    break;
+                case self::BAR_NEWS:
+                    $sidebar .= $this->get_latest_news($value);
+                    break;
+                case self::BAR_SHOWS:
+                    $sidebar .= $this->get_latest_shows($value);
+                    break;
+                case self::BAR_TWITTER:
+                    $sidebar .= $this->get_twitter_stream();
+                    break;
+            }
+        }
+        $this->view->left_side = $sidebar;
+    }
 }
 

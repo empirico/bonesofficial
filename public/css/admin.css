@@ -39,8 +39,8 @@ ul.menu li a {text-decoration: none;}
 
 .alignRightContent {text-align: right;}
 
-div.ico_yes {width:24px;height:24px; background: url('/images/admin/yes.png') no-repeat; float:left;}
-div.ico_no {width:24px;height:24px; background: url('/images/admin/no.png') no-repeat; float:left;}
+.ico_yes {width:24px;height:24px; background: url('/images/admin/yes.png') no-repeat; float:left;display:block;}
+.ico_no {width:24px;height:24px; background: url('/images/admin/no.png') no-repeat; float:left;display:block;}
 
 
 /* FORM PAGE PROPERTIES */

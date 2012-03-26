@@ -167,8 +167,9 @@ body.popin #main_content {
 #contacts p.addresses span {display:block; width: 150px; float: left;}
 
 #contact_form .field {margin: 10px 0;clear:both;}
-#contact_form .field textarea {font-family: verdana;width: 440px; height: 200px;padding: 5px;}
+#contact_form .field textarea {font-family: verdana;width: 440px; height: 200px;padding: 5px; }
 #contact_form .field input {padding: 5px;width:290px;}
+#contact_form .field input, #contact_form .field textarea {background: url("../images/form_input_bg.jpg");border: 1px solid #9B6434;}
 #contact_form #send_button {display:block; text-align:center;height: 25px; width:80px;padding: 5px 0;cursor:pointer; border: 1px solid #03263C; background:#03263C; color:#F4CFA3}
 #mail_form_container p.ok_response span {font-weight:bold;}
 #mail_form_container p.ko_response {font-weight:bold;color: crimson;}

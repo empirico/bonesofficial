@@ -7,9 +7,10 @@ class NewsController extends Bones_Controller_Default
     public function init() {
         parent::init();
         $this->set_meta_description("Stay tuned with Bones &amp; comfort: read the news about the band. ");
-        $this->view->left_side = $this->get_latest_shows() . $this->get_twitter_stream();
+        $this->setup_sidebar(array( self::BAR_NEWS => 5, self::BAR_SHOWS => 3, self::BAR_TWITTER =>'', self::BAR_FACEBOOK =>''));
     }
-	public function indexAction() {
+
+    public function indexAction() {
         $offset = $this->getRequest()->getParam('offset', 1);
     	$query = JournalPostQuery::create()
                 ->filterByJournalId(self::JOURNAL_ID)

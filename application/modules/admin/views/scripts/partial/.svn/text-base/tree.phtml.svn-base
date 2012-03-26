@@ -1,8 +1,0 @@
-<? var_dump($this);?>
-<? var_dump(__FILE__);?><li><?php echo $this->title ?>
-<?php  if (count($this->childs) > 0){?>
-<ul>
-	<?php echo $this->partialLoop('tree.phtml', $this->childs);?>
-</ul>
-<?php }?>
-</li>
