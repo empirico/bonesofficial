@@ -1,18 +1,27 @@
 <img src="/images/upcoming_shows.png"/>
 <br class="clear"/>
 <? foreach ($this->news as $news) { ?>
+<div class="post upcoming_shows">
         <div class="flyer_container">
-            <?if ($news->getFileType() == JournalPost::FILE_IMG) {
+            <?
+            if ($news->getFileType() == JournalPost::FILE_IMG) {
                 $image = $news->getFile();
                 $img_url = $image->getFullPath(150);
             } else {
                 $img_url = '/images/flyer_default.jpg';
-            } ?>
-            <a class="flyer_img" title="<? echo $news->getTitle() ?>" alt="<? echo $news->getTitle() ?>" href="<? echo $this->url(array('action'=>'gig', 'slug' => $news->getTitleSlug()));?>" rel="shadowbox[gig];width=800;height=400;" style="display:block;background: url('<? echo $img_url ?>')  no-repeat center center;"><img src="/images/scotch.png"/></a>
-            <span class="tour_date rounded-corners"><? echo $news->getSmartStartDate(); ?></span>
+            }
+            ?>
+            <a class="flyer_img" title="<? echo $news->getTitle() ?>" alt="<? echo $news->getTitle() ?>" href="<? echo $this->url(array('action' => 'gig', 'slug' => $news->getTitleSlug())); ?>" rel="shadowbox[gig];width=800;height=400;" style="display:block;background: url('<? echo $img_url ?>')  no-repeat center top;">&nbsp;</a>
         </div>
-    <?
-}?>
+        <div class="left date_content">
+            <span> <? echo $news->getSmartStartDate(); ?> - <a class="flyer_img" title="<? echo $news->getTitle() ?>" alt="<? echo $news->getTitle() ?>" href="<? echo $this->url(array('action' => 'gig', 'slug' => $news->getTitleSlug())); ?>" rel="shadowbox[past_gig];width=800;height=400;"><? echo $news->getTitle() ?></a></span>
+            <div class="text">
+                <? echo $news->getContent();?>
+            </div>
+        </div>
+    <br class="clear"/>
+</div>
+<? }?>
 <div class="main_separator clear"></div>
 <br class="clear"/>
 <img src="/images/past_events.png"/>
