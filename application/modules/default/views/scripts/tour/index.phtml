@@ -14,7 +14,7 @@
             <a class="flyer_img" title="<? echo $news->getTitle() ?>" alt="<? echo $news->getTitle() ?>" href="<? echo $this->url(array('action' => 'gig', 'slug' => $news->getTitleSlug())); ?>" rel="shadowbox[gig];width=800;height=400;" style="display:block;background: url('<? echo $img_url ?>')  no-repeat center top;">&nbsp;</a>
         </div>
         <div class="left date_content">
-            <span> <? echo $news->getSmartStartDate(); ?> - <a class="flyer_img" title="<? echo $news->getTitle() ?>" alt="<? echo $news->getTitle() ?>" href="<? echo $this->url(array('action' => 'gig', 'slug' => $news->getTitleSlug())); ?>" rel="shadowbox[past_gig];width=800;height=400;"><? echo $news->getTitle() ?></a></span>
+            <h4> <? echo $news->getSmartStartDate(); ?> - <? echo $news->getTitle() ?></h4>
             <div class="text">
                 <? echo $news->getContent();?>
             </div>
@@ -27,7 +27,7 @@
 <img src="/images/past_events.png"/>
 <? foreach ($this->past_events as $news) { ?>
     <div class="post past_event">
-            <? echo $news->getSmartStartDate(); ?> - <span><a class="flyer_img" title="<? echo $news->getTitle() ?>" alt="<? echo $news->getTitle() ?>" href="<? echo $this->url(array('action'=>'gig', 'slug' => $news->getTitleSlug()));?>" rel="shadowbox[past_gig];width=800;height=400;"><? echo $news->getTitle() ?></a></span>
+          <h4><? echo $news->getSmartStartDate(); ?> - <span><a class="flyer_img" title="<? echo $news->getTitle() ?>" alt="<? echo $news->getTitle() ?>" href="<? echo $this->url(array('action'=>'gig', 'slug' => $news->getTitleSlug()));?>" rel="shadowbox[past_gig];width=800;height=400;"><? echo $news->getTitle() ?></a></h4>
     </div>
     <?
 }?>

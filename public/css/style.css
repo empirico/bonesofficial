@@ -12,7 +12,7 @@ body{
 	color: #313131;
 	font-family: Helvetica,sans-serif;
 	position: relative;
-    font-size:16px;
+    font-size:14px;
 }
 h1,h2,h3,h4,h5,h6, .title{ font-family: 'Alegreya', serif;}
 
@@ -223,6 +223,7 @@ body.popin #main_content {
 }
 .post.gig {padding: 10px;height:350px; overflow:hidden;}
 .post .date_content {width: 400px;}
+
 
 .post_thumb_container {width:150px;height:181px;position:relative;float:left;margin-right:10px;}
 .post_thumb_container img {position:absolute;top:0;left:0;z-index:5;border:0px;}
