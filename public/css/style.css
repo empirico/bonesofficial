@@ -195,29 +195,27 @@ body.popin #main_content {
         font-weight: bold;
 
     }
-.post.tour .post_content {padding-top: 20px;width:380px;font-size:14px;}
+.post.tour .post_content {width:380px;font-size:14px;}
 .post.tour .post_content h4 {margin-bottom: 15px;}
 .flyer_container {
-    width:190px;
-    height:240px;
+    width:100px;
+    height:126px;
     position:relative;
     float:left;
-    margin-right:10px;
-    margin-bottom:10px;
  }
 .flyer_container img {
     position:absolute;
-    top:0;
-    left:0;
+    top:-10px;
+    left:-10px;
     z-index:10;
     border:0px;
 }
 .flyer_container .flyer_img {
-     width:190px;
-     height:240px;
+     width:80px;
+     height:106px;
      position:absolute;
-     top:9px;
-     left:8px;
+     top:0;
+     left:0;
      z-index:2;
 
 }
