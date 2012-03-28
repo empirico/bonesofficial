@@ -180,20 +180,37 @@ body.popin #main_content {
 #social_media img {width: 150px;}
 
 
-.post.tour .post_content {padding-top: 20px;width:380px;font-size:14px;}
-.post.tour .post_content h4 {margin-bottom: 15px;}
-.post.past_event, .post.upcoming_shows { border-bottom: 1px dashed #846041; padding: 5px 0;}
+.post.past_event, .post.upcoming_shows { border-top: 1px dashed #846041; padding:20px 0 0;margin: 10px 0 0;}
+.post.past_event {padding: 10px 0 0;}
 .past_event span, .upcoming_shows span {font-weight: bold;}
 .upcoming_shows .date_content .text {font-size: 14px;margin-top:5px;}
 
+
+.post.upcoming_shows .post_content {width:480px;font-size:14px;}
+.post.upcoming_shows .post_content h4 {margin-bottom: 15px;}
 .flyer_container {
-    width:190px;
-    min-height: 50px;
+    width:75px;
+    height:113px;
     position:relative;
+    margin-right: 20px;
     float:left;
-    margin-right:10px;
-    margin-bottom:10px;
  }
+.flyer_container img {
+    position:absolute;
+    top:-10px;
+    left:-10px;
+    z-index:10;
+    border:0px;
+}
+.flyer_container .flyer_img {
+     width:80px;
+     height:106px;
+     position:absolute;
+     top:0;
+     left:0;
+     z-index:2;
+}
+
 .flyer_container .tour_date {
         display:block;
         width: 100px;
@@ -209,18 +226,6 @@ body.popin #main_content {
         font-weight: bold;
 
     }
-.flyer_container .flyer_img {
-     width:190px;
-     height: 80px;
-     /*  height:240px;
-     position:absolute;
-     top:9px;
-     left:8px;
-     z-index:2;
-     */
-
-
-}
 .post.gig {padding: 10px;height:350px; overflow:hidden;}
 .post .date_content {width: 400px;}
 
