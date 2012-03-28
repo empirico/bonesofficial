@@ -78,6 +78,10 @@ class JournalPost extends BaseJournalPost {
     public function getTitle() {
         return stripslashes(parent::getTitle());
     }
+
+    public function getContent() {
+        return stripslashes(parent::getContent());
+    }
 }
 
 // JournalPost
