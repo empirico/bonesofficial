@@ -1,11 +1,11 @@
-<h2 class="album_title text_shadow_clear"><?echo $this->album->getTitle()?></h2>
+<h2 class="album_title text_shadow_clear"><? echo $this->album->getTitle() ?></h2>
 <div class="gallery album">
-<p class="back_to"><a href="/media">Back to albums</a></p>
-<?php foreach($this->photo_list as $photo) {?>
-	<?php  $image = $photo->getImage();?>
-		<div style="line-height: 100px;margin: 10px;padding: 10px;text-align:center;float:left; width:150px; border: 1px solid #666;" class="ui-corner-all">
-			<div style="border:1px solid black;height:100px;overflow:hidden;width:100%;padding:0px;">
-                <a href="<? echo  $image->getFullPath(1024) ?>" rel="photogallery[bonesGallery]"><img border="0" src="<?php echo $image->getFullPath(Bones_Files_Image::THUMB_WIDTH)?>" style="width:100%;" align="middle"/></a></div>
-		</div>
-<?php }?>
+    <p class="back_to"><a href="/media">Back to albums</a></p>
+    <div class="photo_album">
+        <?php foreach ($this->photo_list as $photo) { ?>
+            <?php $image = $photo->getImage(); ?>
+            <a href="<? echo $image->getFullPath(800) ?>" class="thumb" style="background: url('<? echo $image->getFullPath(400) ?>') no-repeat center center;" rel="photogallery[bonesGallery]">&nbsp;</a>
+        <?php } ?>
+        <br class="clear"/>
+    </div>
 </div>
