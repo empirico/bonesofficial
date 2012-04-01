@@ -10,7 +10,7 @@ class MediaController extends Bones_Controller_Default
 
     public function indexAction()
     {
-        $this->view->albums = AlbumQuery::create()->filterByIsPublic(1)->filterByGalleryId(2)->limit(6)->find();
+        $this->view->albums = AlbumQuery::create()->filterByIsPublic(1)->filterByGalleryId(1)->limit(6)->find();
     }
 
     public function albumAction() {

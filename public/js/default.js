@@ -55,4 +55,10 @@ $(document).ready(function(){
     }).navigator();
     Shadowbox.init();
 
+    $(".thumb").mouseover(function() {
+        $(this).addClass('soft_bg');
+    }).mouseout(function(){
+        $(this).removeClass('soft_bg');
+    });
+
 });
