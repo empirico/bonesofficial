@@ -56,6 +56,10 @@ class JournalPost extends BaseJournalPost {
         return $date->get(Zend_Date::DATE_MEDIUM, 'en_US');
     }
 
+    public function getStartDateObject() {
+        return new Zend_Date($this->getStartDate(), 'it_IT');
+    }
+
     public function getAllPostImages($lenght = 3) {
 
         $sources = array();
@@ -71,6 +75,13 @@ class JournalPost extends BaseJournalPost {
 
     }
 
+    public function getTitle() {
+        return stripslashes(parent::getTitle());
+    }
+
+    public function getContent() {
+        return stripslashes(parent::getContent());
+    }
 }
 
 // JournalPost

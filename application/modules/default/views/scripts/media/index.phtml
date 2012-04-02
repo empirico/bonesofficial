@@ -2,7 +2,8 @@
     <h2><img src="/images/photo_albums.png"/></h2>
     <? foreach($this->albums as $album) {?>
     <div class="gallery_item">
-        <a href="<? echo $this->url(array("controller" => "media", "action"=> "album", "slug" => $album->getTitleSlug()), "album", true)?>"><img src="<? echo $album->getCoverPhotoFullPath(100) ?>" /></a>
+        <a class="thumb"  style="background: url('<? echo $album->getCoverPhotoFullPath(400) ?>') no-repeat center center;" href="<? echo $this->url(array("controller" => "media", "action"=> "album", "slug" => $album->getTitleSlug()), "album", true)?>" style="display:block;">&nbsp;</a>
+        <span><? echo $album->getTitle() ?></span>
     </div>
     <? } ?>
     <div class="clear"></div>

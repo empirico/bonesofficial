@@ -1,0 +1,15 @@
+<div class="post gig">
+    <div class="left">
+        <? if ($this->post->getFileType() == JournalPost::FILE_IMG) {
+            $image = $this->post->getFile(); ?>
+            <a class="flyer_img"><img  src="<? echo $image->getFullPath(250); ?>"></a>
+        <? } else { ?>
+            <a class="flyer_img"><img  src="/images/flyer_default.jpg"/></a>
+        <? } ?>
+        <span class="tour_date rounded-corners"></span>
+    </div>
+    <div class="post_content left">
+        <h4><? echo $this->post->getSmartStartDate(); ?> - <? echo $this->post->getTitle() ?></h4>
+        <? echo $this->post->getContent() ?>
+    </div>
+</div>

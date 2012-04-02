@@ -12,7 +12,7 @@ body{
 	color: #313131;
 	font-family: Helvetica,sans-serif;
 	position: relative;
-    font-size:16px;
+    font-size:14px;
 }
 h1,h2,h3,h4,h5,h6, .title{ font-family: 'Alegreya', serif;}
 
@@ -105,7 +105,7 @@ body.popin #main_content {
     -khtml-border-radius: 5px;
     border-radius: 5px;
 }
-
+.soft_bg {opacity: 0.7;}
 /* BOXES */
 
 .generic_box {width: 300px; margin-bottom: 40px;}
@@ -136,7 +136,7 @@ body.popin #main_content {
 
 .post {margin: 10px 0 20px;}
 .post h4 {font-size: 18px; text-transform:uppercase;}
-.post h4
+.post h4 span {font-weight:normal;}
 .post .post_content {padding: 0 10px;margin-bottom:10px;}
 .post .post_date {font-size: 12px; font-style: italic;}
 .post .read_more {float: right;font-weight: bold;}
@@ -146,6 +146,7 @@ body.popin #main_content {
 .post_footer_content .post_date {width: 150px;border-right: 1px dashed #666;}
 .post_footer_content .post_date span {font-weight: bold;}
 .post_footer_content .post_share {text-align: right; width: 300px;}
+
 
 #compilations {margin: 20px 0;}
 .compilation {float: left; width: 170px; padding: 20px 10px;text-align: center; background: url("../images/compilation_bg.png") no-repeat 10px 10px;}
@@ -166,8 +167,9 @@ body.popin #main_content {
 #contacts p.addresses span {display:block; width: 150px; float: left;}
 
 #contact_form .field {margin: 10px 0;clear:both;}
-#contact_form .field textarea {font-family: verdana;width: 440px; height: 200px;padding: 5px;}
+#contact_form .field textarea {font-family: verdana;width: 440px; height: 200px;padding: 5px; }
 #contact_form .field input {padding: 5px;width:290px;}
+#contact_form .field input, #contact_form .field textarea {background: url("../images/form_input_bg.jpg");border: 1px solid #9B6434;}
 #contact_form #send_button {display:block; text-align:center;height: 25px; width:80px;padding: 5px 0;cursor:pointer; border: 1px solid #03263C; background:#03263C; color:#F4CFA3}
 #mail_form_container p.ok_response span {font-weight:bold;}
 #mail_form_container p.ko_response {font-weight:bold;color: crimson;}
@@ -177,37 +179,69 @@ body.popin #main_content {
 #social_media a {display:block; float:left;}
 #social_media img {width: 150px;}
 
+
+.post.past_event, .post.upcoming_shows { border-top: 1px dashed #846041; padding:20px 0 0;margin: 10px 0 0;}
+.post.past_event {padding: 10px 0 0;}
+.past_event span, .upcoming_shows span {font-weight: bold;}
+.upcoming_shows .date_content .text {font-size: 14px;margin-top:5px;}
+
+
+.post.upcoming_shows .post_content {width:480px;font-size:14px;}
+.post.upcoming_shows .post_content h4 {margin-bottom: 15px;}
 .flyer_container {
-    width:190px;
-    height:240px;
+    width:75px;
+    height:113px;
     position:relative;
+    margin-right: 20px;
     float:left;
-    margin-right:10px;
-    margin-bottom:10px;
-}
+ }
 .flyer_container img {
     position:absolute;
-    top:0;
-    left:0;
-    z-index:1;
+    top:-10px;
+    left:-10px;
+    z-index:10;
     border:0px;
 }
 .flyer_container .flyer_img {
-     width:190px;
-     height:240px;
+     width:80px;
+     height:106px;
      position:absolute;
-     top:9px;
-     left:8px;
+     top:0;
+     left:0;
      z-index:2;
-
 }
+
+.flyer_container .tour_date {
+        display:block;
+        width: 100px;
+        height: 20px;
+        position:absolute;
+        bottom:10px;
+        left: 40px;
+        z-index:2;
+        background:#ECC59E;
+        padding: 10px;
+        border:1px solid #846041;
+        font-size:16px;
+        font-weight: bold;
+
+    }
+.post.gig {padding: 10px;height:350px; overflow:hidden;}
+.post .date_content {width: 400px;}
+
 
 .post_thumb_container {width:150px;height:181px;position:relative;float:left;margin-right:10px;}
 .post_thumb_container img {position:absolute;top:0;left:0;z-index:5;border:0px;}
 .post_thumb_container .post_thumb{width:128px; height:128px; position:absolute; top:10px; left:10px;z-index:1;}
 
-.gallery {margin: 20px 0;}
+.gallery {margin:10px 0;;}
+.gallery .back_to {font-weight: bold;}
 .gallery h2 {margin: 20px 0;}
-.gallery .gallery_item {margin: 0 10px;float:left;}
+.gallery .gallery_item {margin: 0 10px;float:left; padding: 10px;}
+.gallery_item  span {display:block;margin: 5px 0;text-transform: capitalize;font-size: 16px;font-weight: bold;}
+.gallery_item .thumb {display:block; height: 150px; width: 250px;text-decoration: none; border: 1px solid #9B6434;}
+
+.photo_album {margin-top: 10px;}
+.photo_album a {display:block; float:left; width:150px; height: 150px;}
 
 h2.album_title {text-transform: uppercase; font-size: 18px;}

@@ -1,6 +1,0 @@
-<div class="command_bar user">
-	<ul class="horizontal_list" >
-		<li><a href="<?php echo $this->url(array('action' => 'new')); ?>" >Nuovo</a></li>
-		<li><a href="<?php echo $this->url(array('action' => 'index')); ?>">Tutti</a></li>
-	</ul>
-</div>

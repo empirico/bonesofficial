@@ -1,0 +1,18 @@
+<img src="/images/past_events.png"/>
+<? foreach ($this->news as $news) { ?>
+    <div class="post">
+            <h4>
+            <?if ($news->getFileType() == JournalPost::FILE_IMG) {
+                $image = $news->getFile(); ?>
+                 <span><?echo $news->getSmartStartDate(); ?></span> - <a class="flyer_img" href="<? echo  $image->getFullPath(1024) ?>" rel="photogallery[bonesGallery]" style="cursor:pointer"> <? echo $news->getTitle() ?></a>
+            <? } else { ?>
+                <span><?echo $news->getSmartStartDate(); ?></span> - <? echo $news->getTitle() ?>
+            <? }?>
+           </h4>
+        <div style="height: 10px" class="clear">&nbsp;</div>
+        <div class="main_separator clear"></div>
+    </div>
+    <?
+}?>
+
+<?php echo $this->partial('partial/paginator.phtml', array('pager' => $this->pager)); ?>
