@@ -19,7 +19,7 @@ class MediaController extends Bones_Controller_Default
         $album = AlbumQuery::create()->findOneByTitleSlug($slug);
         if ($album instanceof Album) {
             $this->view->album = $album;
-            $this->view->photo_list = $album->getPhotoss();
+            $this->view->photo_list = $album->getPhotoss(PhotosQuery::create()->orderById(Criteria::DESC));
         }
     }
 
