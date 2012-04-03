@@ -15,63 +15,63 @@
     .float_container table, .float_container td {border: 0px;}
     .float_container table {width:100%;}
 </style>
-<div style="" class="ui-accordion-header ui-helper-reset ui-state-default ui-state-active ui-corner-top float_container">
+<div style="" class="ui-accordion-header ui-helper-reset ui-state-default  ui-corner-top float_container">
     <h3 class="ui-state-default" >Journals</h3>
     <div>
-        <table border="0">
+        <table border="0" width="100%">
             <? foreach ($this->journals as $journal) { ?>
                 <tr>
                     <td><a href="<?echo $this->url(array("controller"=>"journal", "action"=>"show", "journal_id" => $journal->getId())); ?>"><? echo $journal->getTitle() ?></a></td>
-                    <td>&raquo;</td>
+                    <td style="width:20px">&raquo;</td>
                 </tr>
             <? } ?>
         </table>
     </div>
 </div>
 
-<div style="" class="ui-accordion-header ui-helper-reset ui-state-default ui-state-active ui-corner-top float_container">
+<div style="" class="ui-accordion-header ui-helper-reset ui-state-default  ui-corner-top float_container">
     <h3 class="ui-state-default" >Posts</h3>
     <div>
-        <table border="0">
+        <table border="0" width="100%">
             <? foreach ($this->posts as $post) { ?>
                 <tr>
-                    <td><a href="<?echo $this->url(array("controller"=>"journal", "action"=>"edit-post", "journal_id" => $post->getJournalId(), "postId"=>$post->getId())); ?>"><? echo $post->getTitle() ?></a></td>
-                    <td>&raquo;</td>
+                    <td><a href="<?echo $this->url(array("controller"=>"journal", "action"=>"edit-post", "journal_id" => $post->getJournalId(), "postId"=>$post->getId())); ?>"><? echo substr($post->getTitle(), 0, 20); ?></a></td>
+                    <td widt>&raquo;</td>
                 </tr>
             <? } ?>
         </table>
     </div>
 </div>
 
-<div style="" class="ui-accordion-header ui-helper-reset ui-state-default ui-state-active ui-corner-top float_container">
+<div style="" class="ui-accordion-header ui-helper-reset ui-state-default  ui-corner-top float_container">
     <h3 class="ui-state-default" >Galleries</h3>
     <div>
-        <table border="0">
+        <table border="0" width="100%">
             <? foreach ($this->galleries as $gallery) { ?>
                 <tr>
-                    <td><? echo $gallery->getTitle() ?></td>
-                    <td>&raquo;</td>
+                    <td><a href="<?echo $this->url(array("controller"=>"album", "action"=>"index", "galleryId" => $gallery->getId())); ?>"><? echo $gallery->getTitle() ?></a></td>
+                    <td style="width:20px">&raquo;</td>
                 </tr>
             <? } ?>
         </table>
     </div>
 </div>
 
-<div style="" class="ui-accordion-header ui-helper-reset ui-state-default ui-state-active ui-corner-top float_container">
+<div style="" class="ui-helper-reset ui-state-default ui-corner-top float_container">
     <h3 class="ui-state-default" >Albums</h3>
     <div>
-        <table border="0">
+        <table border="0" width="100%">
             <? foreach ($this->albums as $album) { ?>
                 <tr>
-                    <td><? echo $album->getTitle() ?></td>
-                    <td>&raquo;</td>
+                    <td><a href="<?echo $this->url(array("controller"=>"album", "action"=>"photos", "albumId" => $album->getId())); ?>"><? echo $album->getTitle() ?></a></td>
+                    <td style="width:20px">&raquo;</td>
                 </tr>
             <? } ?>
         </table>
     </div>
 </div>
 
-<div style="" class="ui-accordion-header ui-helper-reset ui-state-default ui-state-active ui-corner-top float_container">
+<div style="" class="ui-accordion-header ui-helper-reset ui-state-default  ui-corner-top float_container">
     <h3 class="ui-state-default" >Photos</h3>
     <div>
     <? foreach ($this->photos as $photo) {
