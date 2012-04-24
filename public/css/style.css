@@ -106,6 +106,7 @@ body.popin #main_content {
     border-radius: 5px;
 }
 .soft_bg {opacity: 0.7;}
+
 /* BOXES */
 
 .generic_box {width: 300px; margin-bottom: 40px;}
@@ -173,6 +174,11 @@ body.popin #main_content {
 #contact_form #send_button {display:block; text-align:center;height: 25px; width:80px;padding: 5px 0;cursor:pointer; border: 1px solid #03263C; background:#03263C; color:#F4CFA3}
 #mail_form_container p.ok_response span {font-weight:bold;}
 #mail_form_container p.ko_response {font-weight:bold;color: crimson;}
+
+#newsletter_form {padding: 5px;}
+#newsletter_form .field {margin: 10px 0; clear:both;}
+#newsletter_form #newsletter_email {padding: 5px;width:200px;}
+#newsletter_form #newsletter_subscribe {padding: 5px;}
 
 #social_media {margin-top: 30px;}
 #social_media .icons {margin: 0 auto;width: 800px}

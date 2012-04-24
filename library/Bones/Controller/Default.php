@@ -11,6 +11,7 @@ class Bones_Controller_Default extends Bones_Controller_Base {
     const BAR_BANDCAMP = "BANDCAMP";
     const BAR_TWITTER = "TWITTER";
     const BAR_FACEBOOK = "FACEBOOK";
+    const BAR_NEWSLETTER = "NEWSLETTER";
 
     public function init() {
         parent::init();
@@ -60,6 +61,9 @@ class Bones_Controller_Default extends Bones_Controller_Base {
         return $this->view->partial("/partial/fb_fanbox.phtml");
     }
 
+    public function get_newsletter_box(){
+          return $this->view->partial("/partial/newsletter_box.phtml");
+    }
     protected function prepare_html_header() {
 
         $this->view->headLink()->appendStylesheet('/css/bones/jquery-ui-1.8.4.custom.css');
@@ -110,6 +114,9 @@ class Bones_Controller_Default extends Bones_Controller_Base {
                     break;
                 case self::BAR_TWITTER:
                     $sidebar .= $this->get_twitter_stream();
+                    break;
+                case self::BAR_NEWSLETTER:
+                    $sidebar .= $this->get_newsletter_box();
                     break;
             }
         }

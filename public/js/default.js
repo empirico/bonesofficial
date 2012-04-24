@@ -37,11 +37,20 @@ function open_popup(url, width, height) {
 
 function send_email() {
 	src = '<img src="/images/loading.gif" widht="24" height="24" style="margin:10px 50%"/>';
-    input_data = $('#contact_form').serialize()
+    input_data = $('#contact_form').serialize();
 	$('#mail_form_container').html(src);
     $.post("/contacts/send", input_data,function(data){
         $('#mail_form_container').html(data);
     })
+}
+
+function subscribe_newsletter() {
+    src = '<img src="/images/loading.gif" widht="24" height="24" style="margin:10px 50%"/>';
+    input_data = $('#newsletter_form').serialize();
+	$('#newsletter_form_container').html(src);
+    $.post("/contacts/newsletter_subscribe", input_data,function(data){
+        $('#newsletter_form_container').html(data);
+    });
 }
 
 $(document).ready(function(){

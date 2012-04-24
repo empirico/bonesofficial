@@ -33,5 +33,10 @@ class ContactsController extends Bones_Controller_Default
         }
         $this->view->is_valid = $valid;
     }
+
+    public function newslettersubscribeAction(){
+        $this->_helper->layout->disableLayout();
+        $this->_helper->viewRenderer->setNoRender();
+    }
 }
 

@@ -1,0 +1,16 @@
+    <div class="generic_box">
+    <div class="main_separator"></div>
+    <h2>NEWSLETTER</h2>
+    <div class="box_content  rounded-corners">
+        <div class="lucid_border"></div>
+        <div id="newsletter_form_container">
+        <form name="newsletter_form" id="newsletter_form" action="javascript:void(0)" method="post">
+            <p>Subscribe to get our latest news</p>
+            <p class="field">
+                <input type="text"  id="newsletter_email" class="rounded-corners"  name="newsletter_email" value="your email address" onfocus="if($(this).val() == 'your email address'){$(this).val('');}" onblur="if($(this).val() == ''){$(this).val('your email address')}">
+                <input type="button" id="newsletter_subscribe" class="rounded-corners" value="send" onclick="javascript:subscribe_newsletter();">
+            </p>
+        </form>
+        </div>
+    </div>
+</div>
