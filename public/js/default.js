@@ -26,4 +26,9 @@ function activate_mouseover(){
 $(document).ready(function(){
     activate_emails();
     activate_mouseover();
+    $('.work-item a img').mouseover(function() {
+        $(this).addClass('soft_bg');
+    }).mouseout(function(){
+        $(this).removeClass('soft_bg');
+    });
 });

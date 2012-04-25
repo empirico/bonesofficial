@@ -11,6 +11,7 @@ class Bones_Controller_Default extends Bones_Controller_Base
 	public function init() {
     	parent::init();
         $this->view->headScript()->appendFile('/js/jquery.prettyPhoto.js', 'text/javascript');
+        $this->view->headScript()->appendFile('/js/jquery.masonry.min.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/default.js','text/javascript');
         $this->view->headLink()->appendStylesheet('http://fonts.googleapis.com/css?family=Lato:300');
         $this->view->headLink()->appendStylesheet('/css/prettyPhoto.css');

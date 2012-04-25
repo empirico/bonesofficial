@@ -38,21 +38,36 @@ p#splash_screen a {color: #000;text-transform: uppercase;text-shadow: 0px 0px 10
 
 
 /*home */
-.home-main, .work-main {width: 924px; min-heigth:100%;}
+.home-main {width: 924px; min-heigth:100%;}
+.work-main {width: 950px; min-heigth:100%;}
 .home-side, .work-side{width: 100px;overflow:hidden;}
-
+.work-side{width: 60px;overflow:hidden;}
 
 /* PAGINA PORTFOLIO */
 .work-item-container, .work-gallery-container, .about-random-thumbs {}
-.work-item , .work-gallery-item, .about-random-item {
+.work-item {
+    width: 220px;
+    margin: 5px;
+    float: left;
+}
+
+.work-gallery-item, .about-random-item {
     line-height: 112px;
     margin: 10px 10px 0px 0;
     text-align:center;
     float:left;
-    width:200px;
+    width:210px;
+    border:1px solid #bca474;
+    padding: 5px;
 }
 .work-item-title {
-    height:25px;line-height:25px;text-align:left;
+    width:200px;
+    text-align:center;
+    padding: 2px 0;
+    position:absolute;bottom:0px;
+    background: url('/images/pix_2_white_40.png');
+    color: #000;
+    font-weight:bold;
 }
 .work-item-thumb , .work-gallery-thumb, .about-random-thumbs {
     border:1px solid #bca474;
@@ -68,4 +83,6 @@ p#splash_screen a {color: #000;text-transform: uppercase;text-shadow: 0px 0px 10
 .about-random-item {margin: 0px ; line-height: 150px;}
 .work-item-thumb img, .work-gallery-thumb img , .about-random-thumbs img{width:100%;height:100%;}
 .about-random-item, .about-random-thumbs {width: 150px;height:150px; filter: alpha(opacity=100);opacity: 1;}
+
+.soft_bg {opacity: 0.7;}
 
