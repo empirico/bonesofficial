@@ -242,6 +242,7 @@ body.popin #main_content {
 .gallery_item .thumb {display:block; height: 150px; width: 250px;text-decoration: none; border: 1px solid #9B6434;}
 
 .photo_album {margin-top: 10px;}
-.photo_album a {display:block; float:left; width:180px;margin:5px;}
+.photo_album a {display:block}
+.photo_album .item {float:left; width:180px; margin:5px;}
 
 h2.album_title {text-transform: uppercase; font-size: 18px;}
