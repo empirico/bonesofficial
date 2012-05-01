@@ -1,6 +1,5 @@
 //TEST
 function activate_ajaxLinks() {
-
     $(".ajaxLink").unbind('click').click(function(){
 		src = '<img src="/images/loading.gif" widht="24" height="24" style="margin:10px 50%"/>';
 		$('#content').html(src);
@@ -54,11 +53,15 @@ $(document).ready(function(){
         interval: 5000
     }).navigator();
     Shadowbox.init();
-
     $(".thumb").mouseover(function() {
         $(this).addClass('soft_bg');
     }).mouseout(function(){
         $(this).removeClass('soft_bg');
+    });
+
+    $('.photo_album').masonry({
+        itemSelector : '.item'
+
     });
 
 });

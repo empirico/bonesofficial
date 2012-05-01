@@ -4,7 +4,11 @@
     <div class="photo_album">
         <?php foreach ($this->photo_list as $photo) { ?>
             <?php $image = $photo->getImage(); ?>
-            <a href="<? echo $image->getFullPath(800) ?>" class="thumb" style="background: url('<? echo $image->getFullPath(400) ?>') no-repeat center center;" rel="photogallery[bonesGallery]">&nbsp;</a>
+                <div class="item">
+                    <a href="<? echo $image->getFullPath(800) ?>" class="thumb"  rel="photogallery[bonesGallery]">
+                        <img src="<? echo $image->getFullPath(180) ?>" border="0">
+                    </a>
+                </div>
         <?php } ?>
         <br class="clear"/>
     </div>
