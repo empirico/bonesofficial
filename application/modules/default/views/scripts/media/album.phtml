@@ -1,7 +1,17 @@
-<h2 class="album_title text_shadow_clear"><? echo $this->album->getTitle() ?></h2>
+<script>
+    $(document).ready(function() {
+        var container = $('#photo_album');
+        container.imagesLoaded( function(){
+            container.masonry({
+                itemSelector : '.item'
+            });
+        });
+    });
+</script>
+        <h2 class="album_title text_shadow_clear"><? echo $this->album->getTitle() ?></h2>
 <div class="gallery album">
     <p class="back_to"><a href="/media">Back to albums</a></p>
-    <div class="photo_album">
+    <div id="photo_album">
         <?php foreach ($this->photo_list as $photo) { ?>
             <?php $image = $photo->getImage(); ?>
                 <div class="item">

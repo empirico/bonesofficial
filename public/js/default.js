@@ -58,10 +58,4 @@ $(document).ready(function(){
     }).mouseout(function(){
         $(this).removeClass('soft_bg');
     });
-
-    $('.photo_album').masonry({
-        itemSelector : '.item'
-
-    });
-
 });
